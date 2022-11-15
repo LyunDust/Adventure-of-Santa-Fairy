@@ -11,13 +11,8 @@ config_version=4
 [application]
 
 config/name="Adventure of Santa Fairy"
-run/main_scene="res://Platformer/MainScene_Aisle.tscn"
+run/main_scene="res://Aisle/Aisle.tscn"
 config/icon="res://icon.png"
-
-[display]
-
-window/size/width=1920
-window/size/height=1080
 
 [gui]
 
@@ -58,10 +53,10 @@ click={
 [layer_names]
 
 2d_physics/layer_1="Player"
-2d_physics/layer_2="EvilSantaFairy"
-2d_physics/layer_3="Monster_green"
-2d_physics/layer_4="Monster_purple"
-2d_physics/layer_5="Box"
+2d_physics/layer_2="Enemy"
+2d_physics/layer_3="ChirstmasTree"
+2d_physics/layer_4="Box"
+2d_physics/layer_5="Items"
 
 [physics]
 
