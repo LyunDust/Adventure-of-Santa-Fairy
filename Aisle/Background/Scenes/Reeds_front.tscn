@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Aisle/Background/Scenes/Reed.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Aisle/Background/Scenes/Reed_reverse.tscn" type="PackedScene" id=2]
+
+[node name="Reeds_front" type="Node2D"]
+
+[node name="Reed_front" type="Node2D" parent="."]
+
+[node name="Reed1" parent="Reed_front" instance=ExtResource( 1 )]
+position = Vector2( 120, 800 )
+
+[node name="Reed_reverse" parent="Reed_front" instance=ExtResource( 2 )]
+position = Vector2( 355, 800 )
+
+[node name="Reed_front2" type="Node2D" parent="."]
+position = Vector2( 470, 0 )
+
+[node name="Reed1" parent="Reed_front2" instance=ExtResource( 1 )]
+position = Vector2( 120, 800 )
+
+[node name="Reed_reverse" parent="Reed_front2" instance=ExtResource( 2 )]
+position = Vector2( 355, 800 )
+
+[node name="Reed_front3" type="Node2D" parent="."]
+position = Vector2( 940, 0 )
+
+[node name="Reed1" parent="Reed_front3" instance=ExtResource( 1 )]
+position = Vector2( 120, 800 )
+
+[node name="Reed_reverse" parent="Reed_front3" instance=ExtResource( 2 )]
+position = Vector2( 355, 800 )
+
+[node name="Reed_front4" type="Node2D" parent="."]
+position = Vector2( 1410, 0 )
+
+[node name="Reed1" parent="Reed_front4" instance=ExtResource( 1 )]
+position = Vector2( 120, 800 )
+
+[node name="Reed_reverse" parent="Reed_front4" instance=ExtResource( 2 )]
+position = Vector2( 355, 800 )
+
+[node name="Reed_front5" type="Node2D" parent="."]
+position = Vector2( 1880, 0 )
+
+[node name="Reed1" parent="Reed_front5" instance=ExtResource( 1 )]
+position = Vector2( 120, 800 )
+
+[node name="Reed_reverse" parent="Reed_front5" instance=ExtResource( 2 )]
+position = Vector2( 355, 800 )
+
+[node name="Reed_front6" type="Node2D" parent="."]
+position = Vector2( 2350, 0 )
+
+[node name="Reed1" parent="Reed_front6" instance=ExtResource( 1 )]
+position = Vector2( 120, 800 )
+
+[node name="Reed_reverse" parent="Reed_front6" instance=ExtResource( 2 )]
+position = Vector2( 355, 800 )
+
+[node name="Reed_front7" type="Node2D" parent="."]
+position = Vector2( 2820, 0 )
+
+[node name="Reed1" parent="Reed_front7" instance=ExtResource( 1 )]
+position = Vector2( 120, 800 )
+
+[node name="Reed_reverse" parent="Reed_front7" instance=ExtResource( 2 )]
+position = Vector2( 355, 800 )
+
+[node name="Reed_front8" type="Node2D" parent="."]
+position = Vector2( 3290, 0 )
+
+[node name="Reed1" parent="Reed_front8" instance=ExtResource( 1 )]
+position = Vector2( 120, 800 )
+
+[node name="Reed_reverse" parent="Reed_front8" instance=ExtResource( 2 )]
+position = Vector2( 355, 800 )
+
+[node name="Reed_front9" type="Node2D" parent="."]
+position = Vector2( 3760, 0 )
+
+[node name="Reed1" parent="Reed_front9" instance=ExtResource( 1 )]
+position = Vector2( 120, 800 )
+
+[node name="Reed_reverse" parent="Reed_front9" instance=ExtResource( 2 )]
+position = Vector2( 355, 800 )

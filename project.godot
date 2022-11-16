@@ -8,6 +8,40 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "Block",
+"language": "GDScript",
+"path": "res://Aisle/Background/Scripts/BlockStage.gd"
+}, {
+"base": "Node",
+"class": "Evil",
+"language": "GDScript",
+"path": "res://Aisle/MovementAndCollisions/Scripts/Evil.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "MonsterMan",
+"language": "GDScript",
+"path": "res://Aisle/MovementAndCollisions/Scripts/Monster_man.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "MonsterWoman",
+"language": "GDScript",
+"path": "res://Aisle/MovementAndCollisions/Scripts/Monster_woman.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Aisle/MovementAndCollisions/Scripts/Player.gd"
+} ]
+_global_script_class_icons={
+"Block": "",
+"Evil": "",
+"MonsterMan": "",
+"MonsterWoman": "",
+"Player": ""
+}
+
 [application]
 
 config/name="Adventure of Santa Fairy"
@@ -57,6 +91,7 @@ click={
 2d_physics/layer_3="ChirstmasTree"
 2d_physics/layer_4="Box"
 2d_physics/layer_5="Items"
+2d_physics/layer_6="Block"
 
 [physics]
 
