@@ -3,6 +3,7 @@
 [ext_resource path="res://Aisle/Image/sky_purple.jpg" type="Texture" id=1]
 
 [node name="Background_Aisle" type="Node2D"]
+scale = Vector2( 1, 0.57 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }

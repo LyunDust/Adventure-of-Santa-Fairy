@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Aisle/Background/Scenes/Reeds_back.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Aisle/MovementAndCollisions/Scenes/ChirstmasTree.tscn" type="PackedScene" id=2]
@@ -6,10 +6,9 @@
 [ext_resource path="res://Aisle/MovementAndCollisions/Scenes/Monster_woman.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Aisle/MovementAndCollisions/Scenes/Monster_man.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Aisle/Background/Scenes/Reeds_front.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Aisle/MovementAndCollisions/Scripts/Monster_man.gd" type="Script" id=7]
 [ext_resource path="res://Aisle/MovementAndCollisions/Scenes/EvilSantaFairy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Aisle/MovementAndCollisions/Scenes/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Aisle/Background/Scenes/BlockSomething.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Aisle/MovementAndCollisions/Scripts/Evil.gd" type="Script" id=12]
 [ext_resource path="res://Aisle/Background/Scripts/BlockStage.gd" type="Script" id=13]
 
 [node name="Aisle" type="Node"]
@@ -18,45 +17,40 @@ __meta__ = {
 }
 
 [node name="Background_Aisle" parent="." instance=ExtResource( 3 )]
-scale = Vector2( 1, 0.57 )
 
 [node name="Reeds_back" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, -20 )
-scale = Vector2( 0.683, 0.5 )
 
 [node name="ChirstmasTree" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1935, 122 )
-scale = Vector2( 0.6, 0.6 )
-
-[node name="Monster_woman" parent="." instance=ExtResource( 4 )]
-position = Vector2( 153, 343 )
-scale = Vector2( 0.4, 0.57 )
 
 [node name="Monster_man" parent="." instance=ExtResource( 5 )]
 position = Vector2( 3700, 331 )
-scale = Vector2( 0.37, 0.53 )
-script = ExtResource( 7 )
+
+[node name="Monster_woman" parent="." instance=ExtResource( 4 )]
+position = Vector2( 153, 343 )
 
 [node name="Reeds_front" parent="." instance=ExtResource( 6 )]
-scale = Vector2( 0.91, 0.57 )
 
 [node name="EvilSantaFairy" parent="." instance=ExtResource( 8 )]
 position = Vector2( 150, 500 )
-scale = Vector2( 0.7, 0.8 )
-script = ExtResource( 12 )
+
+[node name="Player" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1920, 500 )
 
 [node name="BlockStage" type="Node2D" parent="."]
+visible = false
 script = ExtResource( 13 )
 
-[node name="BlockSomething" parent="BlockStage" instance=ExtResource( 11 )]
+[node name="Block_under" parent="BlockStage" instance=ExtResource( 11 )]
 position = Vector2( 0, 565 )
 scale = Vector2( 38.4, 10 )
 
-[node name="BlockSomething2" parent="BlockStage" instance=ExtResource( 11 )]
+[node name="Block_left" parent="BlockStage" instance=ExtResource( 11 )]
 scale = Vector2( 0.1, 200 )
 script = ExtResource( 13 )
 
-[node name="BlockSomething3" parent="BlockStage" instance=ExtResource( 11 )]
+[node name="Block_right" parent="BlockStage" instance=ExtResource( 11 )]
 position = Vector2( 3840, 0 )
 scale = Vector2( 0.1, 200 )
 script = ExtResource( 13 )

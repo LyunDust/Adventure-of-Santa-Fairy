@@ -9,15 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "AislePlayer",
+"language": "GDScript",
+"path": "res://Aisle/MovementAndCollisions/Scripts/AislePlayer.gd"
+}, {
 "base": "Node",
 "class": "Block",
 "language": "GDScript",
 "path": "res://Aisle/Background/Scripts/BlockStage.gd"
 }, {
-"base": "Node",
-"class": "Evil",
+"base": "KinematicBody2D",
+"class": "EvilSantaFairy",
 "language": "GDScript",
-"path": "res://Aisle/MovementAndCollisions/Scripts/Evil.gd"
+"path": "res://Aisle/MovementAndCollisions/Scripts/EvilSantaFairy.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "MonsterMan",
@@ -28,18 +33,13 @@ _global_script_classes=[ {
 "class": "MonsterWoman",
 "language": "GDScript",
 "path": "res://Aisle/MovementAndCollisions/Scripts/Monster_woman.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "Player",
-"language": "GDScript",
-"path": "res://Aisle/MovementAndCollisions/Scripts/Player.gd"
 } ]
 _global_script_class_icons={
+"AislePlayer": "",
 "Block": "",
-"Evil": "",
+"EvilSantaFairy": "",
 "MonsterMan": "",
-"MonsterWoman": "",
-"Player": ""
+"MonsterWoman": ""
 }
 
 [application]
