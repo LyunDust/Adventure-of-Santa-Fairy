@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scene/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/Level 2.gd" type="Script" id=3]
+[ext_resource path="res://scene/Robot vacuums.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/Santa bag.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scene/Cat.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scene/Background.tscn" type="PackedScene" id=9]
+[ext_resource path="res://image/TopDownHouse_FloorsAndWalls_edit.png" type="Texture" id=11]
+[ext_resource path="res://image/wall1.png" type="Texture" id=12]
+
+[node name="Level 2" type="Node2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="tile" type="Sprite" parent="."]
+position = Vector2( 514, 308 )
+scale = Vector2( 2.01696, 2.01696 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 538, 311 )
+
+[node name="background wall" type="Sprite" parent="."]
+position = Vector2( 515, 24 )
+scale = Vector2( 1.46584, 1.46584 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 752, 64 )
+
+[node name="Background" parent="." instance=ExtResource( 9 )]
+position = Vector2( 517, 52 )
+
+[node name="Santa bag" parent="." instance=ExtResource( 7 )]
+position = Vector2( 514, 301 )
+scale = Vector2( 2.40418, 2.40418 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 699, 301 )
+
+[node name="Cat" parent="." instance=ExtResource( 8 )]
+position = Vector2( 388, 371 )
+
+[node name="Robot vacuums" parent="." instance=ExtResource( 6 )]
+position = Vector2( 295, 306 )
+
+[connection signal="bagBoom" from="Santa bag" to="." method="_on_Santa_bag_bagBoom"]

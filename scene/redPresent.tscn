@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://image/roguelikeHoliday_transparent.png" type="Texture" id=1]
+[ext_resource path="res://scene/redPresent.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="redPresent" type="Area2D"]
+scale = Vector2( 1.77113, 1.77113 )
+collision_layer = 8
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.66275, 1.66275 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 54, 6, 10, 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.730763, 0.730763 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_redPresent_body_entered"]

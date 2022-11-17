@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://image/gdb-playstation-2.png" type="Texture" id=1]
+[ext_resource path="res://scene/Robot vacuums.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Robot vacuums" type="KinematicBody2D"]
+collision_layer = 8
+collision_mask = 19
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2.58337, 2.58337 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 17, 49, 14, 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 1.24281, 1.24281 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="blink" type="Timer" parent="Timer"]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer/blink" to="." method="_on_blink_timeout"]
