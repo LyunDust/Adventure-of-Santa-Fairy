@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/Aisle.gd" type="Script" id=1]
+[ext_resource path="res://fonts/SourceSansPro-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/BRLNSR.TTF" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[node name="Aisle" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground"]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="Label" type="Label" parent="ParallaxBackground/ColorRect"]
+margin_left = 280.0
+margin_top = 104.0
+margin_right = 752.0
+margin_bottom = 288.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Asile Scene"
+
+[node name="Button" type="Button" parent="ParallaxBackground/ColorRect"]
+margin_left = 752.0
+margin_top = 464.0
+margin_right = 936.0
+margin_bottom = 520.0
+custom_fonts/font = SubResource( 2 )
+text = "Go Next"
+
+[connection signal="button_up" from="ParallaxBackground/ColorRect/Button" to="." method="_on_Button_button_up"]

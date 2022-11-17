@@ -1,16 +1,16 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://fonts/SourceSansPro-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://StoryScene.tscn" type="PackedScene" id=2]
-[ext_resource path="res://StartScreen.gd" type="Script" id=3]
+[ext_resource path="res://scripts/StartScreen.gd" type="Script" id=2]
+[ext_resource path="res://StartSceneBackground.jpg" type="Texture" id=3]
+[ext_resource path="res://fonts/SourceSansPro-Regular.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
-font_data = ExtResource( 1 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
-font_data = ExtResource( 1 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.341176, 0.290196, 0.607843, 0.470588 )
@@ -34,13 +34,7 @@ content_margin_bottom = 5.0
 bg_color = Color( 0.341176, 0.290196, 0.607843, 1 )
 
 [node name="StartScreen" type="Node2D"]
-script = ExtResource( 3 )
-mainGameScene = ExtResource( 2 )
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1045.0
-margin_bottom = 613.0
-color = Color( 0.784314, 0.784314, 0.988235, 1 )
+script = ExtResource( 2 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_right = 1032.0
@@ -55,6 +49,7 @@ alignment = 1
 margin_top = 153.0
 margin_right = 1032.0
 margin_bottom = 284.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Adventure of Santa Fairy
 "
@@ -132,4 +127,12 @@ custom_styles/pressed = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 text = "Credit"
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="StartSceneBackground" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 512, 300 )
+scale = Vector2( 0.82915, 0.837989 )
+texture = ExtResource( 3 )
+
 [connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/StartButton" to="." method="_on_StartButton_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/CreditButton" to="." method="_on_CreditButton_button_up"]
