@@ -11,9 +11,9 @@ const DIRECTION_LEFT = -1
 var playerDirection = Vector2(DIRECTION_RIGHT, 1)
 
 var sitdown = false
-
 var isHeAlive = true
-#var damage_mode = true
+
+signal isHeAlived (isHeAlive)
 
 
 func get_input():
@@ -27,8 +27,9 @@ func get_input():
 		velocity.x -= 1
 	if Input.is_action_pressed("down"):
 		sitdown = true
-#	if Input.is_action_pressed("up"):
-#		velocity.y -= 1
+		print("He sit down")
+	if Input.is_action_pressed("interact"):
+		print("He interact")
 
 	velocity = velocity.normalized() * playerSpeed
 
@@ -39,28 +40,12 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity*delta)
 	
 	if collision:
-		if !sitdown:
-			if collision.collider is MonsterMan:
-				print("Collided with an MonsterMan!")
-				isHeAlive = false
-			if collision.collider is MonsterWoman:
-				print("Collided with an MonsterWoman!")
-				isHeAlive = false
-			if collision.collider is EvilSantaFairy:
-				print("Collided with an EvilSantaFairy!")
-		if sitdown:
-			if collision.collider is MonsterMan:
-				print("Escape from an MonsterMan!")
-			if collision.collider is MonsterWoman:
-				print("Escape from an MonsterWoman!")
-			if collision.collider is EvilSantaFairy:
-				print("Escape from an EvilSantaFairy!")
-		
+		check_collider(collision)
 		print("Is he alive? ", isHeAlive)
 		
-		if !isHeAlive:
-			print("He is dead")
-			get_tree().paused = true
+	if !isHeAlive:
+		print("He is dead")
+		get_tree().paused = true
 
 
 func set_direction(hor_direction):
@@ -69,3 +54,26 @@ func set_direction(hor_direction):
 	var hor_dir_mod = hor_direction / abs(hor_direction)
 	apply_scale(Vector2(hor_dir_mod * playerDirection.x, 1))
 	playerDirection = Vector2(hor_dir_mod, playerDirection.y)
+
+
+func check_collider(collision):
+	if !sitdown:
+		isHeAlive = false
+		emit_signal("isHeAlived", isHeAlive)
+#		if collision.collider is MonsterMan:
+#			print("Collided with an MonsterMan!")
+#			isHeAlive = false
+#		if collision.collider is MonsterWoman:
+#			print("Collided with an MonsterWoman!")
+#			isHeAlive = false
+#		if collision.collider is EvilSantaFairy:
+#			print("Collided with an EvilSantaFairy!")
+	if sitdown:
+		isHeAlive = true
+		emit_signal("isHeAlived", isHeAlive)
+#		if collision.collider is MonsterMan:
+#			print("Escape from an MonsterMan!")
+#		if collision.collider is MonsterWoman:
+#			print("Escape from an MonsterWoman!")
+#		if collision.collider is EvilSantaFairy:
+#			print("Escape from an EvilSantaFairy!")
