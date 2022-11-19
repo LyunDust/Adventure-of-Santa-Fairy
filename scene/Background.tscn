@@ -96,16 +96,16 @@ extents = Vector2( 85.6179, 14.7811 )
 extents = Vector2( 12.8238, 28.1475 )
 
 [sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 20.3587, 12.5299 )
+extents = Vector2( 17.012, 10.2989 )
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 10, 14.2032 )
+extents = Vector2( 8.3667, 10.8567 )
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 8.64548, 11.4144 )
+extents = Vector2( 7.52988, 10.8969 )
 
 [sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 10.8566, 8.62551 )
+extents = Vector2( 9.74106, 6.39439 )
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 5.98606, 8.06774 )
@@ -119,27 +119,28 @@ scale = Vector2( 1.79285, 1.79285 )
 collision_layer = 2
 
 [node name="fireplace" type="Sprite" parent="."]
-position = Vector2( 0, -6 )
+position = Vector2( 0, 1.25103 )
 scale = Vector2( 1.47352, 1.47352 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 146, 113, 28, 41 )
 
 [node name="bookShelf1" type="Sprite" parent="."]
-position = Vector2( -44.4903, -2.23108 )
+position = Vector2( -44.4903, 5.01993 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 32.256, 63.2202, 46.9906, 48.1298 )
 
 [node name="bookShelf2" type="Sprite" parent="."]
-position = Vector2( -90.3589, -1.67331 )
+position = Vector2( -90.3589, 5.57771 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 32, 64, 47, 47 )
 
 [node name="fire" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 7.25105 )
 frames = SubResource( 9 )
-frame = 7
+frame = 2
 playing = true
 
 [node name="Sprite7" type="Sprite" parent="."]
@@ -150,45 +151,45 @@ region_enabled = true
 region_rect = Rect2( 240, 544, 81, 62 )
 
 [node name="window" type="Sprite" parent="."]
-position = Vector2( -198.009, -9.48211 )
+position = Vector2( -198.009, -2.23108 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 100, 131, 25, 28 )
 
 [node name="window2" type="Sprite" parent="."]
-position = Vector2( -128.287, -9.48211 )
+position = Vector2( -128.287, -2.23108 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 100, 131, 25, 28 )
 
 [node name="window3" type="Sprite" parent="."]
-position = Vector2( 81.9924, -9.48211 )
+position = Vector2( 81.9924, -2.23108 )
 texture = ExtResource( 3 )
 offset = Vector2( 5.01994, 0 )
 region_enabled = true
 region_rect = Rect2( 100, 131, 25, 28 )
 
 [node name="window4" type="Sprite" parent="."]
-position = Vector2( 157.291, -9.48211 )
+position = Vector2( 157.291, -2.23108 )
 texture = ExtResource( 3 )
 offset = Vector2( 5.01994, 0 )
 region_enabled = true
 region_rect = Rect2( 100, 131, 25, 28 )
 
 [node name="door" type="Sprite" parent="."]
-position = Vector2( 231.475, -11.7132 )
+position = Vector2( 231.475, -4.46217 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 131, 2, 26, 46 )
 
 [node name="stairs" type="Sprite" parent="."]
-position = Vector2( -258.248, -6.13548 )
+position = Vector2( -258.248, 1.11555 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 32, 81, 61, 79 )
 
 [node name="clock" type="Sprite" parent="."]
-position = Vector2( 31.2352, -16.1754 )
+position = Vector2( 31.2352, -8.92437 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 80, 16, 15, 15 )
@@ -206,13 +207,13 @@ region_enabled = true
 region_rect = Rect2( 87.4288, 160, 50.6338, 31.6743 )
 
 [node name="sofa2" type="Sprite" parent="."]
-position = Vector2( -44.4504, 86.5282 )
+position = Vector2( -50.0281, 91.5481 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 175, 116, 26, 38 )
 
 [node name="sofa3" type="Sprite" parent="."]
-position = Vector2( 40.8885, 86.5282 )
+position = Vector2( 46.4663, 91.5481 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 texture = ExtResource( 5 )
@@ -220,19 +221,19 @@ region_enabled = true
 region_rect = Rect2( 175, 116, 26, 38 )
 
 [node name="table" type="Sprite" parent="."]
-position = Vector2( -2.05984, 93.7792 )
+position = Vector2( -2.05984, 98.7991 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 82.7127, 42.9116, 26.314, 20.6905 )
 
 [node name="standHanger" type="Sprite" parent="."]
-position = Vector2( 263.826, -1.11554 )
+position = Vector2( 263.826, 6.1355 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 48.4206, 114.303, 16.8529, 45.4888 )
 
 [node name="turntable" type="Sprite" parent="."]
-position = Vector2( -45.1795, 112.67 )
+position = Vector2( -51.315, 117.69 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 173, 262, 36, 27 )
@@ -262,19 +263,19 @@ region_enabled = true
 region_rect = Rect2( 32.3111, 194.512, 30.9562, 62.1362 )
 
 [node name="cat bed" type="Sprite" parent="."]
-position = Vector2( -269.403, 39.044 )
+position = Vector2( -269.403, 46.295 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 97.8937, 239.513, 29.2318, 15.9446 )
 
 [node name="mirror" type="Sprite" parent="."]
-position = Vector2( 200.798, -9.48211 )
+position = Vector2( 200.798, -2.23108 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 115, 113, 26, 46 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -115.459, 84.7812 )
+position = Vector2( -161.106, 82.6697 )
 scale = Vector2( 0.838525, 0.838525 )
 frames = SubResource( 24 )
 frame = 1
@@ -282,11 +283,11 @@ speed_scale = 0.3
 playing = true
 
 [node name="top" type="CollisionShape2D" parent="."]
-position = Vector2( 1.11554, 8.92434 )
+position = Vector2( 1.11554, 16.1754 )
 shape = SubResource( 10 )
 
 [node name="bottom" type="CollisionShape2D" parent="."]
-position = Vector2( 1.11554, 310.121 )
+position = Vector2( 1.11554, 307.332 )
 shape = SubResource( 10 )
 
 [node name="side1" type="CollisionShape2D" parent="."]
@@ -302,23 +303,23 @@ scale = Vector2( 0.531473, 1 )
 shape = SubResource( 10 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 13.9443 )
+position = Vector2( 0, 21.1953 )
 shape = SubResource( 11 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2( -44.2115, -2.80879 )
+position = Vector2( -44.2115, 4.44224 )
 shape = SubResource( 12 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
-position = Vector2( -89.8011, -2.78886 )
+position = Vector2( -89.8011, 4.46218 )
 shape = SubResource( 12 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
-position = Vector2( -260.459, 8.06774 )
+position = Vector2( -260.459, 15.3188 )
 shape = SubResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -269.384, 39.0639 )
+position = Vector2( -269.384, 46.3149 )
 shape = SubResource( 14 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
@@ -330,29 +331,29 @@ position = Vector2( 270.524, 281.416 )
 shape = SubResource( 16 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
-position = Vector2( -2.50992, 66.076 )
+position = Vector2( -2.50989, 66.076 )
 shape = SubResource( 17 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
-position = Vector2( 41.2751, 87.2713 )
+position = Vector2( 46.8529, 92.2912 )
 shape = SubResource( 18 )
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="."]
-position = Vector2( -44.6217, 87.0123 )
+position = Vector2( -50.1994, 92.0322 )
 shape = SubResource( 18 )
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
-position = Vector2( -38.2073, 111.255 )
+position = Vector2( -44.3427, 116.275 )
 shape = SubResource( 19 )
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="."]
-position = Vector2( -1.93225, 94.0044 )
+position = Vector2( -1.93225, 97.9088 )
 shape = SubResource( 20 )
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="."]
-position = Vector2( -52.8388, 114.901 )
+position = Vector2( -58.4165, 119.921 )
 shape = SubResource( 21 )
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="."]
-position = Vector2( -115.459, 57.4504 )
+position = Vector2( -161.106, 55.3389 )
 shape = SubResource( 25 )

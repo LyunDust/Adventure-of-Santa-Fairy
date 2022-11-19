@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/emote_exclamation.png-bb3e9d029e4477c0b582cefff0f4f9b7.stex"
+path="res://.import/ray.png-9fd3054e1578005c5557c54df5e8854b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/emote_exclamation.png"
-dest_files=[ "res://.import/emote_exclamation.png-bb3e9d029e4477c0b582cefff0f4f9b7.stex" ]
+source_file="res://image/ray.png"
+dest_files=[ "res://.import/ray.png-9fd3054e1578005c5557c54df5e8854b.stex" ]
 
 [params]
 
@@ -19,8 +19,8 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
-flags/filter=false
+flags/repeat=1
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

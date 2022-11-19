@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://image/emote_exclamation.png" type="Texture" id=1]
+[ext_resource path="res://script/textBalloon.gd" type="Script" id=2]
+
+[node name="textBalloon" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="smallTimer" type="Timer" parent="Timer"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer/smallTimer" to="." method="_on_smallTimer_timeout"]

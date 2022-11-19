@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Cat",
+"language": "GDScript",
+"path": "res://script/Cat.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "vacuums",
+"language": "GDScript",
+"path": "res://script/Robot vacuums.gd"
+} ]
+_global_script_class_icons={
+"Cat": "",
+"vacuums": ""
+}
+
 [application]
 
 config/name="Adventure of Santa Fairy"
