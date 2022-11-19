@@ -8,14 +8,12 @@ var velocity = Vector2()
 var direction = 1
 var yValue
 var isMoving = true
-signal pauseRay
-signal startRay
+signal catPause
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
 	yValue = rand_range(-1, 1)
+	isMoving = true
 
 func _physics_process(delta):
 	velocity = velocity.normalized() * speed
@@ -53,15 +51,47 @@ func _on_Timer_timeout():
 	visible = true
 	set_modulate(Color(1, 1, 1))
 	isMoving = true
-	emit_signal("startRay")
 
 
 func _on_Area2D_body_entered(body):
 	body.pausePlayer()
-	emit_signal("pauseRay")
 	robotError()
+	emit_signal("catPause")
 
 
 func _on_Santa_bag_vacuumsPause():
+	isMoving = false
+	$Timer.start()
+
+
+func _on_ray_gameOver():
+	isMoving = false
+
+
+func _on_ray2_gameOver():
+	isMoving = false
+
+
+func _on_ray3_gameOver():
+	isMoving = false
+
+
+func _on_ray4_gameOver():
+	isMoving = false
+
+
+func _on_sideRay_gameOver():
+	isMoving = false
+
+
+func _on_sideRay2_gameOver():
+	isMoving = false
+
+
+func _on_sideRay3_gameOver():
+	isMoving = false
+
+
+func _on_Cat_vacuumsPause():
 	isMoving = false
 	$Timer.start()

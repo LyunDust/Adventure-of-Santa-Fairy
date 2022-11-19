@@ -8,14 +8,12 @@ var velocity = Vector2()
 var yValue
 export var direction = 1
 var isMoving = true
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal vacuumsPause
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	isMoving = true
 	yValue = rand_range(-1, 1)
 	if direction == -1:
 		$AnimatedSprite.flip_h = true;
@@ -70,7 +68,41 @@ func _on_blink_timeout():
 func _on_Area2D_body_entered(body):
 	body.pausePlayer()
 	catCollision()
+	emit_signal("vacuumsPause")
 
 func _on_Santa_bag_catPause():
+	isMoving = false
+	$Timer.start()
+
+
+func _on_ray_gameOver():
+	isMoving = false
+
+
+func _on_ray2_gameOver():
+	isMoving = false
+
+
+func _on_ray3_gameOver():
+	isMoving = false
+
+
+func _on_ray4_gameOver():
+	isMoving = false
+
+
+func _on_sideRay_gameOver():
+	isMoving = false
+
+
+func _on_sideRay2_gameOver():
+	isMoving = false
+
+
+func _on_sideRay3_gameOver():
+	isMoving = false
+
+
+func _on_Robot_vacuums_catPause():
 	isMoving = false
 	$Timer.start()

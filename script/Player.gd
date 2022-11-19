@@ -1,22 +1,18 @@
 extends KinematicBody2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-export (int) var speed = 200
+export (int) var speed = 300
 var isMoving = true
 var blinking = false
 var life = 3
 signal playerDamage
+signal pauseRay
+signal startRay
 
 var velocity = Vector2()
 
-
-# Called when the node enters the scene tree for the first time.
-#func _ready():
-	#pass # Replace with function body.
+func _ready():
+	isMoving = true
 
 func get_input():
 	velocity = Vector2()
@@ -31,7 +27,6 @@ func get_input():
 			velocity.y += 1
 		velocity = velocity.normalized() * speed
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
@@ -42,10 +37,10 @@ func pausePlayer():
 	$Timer/blink.start()
 	life -= 1
 	emit_signal("playerDamage")
+	emit_signal("pauseRay")
 	
 	if life == 0:
 		Global.playerDie = true
-		print('game over')
 		$Timer2.start()
 		
 		
@@ -53,6 +48,7 @@ func _on_Timer_timeout():
 	isMoving = true
 	$Timer/blink.stop()
 	set_modulate(Color(1, 1, 1))
+	emit_signal("startRay")
 
 func _on_blink_timeout():
 	if blinking == false:
@@ -64,9 +60,37 @@ func _on_blink_timeout():
 
 
 func _on_Timer2_timeout():
-	get_tree().paused = true
+	get_tree().change_scene("res://scene/GameOver.tscn")
 	
 
 func _on_Santa_bag_playerPause():
 	isMoving = false
 	$Timer.start()
+	emit_signal("pauseRay")
+
+
+func _on_ray_gameOver():
+	isMoving = false
+
+func _on_ray2_gameOver():
+	isMoving = false
+
+
+func _on_ray3_gameOver():
+	isMoving = false
+
+
+func _on_ray4_gameOver():
+	isMoving = false
+
+
+func _on_sideRay_gameOver():
+	isMoving = false
+
+
+func _on_sideRay2_gameOver():
+	isMoving = false
+
+
+func _on_sideRay3_gameOver():
+	isMoving = false

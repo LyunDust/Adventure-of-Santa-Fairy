@@ -63,7 +63,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
 animation = "Run"
-frame = 6
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -86,7 +86,7 @@ scale = Vector2( 0.614538, 0.606822 )
 shape = SubResource( 10 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 
 [node name="blink" type="Timer" parent="Timer"]
 wait_time = 0.5

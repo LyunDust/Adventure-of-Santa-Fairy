@@ -1,9 +1,5 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var bluePresent
 var ray
 var rayList = []
@@ -20,6 +16,7 @@ func _ready():
 	ray = load("res://scene/ray.tscn")
 	timerText = $Label
 	timerText.text = String(2)+':00'
+	Global.presentNum = 0
 	windowSize = get_viewport_rect().size
 	
 	for i in range(10):
@@ -35,18 +32,6 @@ func _ready():
 	rayList.append($ray2)
 	rayList.append($ray3)
 	rayList.append($ray4)
-		
-#	for i in range(4):
-#		rayList.append(ray.instance())
-#		if i == 0:
-#			rayList[i].position = Vector2(163, 401)
-#		elif i == 1:
-#			rayList[i].position = Vector2(163+125, 401)
-#		elif i == 2:
-#			rayList[i].position = Vector2(163+510, 401)
-#		elif i == 3:
-#			rayList[i].position = Vector2(163+645, 401)
-#		add_child(rayList[i])
 	
 	$stageTimer.start()
 		
@@ -83,8 +68,7 @@ func _on_stageTimer_timeout():
 	elif(time <= 120):
 		timerText.text = String(0)+':0'+String(120-time)
 	if time == 120:
-		print('game over!')
-		get_tree().paused = true
+		$Timer.start()
 	
 func randomPosition(instance):
 	instance.position = Vector2(rand_range(20, windowSize.x-20), rand_range(100, windowSize.y-30))
@@ -98,3 +82,7 @@ instance.position.x > 966 and instance.position.x < 1022 and instance.position.y
 
 func _on_Santa_bag_catInterruption():
 	onePresentReposition()
+
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://scene/GameOver.tscn")

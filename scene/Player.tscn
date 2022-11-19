@@ -4,7 +4,7 @@
 [ext_resource path="res://script/Player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21.8424, 13.6599 )
+extents = Vector2( 25.2028, 26.8829 )
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.595173, 0.595173 )
@@ -15,18 +15,18 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 15.3401 )
+position = Vector2( 9.01321e-07, -4.00587e-07 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 
 [node name="blink" type="Timer" parent="Timer"]
 wait_time = 0.5
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.5
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer/blink" to="." method="_on_blink_timeout"]
