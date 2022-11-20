@@ -19,9 +19,9 @@ func _physics_process(delta):
 			visible = true
 	
 
-func _on_redPresent_body_entered(body):
+func _on_greenPresent_body_entered(body):
 	if setPosition == true:
-		print('get red!!')
+		print('get green!!')
 		queue_free()
 		Global.presentNum -= 1
 		print(Global.presentNum)

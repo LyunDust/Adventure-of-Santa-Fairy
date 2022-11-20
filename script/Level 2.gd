@@ -1,44 +1,66 @@
 extends Node2D
 
 var bluePresent
-var ray
-var rayList = []
+var greenPresent
+var redPresent
 var SantaBag
 var windowSize
 var bagBoom = false
 var timerText
 var time = 0
+var presentNum
 
 func _ready():
 	randomize()
 	bluePresent = load("res://scene/bluePresent.tscn")
-	ray = load("res://scene/ray.tscn")
+	greenPresent = load("res://scene/greenPresent.tscn")
+	redPresent = load("res://scene/redPresent.tscn")
 	timerText = $Label
 	timerText.text = String(2)+':00'
 	Global.presentNum = 0
 	windowSize = get_viewport_rect().size
 	
 	for i in range(10):
-		var newPresent = bluePresent.instance()
+		var newPresent
+		presentNum = randi() % 3
+		match presentNum:
+			0:
+				newPresent = redPresent.instance()
+			1:
+				newPresent = greenPresent.instance()
+			2:
+				newPresent = bluePresent.instance()	
+		
 		add_child(newPresent)
 		Global.presentNum += 1
-		
-	rayList.append($ray)
-	rayList.append($ray2)
-	rayList.append($ray3)
-	rayList.append($ray4)
 	
 	$stageTimer.start()
 		
 func presentReposition():
 	for i in range(10 - Global.presentNum):
-		var newPresent = bluePresent.instance()
+		var newPresent
+		presentNum = randi() % 3
+		match presentNum:
+			0:
+				newPresent = redPresent.instance()
+			1:
+				newPresent = greenPresent.instance()
+			2:
+				newPresent = bluePresent.instance()	
 		add_child(newPresent)
 		Global.presentNum += 1
 
 func onePresentReposition():
 	if Global.presentNum < 10:
-		var newPresent = bluePresent.instance()
+		var newPresent
+		presentNum = randi() % 3
+		match presentNum:
+			0:
+				newPresent = redPresent.instance()
+			1:
+				newPresent = greenPresent.instance()
+			2:
+				newPresent = bluePresent.instance()	
 		add_child(newPresent)
 		Global.presentNum += 1
 

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="redPresent" type="Area2D"]
-scale = Vector2( 1.77113, 1.77113 )
+scale = Vector2( 2.08176, 2.08176 )
 collision_layer = 8
 script = ExtResource( 2 )
 
@@ -17,7 +17,55 @@ region_enabled = true
 region_rect = Rect2( 54, 6, 10, 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 0.730763, 0.730763 )
+scale = Vector2( 0.786577, 0.786577 )
 shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 12, 0 )
+collision_mask = 26
+collide_with_areas = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, -12 )
+collision_mask = 26
+collide_with_areas = true
+
+[node name="RayCast2D3" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -12, 0 )
+collision_mask = 26
+collide_with_areas = true
+
+[node name="RayCast2D4" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 12 )
+collision_mask = 26
+collide_with_areas = true
+
+[node name="RayCast2D5" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 10, 10 )
+collision_mask = 26
+collide_with_areas = true
+
+[node name="RayCast2D6" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 10, -10 )
+collision_mask = 26
+collide_with_areas = true
+
+[node name="RayCast2D7" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -10, 10 )
+collision_mask = 26
+collide_with_areas = true
+
+[node name="RayCast2D8" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -10, -10 )
+collision_mask = 26
+collide_with_areas = true
 
 [connection signal="body_entered" from="." to="." method="_on_redPresent_body_entered"]
