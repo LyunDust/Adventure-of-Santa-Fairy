@@ -9,7 +9,6 @@ var bagBoom = false
 var timerText
 var time = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
 	bluePresent = load("res://scene/bluePresent.tscn")
@@ -21,11 +20,7 @@ func _ready():
 	
 	for i in range(10):
 		var newPresent = bluePresent.instance()
-		#newPresent.position = Vector2(rand_range(20, windowSize.x-20), rand_range(100, windowSize.y-30))
-		randomPosition(newPresent)
-		#Global.presentList.append(newPresent)
 		add_child(newPresent)
-		#Global.presentNum = Global.presentList.size()
 		Global.presentNum += 1
 		
 	rayList.append($ray)
@@ -38,19 +33,13 @@ func _ready():
 func presentReposition():
 	for i in range(10 - Global.presentNum):
 		var newPresent = bluePresent.instance()
-		randomPosition((newPresent))
-		#Global.presentList.append(newPresent)
 		add_child(newPresent)
-		#Global.presentNum = Global.presentList.size()
 		Global.presentNum += 1
 
 func onePresentReposition():
 	if Global.presentNum < 10:
 		var newPresent = bluePresent.instance()
-		randomPosition((newPresent))
-		#Global.presentList.append(newPresent)
 		add_child(newPresent)
-		#Global.presentNum = Global.presentList.size()
 		Global.presentNum += 1
 
 func _on_Santa_bag_bagBoom():
@@ -69,15 +58,6 @@ func _on_stageTimer_timeout():
 		timerText.text = String(0)+':0'+String(120-time)
 	if time == 120:
 		$Timer.start()
-	
-func randomPosition(instance):
-	instance.position = Vector2(rand_range(20, windowSize.x-20), rand_range(100, windowSize.y-30))
-	if (instance.position.x > 408 and instance.position.x < 623 and instance.position.y > 141 and instance.position.y < 280)or(
-instance.position.x > 706 and instance.position.x < 1026 and instance.position.y > 492 and instance.position.y < 556)or(
-instance.position.x > 171 and instance.position.x < 282 and instance.position.y > 125 and instance.position.y < 272)or(
-instance.position.x > 0 and instance.position.x < 187 and instance.position.y > 563 and instance.position.y < 597)or(
-instance.position.x > 966 and instance.position.x < 1022 and instance.position.y > 518 and instance.position.y < 602):
-		randomPosition(instance)
 
 
 func _on_Santa_bag_catInterruption():

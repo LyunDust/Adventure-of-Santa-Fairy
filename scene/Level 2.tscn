@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scene/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/life.tscn" type="PackedScene" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://scene/Background.tscn" type="PackedScene" id=9]
 [ext_resource path="res://image/TopDownHouse_FloorsAndWalls_edit.png" type="Texture" id=11]
 [ext_resource path="res://image/wall1.png" type="Texture" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 85, 13 )
 
 [node name="Level 2" type="Node2D"]
 script = ExtResource( 3 )
@@ -40,13 +43,13 @@ position = Vector2( 514, 360 )
 scale = Vector2( 2.40418, 2.40418 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 932, 98 )
+position = Vector2( 932, 60 )
 
 [node name="Cat" parent="." instance=ExtResource( 8 )]
-position = Vector2( 388, 371 )
+position = Vector2( 63, 543 )
 
 [node name="Robot vacuums" parent="." instance=ExtResource( 6 )]
-position = Vector2( 273, 425 )
+position = Vector2( 46, 222 )
 
 [node name="stageTimer" type="Timer" parent="."]
 
@@ -84,6 +87,14 @@ text = "2:00"
 
 [node name="life" parent="." instance=ExtResource( 2 )]
 position = Vector2( 122, 582 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 87, 582 )
+shape = SubResource( 1 )
 
 [connection signal="bagBoom" from="Santa bag" to="." method="_on_Santa_bag_bagBoom"]
 [connection signal="catInterruption" from="Santa bag" to="." method="_on_Santa_bag_catInterruption"]

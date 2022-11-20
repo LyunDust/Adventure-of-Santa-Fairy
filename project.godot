@@ -77,6 +77,7 @@ ui_down={
 2d_physics/layer_4="present"
 2d_physics/layer_5="santa bag"
 2d_physics/layer_6="cat"
+2d_physics/layer_7="ray"
 
 [physics]
 

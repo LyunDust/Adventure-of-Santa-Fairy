@@ -8,6 +8,7 @@
 extents = Vector2( 13.2013, 10 )
 
 [node name="sideRay" type="Area2D"]
+collision_layer = 64
 script = ExtResource( 3 )
 
 [node name="raySprite" type="Sprite" parent="."]

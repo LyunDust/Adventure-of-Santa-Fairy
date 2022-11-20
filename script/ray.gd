@@ -29,13 +29,15 @@ func _on_textBalloonTimer_timeout():
 	num = rand_range(0, 10)
 	if num > 2:
 		$textBalloon.visible = true
+		$raySprite.visible = true
+		$raySprite.set_modulate(Color(1, 1, 1, 0.3))
 		$textBalloonTimer/smallTimer.start()
 
 
 func _on_smallTimer_timeout():
 	$textBalloon.visible = false
 	isSeeing = true
-	$raySprite.visible = true
+	$raySprite.set_modulate(Color(1, 1, 1, 1))
 	$rayTimer.start()
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://image/burning_loop_1.png" type="Texture" id=1]
 [ext_resource path="res://image/TopDownHouse_FurnitureState1.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://image/TopDownHouse_FurnitureState2.png" type="Texture" id=5]
 [ext_resource path="res://image/Interior.png" type="Texture" id=6]
 [ext_resource path="res://image/Christmas Tree.png" type="Texture" id=7]
+[ext_resource path="res://script/Background.gd" type="Script" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -110,13 +111,24 @@ extents = Vector2( 9.74106, 6.39439 )
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 5.98606, 8.06774 )
 
-[sub_resource type="ConvexPolygonShape2D" id=25]
-points = PoolVector2Array( 30, 60, -30, 60, -5, 0, 5, 0 )
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 256.017, 22.5897 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 21.7531, 22.8487 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 15.5977, 11.9721 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 16.7132, 12.251 )
 
 [node name="Background" type="StaticBody2D"]
 position = Vector2( 517, 46 )
 scale = Vector2( 1.79285, 1.79285 )
 collision_layer = 2
+collision_mask = 9
+script = ExtResource( 8 )
 
 [node name="fireplace" type="Sprite" parent="."]
 position = Vector2( 0, 1.25103 )
@@ -140,7 +152,7 @@ region_rect = Rect2( 32, 64, 47, 47 )
 [node name="fire" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 7.25105 )
 frames = SubResource( 9 )
-frame = 2
+frame = 7
 playing = true
 
 [node name="Sprite7" type="Sprite" parent="."]
@@ -282,10 +294,6 @@ frame = 1
 speed_scale = 0.3
 playing = true
 
-[node name="top" type="CollisionShape2D" parent="."]
-position = Vector2( 1.11554, 16.1754 )
-shape = SubResource( 10 )
-
 [node name="bottom" type="CollisionShape2D" parent="."]
 position = Vector2( 1.11554, 307.332 )
 shape = SubResource( 10 )
@@ -354,6 +362,32 @@ shape = SubResource( 20 )
 position = Vector2( -58.4165, 119.921 )
 shape = SubResource( 21 )
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="."]
-position = Vector2( -161.106, 55.3389 )
-shape = SubResource( 25 )
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="."]
+position = Vector2( -37.9284, -6.41437 )
+shape = SubResource( 26 )
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="."]
+position = Vector2( 266.057, -6.67331 )
+shape = SubResource( 27 )
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="."]
+position = Vector2( 232.033, -17.5499 )
+shape = SubResource( 28 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -180.718, 49.6416 )
+polygon = PoolVector2Array( 16.1753, 2.78886, 22.3108, 2.78886, 44.6217, 36.8129, 44.0639, 69.7214, -3.90442, 69.7214, -7.25105, 40.7173, 10.9746, 9.90733 )
+
+[node name="startPosition" type="CollisionShape2D" parent="."]
+position = Vector2( 232.053, 3.92434 )
+shape = SubResource( 29 )
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="startPosition2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 232.053, 3.92434 )
+shape = SubResource( 29 )
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
