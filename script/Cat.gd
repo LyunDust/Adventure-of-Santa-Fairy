@@ -9,6 +9,7 @@ var yValue
 export var direction = 1
 var isMoving = true
 signal vacuumsPause
+signal aimingPause
 
 
 func _ready():
@@ -18,6 +19,7 @@ func _ready():
 	if direction == -1:
 		$AnimatedSprite.flip_h = true;
 	$sideSensor.position.x = $CollisionShape2D.shape.get_extents().x * direction * 0.5
+	$AnimatedSprite.playing = true
 
 
 func _physics_process(delta):
@@ -50,6 +52,7 @@ func catCollision():
 	else:
 		visible = true
 	velocity.x = 0
+	$AnimatedSprite.playing = false
 	$Timer.start()
 	$Timer/blink.start()
 		
@@ -59,6 +62,7 @@ func _on_Timer_timeout():
 	visible = true
 	set_modulate(Color(1, 1, 1))
 	isMoving = true
+	$AnimatedSprite.playing = true
 
 
 func _on_blink_timeout():
@@ -66,43 +70,55 @@ func _on_blink_timeout():
 
 
 func _on_Area2D_body_entered(body):
-	body.pausePlayer()
-	catCollision()
-	emit_signal("vacuumsPause")
+	if body is player:
+		body.pausePlayer()
+		catCollision()
+		emit_signal("vacuumsPause")
+		emit_signal("aimingPause")
 
 func _on_Santa_bag_catPause():
 	isMoving = false
+	$AnimatedSprite.playing = false
+	emit_signal("aimingPause")
 	$Timer.start()
 
 
 func _on_ray_gameOver():
 	isMoving = false
+	$AnimatedSprite.playing = false
 
 
 func _on_ray2_gameOver():
 	isMoving = false
+	$AnimatedSprite.playing = false
 
 
 func _on_ray3_gameOver():
 	isMoving = false
+	$AnimatedSprite.playing = false
 
 
 func _on_ray4_gameOver():
 	isMoving = false
+	$AnimatedSprite.playing = false
 
 
 func _on_sideRay_gameOver():
 	isMoving = false
+	$AnimatedSprite.playing = false
 
 
 func _on_sideRay2_gameOver():
 	isMoving = false
+	$AnimatedSprite.playing = false
 
 
 func _on_sideRay3_gameOver():
 	isMoving = false
+	$AnimatedSprite.playing = false
 
 
 func _on_Robot_vacuums_catPause():
 	isMoving = false
+	$AnimatedSprite.playing = false
 	$Timer.start()

@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+class_name player
 
 export (int) var speed = 300
 var isMoving = true
@@ -16,7 +17,7 @@ func _ready():
 
 func get_input():
 	velocity = Vector2()
-	if isMoving == true:
+	if isMoving == true and Global.aiming == false:
 		if Input.is_action_pressed("ui_right"):
 			velocity.x += 1
 		if Input.is_action_pressed("ui_left"):

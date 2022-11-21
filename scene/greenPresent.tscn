@@ -22,43 +22,43 @@ shape = SubResource( 2 )
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 10, 0 )
-collision_mask = 26
+collision_mask = 282
 collide_with_areas = true
 
 [node name="RayCast2D2" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 0, 8 )
-collision_mask = 26
+collision_mask = 282
 
 [node name="RayCast2D3" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( -10, 0 )
-collision_mask = 26
+collision_mask = 282
 
 [node name="RayCast2D4" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 0, -8 )
-collision_mask = 26
+collision_mask = 282
 
 [node name="RayCast2D5" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 10.1936, -5.76162 )
-collision_mask = 26
+collision_mask = 282
 collide_with_areas = true
 
 [node name="RayCast2D6" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 9.75043, 5.76162 )
-collision_mask = 26
+collision_mask = 282
 
 [node name="RayCast2D7" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( -9.75043, 5.76162 )
-collision_mask = 26
+collision_mask = 282
 
 [node name="RayCast2D8" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( -9.75043, -5.76162 )
-collision_mask = 26
+collision_mask = 282
 
 [connection signal="body_entered" from="." to="." method="_on_greenPresent_body_entered"]

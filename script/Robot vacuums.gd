@@ -9,6 +9,7 @@ var direction = 1
 var yValue
 var isMoving = true
 signal catPause
+signal aimingPause
 
 func _ready():
 	randomize()
@@ -54,13 +55,16 @@ func _on_Timer_timeout():
 
 
 func _on_Area2D_body_entered(body):
-	body.pausePlayer()
-	robotError()
-	emit_signal("catPause")
+	if body is player:
+		body.pausePlayer()
+		robotError()
+		emit_signal("catPause")
+		emit_signal("aimingPause")
 
 
 func _on_Santa_bag_vacuumsPause():
 	isMoving = false
+	emit_signal("aimingPause")
 	$Timer.start()
 
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall2.png-8eb7da0ac5b1a55b0ce86c3b0f2086b7.stex"
+path="res://.import/generic-rpg-ui-inventario01.png-665d14a6172b62e212e37e6d551cbfe5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/wall2.png"
-dest_files=[ "res://.import/wall2.png-8eb7da0ac5b1a55b0ce86c3b0f2086b7.stex" ]
+source_file="res://image/generic-rpg-ui-inventario01.png"
+dest_files=[ "res://.import/generic-rpg-ui-inventario01.png-665d14a6172b62e212e37e6d551cbfe5.stex" ]
 
 [params]
 

@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+class_name santaBag
+
 signal bagBoom
 signal playerPause
 signal startRay

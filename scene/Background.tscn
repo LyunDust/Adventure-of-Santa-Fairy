@@ -75,9 +75,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 300, 1.277 )
-
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 16.9921, 5.01994 )
 
@@ -118,16 +115,19 @@ extents = Vector2( 256.017, 22.5897 )
 extents = Vector2( 21.7531, 22.8487 )
 
 [sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 15.5977, 11.9721 )
+extents = Vector2( 15.5977, 8.06775 )
 
 [sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 16.7132, 12.251 )
+extents = Vector2( 16.7132, 14.7809 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 19.7809, 6.68328 )
 
 [node name="Background" type="StaticBody2D"]
 position = Vector2( 517, 46 )
 scale = Vector2( 1.79285, 1.79285 )
 collision_layer = 2
-collision_mask = 9
+collision_mask = 1033
 script = ExtResource( 8 )
 
 [node name="fireplace" type="Sprite" parent="."]
@@ -152,7 +152,6 @@ region_rect = Rect2( 32, 64, 47, 47 )
 [node name="fire" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 7.25105 )
 frames = SubResource( 9 )
-frame = 3
 playing = true
 
 [node name="Sprite7" type="Sprite" parent="."]
@@ -293,22 +292,6 @@ frames = SubResource( 24 )
 speed_scale = 0.3
 playing = true
 
-[node name="bottom" type="CollisionShape2D" parent="."]
-position = Vector2( 1.11554, 307.332 )
-shape = SubResource( 10 )
-
-[node name="side1" type="CollisionShape2D" parent="."]
-position = Vector2( -289.483, 155.618 )
-rotation = 1.57079
-scale = Vector2( 0.531473, 1 )
-shape = SubResource( 10 )
-
-[node name="side2" type="CollisionShape2D" parent="."]
-position = Vector2( 283.905, 155.618 )
-rotation = 1.57079
-scale = Vector2( 0.531473, 1 )
-shape = SubResource( 10 )
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 21.1953 )
 shape = SubResource( 11 )
@@ -370,15 +353,19 @@ position = Vector2( 266.057, -6.67331 )
 shape = SubResource( 27 )
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="."]
-position = Vector2( 232.033, -17.5499 )
+position = Vector2( 232.033, -21.4543 )
 shape = SubResource( 28 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( -180.718, 49.6416 )
 polygon = PoolVector2Array( 16.1753, 2.78886, 22.3108, 2.78886, 44.6217, 36.8129, 44.0639, 69.7214, -3.90442, 69.7214, -7.25105, 40.7173, 10.9746, 9.90733 )
 
-[node name="startPosition" type="CollisionShape2D" parent="."]
-position = Vector2( 232.053, 3.92434 )
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 512
+collision_mask = 1025
+
+[node name="startPosition" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 232.033, 1.11554 )
 shape = SubResource( 29 )
 disabled = true
 
@@ -386,7 +373,15 @@ disabled = true
 collision_layer = 2
 
 [node name="startPosition2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 232.053, 3.92434 )
+position = Vector2( 232.033, 1.39443 )
 shape = SubResource( 29 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 512
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 233.706, 9.47214 )
+shape = SubResource( 30 )
 
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
