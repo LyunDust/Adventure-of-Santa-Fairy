@@ -8,6 +8,7 @@ var velocity = Vector2()
 
 var sitdown = false
 var isHeAlive = true
+var input = false
 
 signal isHeAlived (isHeAlive)
 
@@ -16,19 +17,26 @@ onready var animation = $AnimationPlayer
 
 func get_input():
 	velocity = Vector2()
-	sitdown = false
 	if Input.is_action_pressed("right"):
 		velocity.x += 1
 		animation.play("run")
+		input = true
+		sitdown = false
 	if Input.is_action_pressed("left"):
 		velocity.x -= 1
 		animation.play("run_left")
+		input = true
+		sitdown = false
 	if Input.is_action_pressed("down"):
+		animation.play("sitdown")
 		sitdown = true
-		print("He sit down")
+		input = true
 	if Input.is_action_pressed("interact"):
 		print("He interact")
-	velocity = velocity.normalized() * playerSpeed
+		input = true
+		
+	if !sitdown:
+		velocity = velocity.normalized() * playerSpeed
 
 
 func _physics_process(delta):
@@ -43,26 +51,13 @@ func _physics_process(delta):
 	if !isHeAlive:
 		print("He is dead")
 		get_tree().paused = true
+	
+	if !input:
+		animation.stop()
+	
+	input = false
 
 
 func check_collider(collision):
-	if !sitdown:
-		isHeAlive = false
-		emit_signal("isHeAlived", isHeAlive)
-#		if collision.collider is MonsterMan:
-#			print("Collided with an MonsterMan!")
-#			isHeAlive = false
-#		if collision.collider is MonsterWoman:
-#			print("Collided with an MonsterWoman!")
-#			isHeAlive = false
-#		if collision.collider is EvilSantaFairy:
-#			print("Collided with an EvilSantaFairy!")
-	if sitdown:
-		isHeAlive = true
-		emit_signal("isHeAlived", isHeAlive)
-#		if collision.collider is MonsterMan:
-#			print("Escape from an MonsterMan!")
-#		if collision.collider is MonsterWoman:
-#			print("Escape from an MonsterWoman!")
-#		if collision.collider is EvilSantaFairy:
-#			print("Escape from an EvilSantaFairy!")
+	isHeAlive = false
+	emit_signal("isHeAlived", isHeAlive)
