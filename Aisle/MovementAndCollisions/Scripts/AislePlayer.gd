@@ -6,10 +6,6 @@ export (int) var playerSpeed = 150
 
 var velocity = Vector2()
 
-const DIRECTION_RIGHT = 1
-const DIRECTION_LEFT = -1
-var playerDirection = Vector2(DIRECTION_RIGHT, 1)
-
 var sitdown = false
 var isHeAlive = true
 
@@ -22,11 +18,9 @@ func get_input():
 	velocity = Vector2()
 	sitdown = false
 	if Input.is_action_pressed("right"):
-#		set_direction(DIRECTION_RIGHT)
 		velocity.x += 1
 		animation.play("run")
 	if Input.is_action_pressed("left"):
-#		set_direction(DIRECTION_LEFT)
 		velocity.x -= 1
 		animation.play("run_left")
 	if Input.is_action_pressed("down"):
@@ -49,14 +43,6 @@ func _physics_process(delta):
 	if !isHeAlive:
 		print("He is dead")
 		get_tree().paused = true
-
-
-func set_direction(hor_direction):
-	if hor_direction == 0:
-		hor_direction = DIRECTION_RIGHT
-	var hor_dir_mod = hor_direction / abs(hor_direction)
-	apply_scale(Vector2(hor_dir_mod * playerDirection.x, 1))
-	playerDirection = Vector2(hor_dir_mod, playerDirection.y)
 
 
 func check_collider(collision):
