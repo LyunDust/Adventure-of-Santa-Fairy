@@ -15,22 +15,25 @@ var isHeAlive = true
 
 signal isHeAlived (isHeAlive)
 
+onready var animation = $AnimationPlayer
+
 
 func get_input():
 	velocity = Vector2()
 	sitdown = false
 	if Input.is_action_pressed("right"):
-		set_direction(DIRECTION_RIGHT)
+#		set_direction(DIRECTION_RIGHT)
 		velocity.x += 1
+		animation.play("run")
 	if Input.is_action_pressed("left"):
-		set_direction(DIRECTION_LEFT)
+#		set_direction(DIRECTION_LEFT)
 		velocity.x -= 1
+		animation.play("run_left")
 	if Input.is_action_pressed("down"):
 		sitdown = true
 		print("He sit down")
 	if Input.is_action_pressed("interact"):
 		print("He interact")
-
 	velocity = velocity.normalized() * playerSpeed
 
 
