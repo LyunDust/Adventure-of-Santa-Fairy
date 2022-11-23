@@ -9,6 +9,7 @@ var velocity = Vector2()
 var sitdown = false
 var isHeAlive = true
 var input = false
+var collideWithBox = false
 
 signal isHeAlived (isHeAlive)
 
@@ -32,7 +33,9 @@ func get_input():
 		sitdown = true
 		input = true
 	if Input.is_action_pressed("interact"):
-		print("He interact")
+		if collideWithBox:
+			animation.play("inTheBox")
+			print("in the box")
 		input = true
 		
 	if !sitdown:
@@ -61,3 +64,19 @@ func _physics_process(delta):
 func check_collider(collision):
 	isHeAlive = false
 	emit_signal("isHeAlived", isHeAlive)
+
+
+func _on_Box_body_entered(body):
+	collideWithBox = true
+
+
+func _on_Box_body_exited(body):
+	collideWithBox = false
+
+
+func _on_ChirstmasTree_body_entered(body):
+	print("he is in the tree")
+
+
+func _on_ChirstmasTree_body_exited(body):
+	print("he is out the tree")

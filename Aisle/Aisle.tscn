@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Aisle/Background/Scenes/Reeds_back.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Aisle/MovementAndCollisions/Scenes/ChirstmasTree.tscn" type="PackedScene" id=2]
@@ -8,11 +8,13 @@
 [ext_resource path="res://Aisle/Background/Scenes/Reeds_front.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Aisle/UI/AisleUI.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Aisle/MovementAndCollisions/Scenes/EvilSantaFairy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Aisle/UI/AisleUI.gd" type="Script" id=9]
+[ext_resource path="res://Aisle/UI/GameOver.gd" type="Script" id=9]
 [ext_resource path="res://Aisle/MovementAndCollisions/Scenes/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Aisle/Background/Scenes/BlockSomething.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Aisle/UI/AisleUI_small.tres" type="DynamicFont" id=12]
 [ext_resource path="res://Aisle/Background/Scripts/BlockStage.gd" type="Script" id=13]
+[ext_resource path="res://Aisle/MovementAndCollisions/Scenes/Box.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Aisle/MovementAndCollisions/Scripts/ChirstmasTree.gd" type="Script" id=15]
 
 [node name="Aisle" type="Node"]
 __meta__ = {
@@ -26,6 +28,7 @@ position = Vector2( 0, -20 )
 
 [node name="ChirstmasTree" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1935, 122 )
+script = ExtResource( 15 )
 
 [node name="Monster_man" parent="." instance=ExtResource( 5 )]
 position = Vector2( 3700, 331 )
@@ -35,20 +38,34 @@ position = Vector2( 153, 343 )
 
 [node name="Reeds_front" parent="." instance=ExtResource( 6 )]
 
+[node name="Boxes" type="Node2D" parent="."]
+
+[node name="Box" parent="Boxes" instance=ExtResource( 14 )]
+position = Vector2( 1453, 517 )
+
+[node name="Box2" parent="Boxes" instance=ExtResource( 14 )]
+position = Vector2( 564, 517 )
+
+[node name="Box3" parent="Boxes" instance=ExtResource( 14 )]
+position = Vector2( 2991, 517 )
+
+[node name="Box4" parent="Boxes" instance=ExtResource( 14 )]
+position = Vector2( 3607, 517 )
+
 [node name="EvilSantaFairy" parent="." instance=ExtResource( 8 )]
-position = Vector2( 150, 500 )
+position = Vector2( 258, 500 )
 
 [node name="Player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1920, 500 )
 
-[node name="UI" type="Control" parent="Player"]
+[node name="UI_Text" type="Control" parent="Player"]
 margin_left = -512.857
 margin_top = -526.25
 margin_right = -472.857
 margin_bottom = -486.25
 script = ExtResource( 9 )
 
-[node name="GameOver" type="Label" parent="Player/UI"]
+[node name="GameOver" type="Label" parent="Player/UI_Text"]
 visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
@@ -58,15 +75,39 @@ text = "Game Over"
 align = 1
 valign = 1
 
-[node name="PressKey" type="Label" parent="Player/UI"]
+[node name="PressKey_hide" type="Label" parent="Player/UI_Text"]
 visible = false
 margin_top = 98.75
 margin_right = 1024.0
 margin_bottom = 698.75
 custom_fonts/font = ExtResource( 12 )
-text = "Press E or Spacebar"
+text = "Press E or Spacebar to hide"
 align = 1
 valign = 1
+
+[node name="PressKey_item" type="Label" parent="Player/UI_Text"]
+visible = false
+margin_top = 98.75
+margin_right = 1024.0
+margin_bottom = 698.75
+custom_fonts/font = ExtResource( 12 )
+text = "Press E or Spacebar to get item"
+align = 1
+valign = 1
+
+[node name="PressKey_deco" type="Label" parent="Player/UI_Text"]
+visible = false
+margin_top = 98.75
+margin_right = 1024.0
+margin_bottom = 698.75
+custom_fonts/font = ExtResource( 12 )
+text = "Press E or Spacebar to decorate tree"
+align = 1
+valign = 1
+
+[node name="UI_Inventory" type="Control" parent="Player"]
+margin_right = 40.0
+margin_bottom = 40.0
 
 [node name="BlockStage" type="Node2D" parent="."]
 visible = false
@@ -85,4 +126,24 @@ position = Vector2( 3840, 0 )
 scale = Vector2( 0.1, 200 )
 script = ExtResource( 13 )
 
-[connection signal="isHeAlived" from="Player" to="Player/UI" method="_on_Player_isHeAlived"]
+[connection signal="body_entered" from="ChirstmasTree" to="ChirstmasTree" method="_on_ChirstmasTree_body_entered"]
+[connection signal="body_entered" from="ChirstmasTree" to="Player" method="_on_ChirstmasTree_body_entered"]
+[connection signal="body_exited" from="ChirstmasTree" to="ChirstmasTree" method="_on_ChirstmasTree_body_exited"]
+[connection signal="body_exited" from="ChirstmasTree" to="Player" method="_on_ChirstmasTree_body_exited"]
+[connection signal="body_entered" from="Boxes/Box" to="Boxes/Box" method="_on_Box_body_entered"]
+[connection signal="body_entered" from="Boxes/Box" to="Player" method="_on_Box_body_entered"]
+[connection signal="body_exited" from="Boxes/Box" to="Boxes/Box" method="_on_Box_body_exited"]
+[connection signal="body_exited" from="Boxes/Box" to="Player" method="_on_Box_body_exited"]
+[connection signal="body_entered" from="Boxes/Box2" to="Boxes/Box2" method="_on_Box_body_entered"]
+[connection signal="body_entered" from="Boxes/Box2" to="Player" method="_on_Box_body_entered"]
+[connection signal="body_exited" from="Boxes/Box2" to="Boxes/Box2" method="_on_Box_body_exited"]
+[connection signal="body_exited" from="Boxes/Box2" to="Player" method="_on_Box_body_exited"]
+[connection signal="body_entered" from="Boxes/Box3" to="Boxes/Box3" method="_on_Box_body_entered"]
+[connection signal="body_entered" from="Boxes/Box3" to="Player" method="_on_Box_body_entered"]
+[connection signal="body_exited" from="Boxes/Box3" to="Boxes/Box3" method="_on_Box_body_exited"]
+[connection signal="body_exited" from="Boxes/Box3" to="Player" method="_on_Box_body_exited"]
+[connection signal="body_entered" from="Boxes/Box4" to="Boxes/Box4" method="_on_Box_body_entered"]
+[connection signal="body_entered" from="Boxes/Box4" to="Player" method="_on_Box_body_entered"]
+[connection signal="body_exited" from="Boxes/Box4" to="Boxes/Box4" method="_on_Box_body_exited"]
+[connection signal="body_exited" from="Boxes/Box4" to="Player" method="_on_Box_body_exited"]
+[connection signal="isHeAlived" from="Player" to="Player/UI_Text" method="_on_Player_isHeAlived"]

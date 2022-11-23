@@ -85,3 +85,5 @@ position = Vector2( 120, 800 )
 
 [node name="Reed_reverse" parent="Reed_front9" instance=ExtResource( 2 )]
 position = Vector2( 355, 800 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

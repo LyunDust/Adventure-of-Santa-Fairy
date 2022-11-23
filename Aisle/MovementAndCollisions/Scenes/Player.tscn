@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Aisle/Image/santafairy.png" type="Texture" id=1]
 [ext_resource path="res://Aisle/MovementAndCollisions/Scripts/AislePlayer.gd" type="Script" id=2]
@@ -77,6 +77,69 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:collision_mask")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 62 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "inTheBox"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:collision_mask")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 40 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ PoolVector2Array( -107, 30, -58.9286, 54.1667, -33.9286, 66.6667, -2.5, 74.286, 22.5, 74.286, 40.833, 66.429, 80.3571, 37.5 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "run"
@@ -130,6 +193,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 0.95, 1 ), Vector2( 0.9, 1 ), Vector2( 0.95, 1 ), Vector2( 1, 1 ), Vector2( 1.05, 1 ), Vector2( 1.1, 1 ), Vector2( 1.05, 1 ), Vector2( 1, 1 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:collision_mask")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 62 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "run_left"
@@ -182,6 +269,30 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 0.95, 1 ), Vector2( 0.9, 1 ), Vector2( 0.95, 1 ), Vector2( 1, 1 ), Vector2( 1.05, 1 ), Vector2( 1.1, 1 ), Vector2( 1.05, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:collision_mask")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 62 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -248,6 +359,30 @@ tracks/4/keys = {
 "update": 1,
 "values": [ PoolVector2Array( -107, 30, -58.9286, 54.1667, -33.9286, 66.6667, -2.5, 74.286, 22.5, 74.286, 40.833, 66.429, 80.3571, 37.5 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:collision_mask")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 62 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.7, 0.8 )
@@ -270,6 +405,7 @@ limit_bottom = 600
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
+anims/inTheBox = SubResource( 5 )
 anims/run = SubResource( 2 )
 anims/run_left = SubResource( 3 )
 anims/sitdown = SubResource( 4 )

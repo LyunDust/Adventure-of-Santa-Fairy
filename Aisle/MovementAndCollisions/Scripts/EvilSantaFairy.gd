@@ -12,16 +12,20 @@ const DIRECTION_RIGHT = 1
 const DIRECTION_LEFT = -1
 var evilSantaFairyDirection = Vector2(DIRECTION_RIGHT, 1)
 
+onready var animation = $AnimationPlayer
+
 
 func _physics_process(delta):	
 	velocity = Vector2()
 	
-	if !evilSantaFairyBlocked:
-		velocity.x -= 1
-		set_direction(DIRECTION_LEFT)
 	if evilSantaFairyBlocked:
+		velocity.x -= 1
+		animation.play("run_left")
+#		set_direction(DIRECTION_LEFT)
+	if !evilSantaFairyBlocked:
 		velocity.x += 1
-		set_direction(DIRECTION_RIGHT)
+		animation.play("run")
+#		set_direction(DIRECTION_RIGHT)
 	
 	velocity = velocity.normalized() * evilSantaFairySpeed
 	

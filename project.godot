@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "AisleUI",
 "language": "GDScript",
-"path": "res://Aisle/UI/AisleUI.gd"
+"path": "res://Aisle/UI/GameOver.gd"
 }, {
 "base": "Node",
 "class": "Block",
