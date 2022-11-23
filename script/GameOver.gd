@@ -1,12 +1,10 @@
 extends Node2D
 
-
 var alpha = 0
 
 func _ready():
 	$Label.modulate.a = alpha
 	$Label2.visible = false
-
 
 func _process(delta):
 	if($Label.modulate.a < 1):
@@ -14,7 +12,6 @@ func _process(delta):
 	else:
 		$Label2.visible = true
 		
-
 func _input(event):
 	if event is InputEventKey && $Label2.visible == true:
 		if event.pressed:

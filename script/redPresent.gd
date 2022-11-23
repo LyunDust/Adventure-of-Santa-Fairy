@@ -8,7 +8,6 @@ func _ready():
 	visible  = false
 	position = Vector2(rand_range(18, windowSize.x-18), rand_range(100, windowSize.y-16))
 	
-	
 
 func _physics_process(delta):
 	if setPosition == false:

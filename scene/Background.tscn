@@ -127,7 +127,7 @@ extents = Vector2( 19.7809, 6.68328 )
 position = Vector2( 517, 46 )
 scale = Vector2( 1.79285, 1.79285 )
 collision_layer = 2
-collision_mask = 1033
+collision_mask = 9
 script = ExtResource( 8 )
 
 [node name="fireplace" type="Sprite" parent="."]
@@ -152,6 +152,7 @@ region_rect = Rect2( 32, 64, 47, 47 )
 [node name="fire" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 7.25105 )
 frames = SubResource( 9 )
+frame = 5
 playing = true
 
 [node name="Sprite7" type="Sprite" parent="."]
@@ -289,6 +290,7 @@ region_rect = Rect2( 115, 113, 26, 46 )
 position = Vector2( -161.106, 82.6697 )
 scale = Vector2( 0.838525, 0.838525 )
 frames = SubResource( 24 )
+frame = 1
 speed_scale = 0.3
 playing = true
 

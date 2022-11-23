@@ -7,8 +7,6 @@ func _ready():
 	windowSize = get_viewport_rect().size
 	visible  = false
 	position = Vector2(rand_range(18, windowSize.x-18), rand_range(100, windowSize.y-16))
-	
-	
 
 func _physics_process(delta):
 	if setPosition == false:
@@ -18,7 +16,6 @@ func _physics_process(delta):
 			setPosition = true
 			visible = true
 	
-
 func _on_bluePresnet_body_entered(body):
 	if setPosition == true:
 		print('get!!')

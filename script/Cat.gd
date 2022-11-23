@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 class_name Cat
 
-export (int) var speed = 170
+export (int) var speed = 140
 
 var velocity = Vector2()
 var yValue
@@ -10,6 +10,8 @@ export var direction = 1
 var isMoving = true
 signal vacuumsPause
 signal aimingPause
+var target
+var isFollowing = false
 
 
 func _ready():
@@ -20,9 +22,19 @@ func _ready():
 		$AnimatedSprite.flip_h = true;
 	$sideSensor.position.x = $CollisionShape2D.shape.get_extents().x * direction * 0.5
 	$AnimatedSprite.playing = true
+	target = position
 
 
 func _physics_process(delta):
+	if Global.toyArrive == true:
+		isFollowing = true
+		if target > position:
+			$AnimatedSprite.flip_h = false
+		else:
+			$AnimatedSprite.flip_h = true
+	else:
+		isFollowing = false
+	
 	velocity = velocity.normalized() * speed
 	
 	if $sideSensor.is_colliding():
@@ -35,14 +47,20 @@ func _physics_process(delta):
 		yValue = rand_range(-2, 2)
 	
 	if isMoving == true:
-		if direction == 1:
-			velocity.x += 1
-			velocity.y += yValue
-		else:
-			velocity.x -= 1
-			velocity.y += yValue
+		if isFollowing == false:
+			if direction == 1:
+				velocity.x += 1
+				velocity.y += yValue
+			else:
+				velocity.x -= 1
+				velocity.y += yValue
+			velocity = move_and_slide(velocity)
+		else: #isFollowing이 true인 경우에는 타겟 위치를 따라감, 위치에 도착해도 isFollowing이 true가 되기 전까지는 그 자리에 있음
+			velocity = position.direction_to(target) * speed
+			if position.distance_to(target) > 5:
+				velocity = move_and_slide(velocity)
 		
-		velocity = move_and_slide(velocity)
+		
 	
 func catCollision():
 	set_modulate(Color(0.5, 0.5, 0.5))
@@ -122,3 +140,6 @@ func _on_Robot_vacuums_catPause():
 	isMoving = false
 	$AnimatedSprite.playing = false
 	$Timer.start()
+
+func _on_Level_2_toyArrive(pos):
+	target = pos

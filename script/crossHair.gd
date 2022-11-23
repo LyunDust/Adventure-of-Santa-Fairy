@@ -1,16 +1,7 @@
 extends KinematicBody2D
 
 var velocity = Vector2()
-var speed = 300
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
+var speed = 500
 
 func _physics_process(delta):
 	if Global.aiming == true:
@@ -29,10 +20,8 @@ func get_input():
 		velocity.y += 1
 	velocity = velocity.normalized() * speed
 
-
 func _on_Area2D_body_entered(body):
 	Global.target = true
-	Global.targetPos = body.position
 
 func _on_Area2D_body_exited(body):
 	if Global.aiming == true:

@@ -8,8 +8,6 @@ func _ready():
 	visible  = false
 	position = Vector2(rand_range(18, windowSize.x-18), rand_range(100, windowSize.y-16))
 	
-	
-
 func _physics_process(delta):
 	if setPosition == false:
 		if $RayCast2D.is_colliding() or $RayCast2D2.is_colliding() or $RayCast2D3.is_colliding() or $RayCast2D4.is_colliding() or $RayCast2D5.is_colliding() or $RayCast2D6.is_colliding() or $RayCast2D7.is_colliding() or $RayCast2D8.is_colliding():
@@ -18,7 +16,6 @@ func _physics_process(delta):
 			setPosition = true
 			visible = true
 	
-
 func _on_greenPresent_body_entered(body):
 	if setPosition == true:
 		print('get green!!')

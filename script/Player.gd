@@ -69,29 +69,31 @@ func _on_Santa_bag_playerPause():
 	$Timer.start()
 	emit_signal("pauseRay")
 
-
 func _on_ray_gameOver():
 	isMoving = false
 
 func _on_ray2_gameOver():
 	isMoving = false
 
-
 func _on_ray3_gameOver():
 	isMoving = false
-
 
 func _on_ray4_gameOver():
 	isMoving = false
 
-
 func _on_sideRay_gameOver():
 	isMoving = false
-
 
 func _on_sideRay2_gameOver():
 	isMoving = false
 
-
 func _on_sideRay3_gameOver():
 	isMoving = false
+
+#option: 조준할 때 광선 멈추게할지 말지
+
+func _on_Level_2_pauseRay():
+	emit_signal("pauseRay")
+
+func _on_Level_2_startRay():
+	emit_signal("startRay")

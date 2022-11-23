@@ -18,7 +18,11 @@ var item2
 var item1Instance
 var item2Instance
 var itemType = 0
+var vacuumPos
 signal changeItem
+signal toyArrive(pos)
+signal pauseRay
+signal startRay
 
 func _ready():
 	randomize()
@@ -52,29 +56,40 @@ func _ready():
 func _physics_process(delta):
 	if aimMode == true and aimingPause == false:
 		throwItem()
+	if Global.pillowCount > 0 and Global.target == true:
+			Global.vaccumsPos = vacuumPos
 
 func throwItem():
 	if Input.is_action_pressed("throw"):
+		emit_signal("pauseRay")
 		Global.aiming = true
 	else:
+		emit_signal("startRay")
 		aimMode = false
 		Global.aiming = false
 		remove_child(cH)
 		if itemType == 0:
+			if Global.pillowCount > 0:
+				remove_child(item1Instance)
+				Global.pillowCount -= 1
+				
 			item1Instance = item1.instance()
-			item1Instance.position = cH.position
+			item1Instance.position = $Player.position
+			item1Instance.targetPos(cH.position)
 			add_child(item1Instance)
+			Global.pillowCount += 1
 			
 		elif itemType == 1:
+			if Global.toyCount > 0:
+				remove_child(item2Instance)
+				Global.toyCount -= 1
+			
 			item2Instance = item2.instance()
-			item2Instance.position = cH.position
+			item2Instance.position = $Player.position
+			item2Instance.targetPos(cH.position)
 			add_child(item2Instance)
-			
-			
-		if Global.target == true:
-			print(Global.targetPos)
-		else:
-			print('aiming fail')
+			Global.toyCount += 1
+			emit_signal("toyArrive", cH.position)
 		
 		
 func _unhandled_input(event):
@@ -165,3 +180,6 @@ func _on_Cat_aimingPause():
 
 func _on_aimingPauseTimer_timeout():
 	aimingPause = false
+
+func _on_Robot_vacuums_sendPos(pos):
+	vacuumPos = pos

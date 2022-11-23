@@ -27,7 +27,7 @@ func _on_rayTimer_timeout():
 
 func _on_textBalloonTimer_timeout():
 	num = rand_range(0, 10)
-	if num > 2:
+	if num > 5:
 		$textBalloon.visible = true
 		$raySprite.visible = true
 		$raySprite.set_modulate(Color(1, 1, 1, 0.3))

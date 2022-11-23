@@ -1,10 +1,8 @@
 extends Area2D
 
-
 var num
 var isSeeing = false
 signal gameOver
-
 
 func _ready():
 	$textBalloon.visible = false
@@ -29,7 +27,7 @@ func _on_rayTimer_timeout():
 
 func _on_textBalloonTimer_timeout():
 	num = rand_range(0, 10)
-	if num > 2:
+	if num > 6:
 		$textBalloon.visible = true
 		$raySprite.visible = true
 		$raySprite.set_modulate(Color(1, 1, 1, 0.3))
@@ -63,4 +61,3 @@ func _on_sideRay_gameOver():
 	$rayTimer.paused = true
 	$textBalloonTimer.paused = true
 	$textBalloonTimer/smallTimer.paused = true
-

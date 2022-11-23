@@ -53,7 +53,7 @@ position = Vector2( 933, 53 )
 position = Vector2( 63, 543 )
 
 [node name="Robot vacuums" parent="." instance=ExtResource( 6 )]
-position = Vector2( 53, 249 )
+position = Vector2( 93, 158 )
 
 [node name="stageTimer" type="Timer" parent="."]
 
@@ -135,6 +135,9 @@ shape = SubResource( 2 )
 wait_time = 2.0
 
 [connection signal="changeItem" from="." to="inventory" method="_on_Level_2_changeItem"]
+[connection signal="pauseRay" from="." to="Player" method="_on_Level_2_pauseRay"]
+[connection signal="startRay" from="." to="Player" method="_on_Level_2_startRay"]
+[connection signal="toyArrive" from="." to="Cat" method="_on_Level_2_toyArrive"]
 [connection signal="bagBoom" from="Santa bag" to="." method="_on_Santa_bag_bagBoom"]
 [connection signal="catInterruption" from="Santa bag" to="." method="_on_Santa_bag_catInterruption"]
 [connection signal="catPause" from="Santa bag" to="Cat" method="_on_Santa_bag_catPause"]
@@ -161,6 +164,7 @@ wait_time = 2.0
 [connection signal="vacuumsPause" from="Cat" to="Robot vacuums" method="_on_Cat_vacuumsPause"]
 [connection signal="aimingPause" from="Robot vacuums" to="." method="_on_Robot_vacuums_aimingPause"]
 [connection signal="catPause" from="Robot vacuums" to="Cat" method="_on_Robot_vacuums_catPause"]
+[connection signal="sendPos" from="Robot vacuums" to="." method="_on_Robot_vacuums_sendPos"]
 [connection signal="timeout" from="stageTimer" to="." method="_on_stageTimer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="gameOver" from="sideRay" to="Player" method="_on_sideRay_gameOver"]
