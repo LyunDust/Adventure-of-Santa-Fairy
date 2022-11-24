@@ -8,7 +8,6 @@ var dialog
 
 var phraseNum=0
 var finished=false
-var dialogFinished=false
 
 func _ready():
 	$Timer.wait_time=textSpeed
@@ -19,13 +18,11 @@ func _ready():
 func _process(delta):
 	$Indicator.visible=finished
 	if Input.is_action_just_pressed("ui_accept"):
-		if finished:  
+		if finished:
 			nextPhrase()
 		else:
 			$Text.visible_characters=len($Text.text)
-	
-	if dialogFinished:
-		get_tree().change_scene("res://scenes/Aisle.tscn")
+			print($Text.text)
 
 func getDialog() ->Array:
 	var file=File.new()
@@ -44,7 +41,6 @@ func getDialog() ->Array:
 
 func nextPhrase()->void:
 	if phraseNum >= len(dialog):
-		dialogFinished=true
 		queue_free()
 		return
 	
@@ -52,7 +48,6 @@ func nextPhrase()->void:
 	
 	$Name.bbcode_text=dialog[phraseNum]["Name"]
 	$Text.bbcode_text=dialog[phraseNum]["Text"]
-	
 	
 	$Text.visible_characters=0
 	
