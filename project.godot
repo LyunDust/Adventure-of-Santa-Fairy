@@ -52,7 +52,7 @@ _global_script_class_icons={
 
 config/name="Adventure of Santa Fairy"
 run/main_scene="res://Aisle/Aisle.tscn"
-config/icon="res://icon.png"
+config/icon="res://Aisle/Image/icon.png"
 
 [gui]
 
@@ -106,4 +106,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://Aisle/Image/default_env.tres"

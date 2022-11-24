@@ -6,14 +6,23 @@ export (int) var playerSpeed = 150
 
 var velocity = Vector2()
 
-var sitdown = false
-var isHeAlive = true
 var input = false
+var sitdown = false
 var collideWithBox = false
 
-signal isHeAlived (isHeAlive)
+var itemList = 7
+var itemCount = 0
+var decoPossible = false
 
+signal isHeAlived (isHeAlive)
+signal getItem (getItem)
+
+onready var itemText = get_node("UI_Text/ItemCount")
 onready var animation = $AnimationPlayer
+
+
+func _ready():
+	itemText.text = "Items: " + str(itemCount) + " / " + str(itemList)
 
 
 func get_input():
@@ -35,7 +44,11 @@ func get_input():
 	if Input.is_action_pressed("interact"):
 		if collideWithBox:
 			animation.play("inTheBox")
-			print("in the box")
+		if decoPossible:
+			$UI_Text/Decorate.visible = true
+			$UI_Text/PressKey_hide.visible = false
+			$UI_Text/PressKey_deco.visible = false
+			get_tree().paused = true
 		input = true
 		
 	if !sitdown:
@@ -44,26 +57,18 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
+	itemText.text = "Items: " + str(itemCount) + " / " + str(itemList)
 	
 	var collision = move_and_collide(velocity*delta)
 	
 	if collision:
-		check_collider(collision)
-		print("Is he alive? ", isHeAlive)
-		
-	if !isHeAlive:
-		print("He is dead")
+		emit_signal("isHeAlived", false)
 		get_tree().paused = true
 	
 	if !input:
 		animation.stop()
 	
 	input = false
-
-
-func check_collider(collision):
-	isHeAlive = false
-	emit_signal("isHeAlived", isHeAlive)
 
 
 func _on_Box_body_entered(body):
@@ -75,8 +80,14 @@ func _on_Box_body_exited(body):
 
 
 func _on_ChirstmasTree_body_entered(body):
-	print("he is in the tree")
+	if itemCount == itemList:
+		decoPossible = true
 
 
 func _on_ChirstmasTree_body_exited(body):
-	print("he is out the tree")
+	if itemCount == itemList:
+		$UI_Text/Decorate.visible = false
+
+
+func _on_Item_body_entered(body):
+	itemCount += 1

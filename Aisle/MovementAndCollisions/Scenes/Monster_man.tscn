@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Aisle/Image/monster_man.png" type="Texture" id=1]
+[ext_resource path="res://Aisle/Image/Characters/monster_man.png" type="Texture" id=1]
 [ext_resource path="res://Aisle/MovementAndCollisions/Scripts/Monster_man.gd" type="Script" id=2]
 
 [node name="Monster_man" type="KinematicBody2D"]
