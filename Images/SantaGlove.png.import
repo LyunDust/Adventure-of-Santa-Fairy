@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dialogImg.png-8f4b313e14134e9296df1bd603366a58.stex"
+path="res://.import/SantaGlove.png-2710c3d3b5402299af4ec5d25a776215.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dialogImg.png"
-dest_files=[ "res://.import/dialogImg.png-8f4b313e14134e9296df1bd603366a58.stex" ]
+source_file="res://Images/SantaGlove.png"
+dest_files=[ "res://.import/SantaGlove.png-2710c3d3b5402299af4ec5d25a776215.stex" ]
 
 [params]
 
@@ -30,6 +30,6 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
-size_limit=0
+size_limit=80
 detect_3d=true
 svg/scale=1.0

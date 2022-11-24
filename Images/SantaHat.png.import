@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FairyGodHappy.png-237e85528bc3b326d321085f52ae7367.stex"
+path="res://.import/SantaHat.png-1c7fcbfe568c2b7b73bb9249f8bf7e9d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FairyGodHappy.png"
-dest_files=[ "res://.import/FairyGodHappy.png-237e85528bc3b326d321085f52ae7367.stex" ]
+source_file="res://Images/SantaHat.png"
+dest_files=[ "res://.import/SantaHat.png-1c7fcbfe568c2b7b73bb9249f8bf7e9d.stex" ]
 
 [params]
 
@@ -30,6 +30,6 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
-size_limit=0
+size_limit=80
 detect_3d=true
 svg/scale=1.0
