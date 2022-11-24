@@ -1,3 +1,4 @@
+#Owner: LeeSoyoung
 extends Node2D
 
 var bluePresent
@@ -37,7 +38,7 @@ func _ready():
 	Global.presentNum = 0
 	windowSize = get_viewport_rect().size
 	
-	for i in range(10):
+	for _i in range(10):
 		var newPresent
 		presentNum = randi() % 3
 		match presentNum:
@@ -53,10 +54,10 @@ func _ready():
 	
 	$stageTimer.start()
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if aimMode == true and aimingPause == false:
 		throwItem()
-	if Global.pillowCount > 0 and Global.target == true:
+	if Global.target == true:
 			Global.vaccumsPos = vacuumPos
 
 func throwItem():
@@ -69,15 +70,10 @@ func throwItem():
 		Global.aiming = false
 		remove_child(cH)
 		if itemType == 0:
-			if Global.pillowCount > 0:
-				remove_child(item1Instance)
-				Global.pillowCount -= 1
-				
 			item1Instance = item1.instance()
 			item1Instance.position = $Player.position
 			item1Instance.targetPos(cH.position)
 			add_child(item1Instance)
-			Global.pillowCount += 1
 			
 		elif itemType == 1:
 			if Global.toyCount > 0:
@@ -107,7 +103,7 @@ func _unhandled_input(event):
 	
 		
 func presentReposition():
-	for i in range(10 - Global.presentNum):
+	for _i in range(10 - Global.presentNum):
 		var newPresent
 		presentNum = randi() % 3
 		match presentNum:
@@ -161,21 +157,21 @@ func _on_Timer_timeout():
 
 
 func _on_Robot_vacuums_aimingPause():
-	print('ouch')
 	aimMode = false
+	if Global.aiming == true:
+		remove_child(cH)
 	Global.aiming = false
 	aimingPause = true
 	$aimingPauseTimer.start()
-	remove_child(cH)
 
 
 func _on_Cat_aimingPause():
-	print('ouch')
 	aimMode = false
+	if Global.aiming == true:
+		remove_child(cH)
 	Global.aiming = false
 	aimingPause = true
 	$aimingPauseTimer.start()
-	remove_child(cH)
 
 
 func _on_aimingPauseTimer_timeout():

@@ -1,7 +1,8 @@
+#Owner: LeeSoyoung
 extends Area2D
 
 var num
-var isSeeing = false
+var isSeeing = false #Variables to distinguish when ray comes out
 signal gameOver
 
 func _ready():
@@ -9,23 +10,26 @@ func _ready():
 	randomize()
 	$raySprite.visible = false
 	$textBalloonTimer.start()
+	#Setting the position of the sensor
 	$sensor.position.x = $CollisionShape2D.shape.get_extents().x-12
 	$sensor2.position.x = $CollisionShape2D.shape.get_extents().x-3
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if isSeeing == true:
+		#When a sensor collides with a player, it sends a game over signal
 		if $sensor.is_colliding() or $sensor2.is_colliding():
 			emit_signal("gameOver")
 			$Timer2.start()
 			isSeeing = false
 
 
+#If rayTimer times out, hide raySprite
 func _on_rayTimer_timeout():
 	$raySprite.visible = false
 	isSeeing = false
 
-
 func _on_textBalloonTimer_timeout():
+	#If the random number is greater than 5, it shows the location of the ray in advance
 	num = rand_range(0, 10)
 	if num > 5:
 		$textBalloon.visible = true
@@ -35,28 +39,30 @@ func _on_textBalloonTimer_timeout():
 
 
 func _on_smallTimer_timeout():
+	#Finish showing it in advance and shoot a ray
 	$textBalloon.visible = false
 	isSeeing = true
 	$raySprite.set_modulate(Color(1, 1, 1, 1))
 	$rayTimer.start()
 
 
+#Pause the timer to stop the ray
 func _on_Player_pauseRay():
 	$rayTimer.paused = true
 	$textBalloonTimer.paused = true
 	$textBalloonTimer/smallTimer.paused = true
 
-
+#Unpause the timer to allow the ray to operate continuously
 func _on_Player_startRay():
 	$rayTimer.paused = false
 	$textBalloonTimer.paused = false
 	$textBalloonTimer/smallTimer.paused = false
 
-
+#Change to game over scene after 0.5 second delay
 func _on_Timer2_timeout():
 	get_tree().change_scene("res://scene/GameOver.tscn")
 
-
+#When the game over signal is received, all timers except Timer 2 are stopped
 func _on_ray_gameOver():
 	$rayTimer.paused = true
 	$textBalloonTimer.paused = true

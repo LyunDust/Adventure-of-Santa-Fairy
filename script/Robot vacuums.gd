@@ -1,8 +1,9 @@
+#Owner: LeeSoyoung
 extends KinematicBody2D
 
 class_name vacuums
 
-export (int) var speed = 150
+var speed = 150
 
 var velocity = Vector2()
 var direction = 1
@@ -17,7 +18,7 @@ func _ready():
 	yValue = rand_range(-1, 1)
 	isMoving = true
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	velocity = velocity.normalized() * speed
 	
 	if is_on_wall():

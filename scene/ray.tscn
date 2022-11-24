@@ -50,11 +50,8 @@ one_shot = true
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 0.5
 
-[connection signal="body_entered" from="." to="." method="_on_ray_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_ray_body_exited"]
 [connection signal="gameOver" from="." to="." method="_on_ray_gameOver"]
 [connection signal="timeout" from="rayTimer" to="." method="_on_rayTimer_timeout"]
-[connection signal="timeout" from="rayTimer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="textBalloonTimer" to="." method="_on_textBalloonTimer_timeout"]
 [connection signal="timeout" from="textBalloonTimer/smallTimer" to="." method="_on_smallTimer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

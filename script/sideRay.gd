@@ -1,4 +1,7 @@
+#Owner: LeeSoyoung
 extends Area2D
+
+#It is the same as ray.gd except probability and sensor orientation
 
 var num
 var isSeeing = false
@@ -9,10 +12,11 @@ func _ready():
 	randomize()
 	$raySprite.visible = false
 	$textBalloonTimer.start()
+	#Setting the position of the sensor
 	$sensor1.position.y = $CollisionShape2D.shape.get_extents().y-12
 	$sensor2.position.y = $CollisionShape2D.shape.get_extents().y-3
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if isSeeing == true:
 		if $sensor1.is_colliding() or $sensor2.is_colliding():
 			emit_signal("gameOver")
