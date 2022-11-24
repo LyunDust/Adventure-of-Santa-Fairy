@@ -2,32 +2,17 @@
   {
     "Name": "SantaFairy",
     "Emotion": "Happy",
-    "Text": "It's Christmas soon!"
+    "Text": "I want to go Human World!"
+  },
+  {
+    "Name": "FairyGod",
+    "Emotion": "Happy",
+    "Text": "HaHaHa"
   },
   {
     "Name": "SantaFairy",
     "Emotion": "Happy",
-    "Text": "I want to go to the human world"
-  },
-  {
-    "Name": "OtherSantaFairy",
-    "Emotion": "",
-    "Text": "What? Are you going to the human world? I want to go too!!"
-  },
-  {
-    "Name": "SantaFairy",
-    "Emotion": "Happy",
-    "Text": "Only a fairy can go to the human world. You can't go!"
-  },
-  {
-    "Name": "OtherSantaFairy",
-    "Emotion": "",
-    "Text": "Do you think you can go through that rough aisle?"
-  },
-  {
-    "Name": "OtherSantaFairy",
-    "Emotion": "",
-    "Text": "Let's see who's going!"
+    "Text": "Thank You!!"
   }
 
 ]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/keyShape.png-01bd70396352d70cc395d231fb8eb01f.stex"
+path="res://.import/indicator.png-87b19938fe0a288a6c9c6934df4b2eaa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/keyShape.png"
-dest_files=[ "res://.import/keyShape.png-01bd70396352d70cc395d231fb8eb01f.stex" ]
+source_file="res://indicator.png"
+dest_files=[ "res://.import/indicator.png-87b19938fe0a288a6c9c6934df4b2eaa.stex" ]
 
 [params]
 
