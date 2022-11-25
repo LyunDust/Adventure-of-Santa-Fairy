@@ -16,19 +16,36 @@ var velocity = Vector2()
 func _ready():
 	isMoving = true
 	life = 3
+	$sprite.play("default")
+		
 
 func get_input(): #Control player
 	velocity = Vector2()
 	if isMoving == true and Global.aiming == false:
 		if Input.is_action_pressed("ui_right"):
+			$sprite.play("right")
 			velocity.x += 1
+			
 		if Input.is_action_pressed("ui_left"):
+			$sprite.play("left")
 			velocity.x -= 1
+			
 		if Input.is_action_pressed("ui_up"):
+			$sprite.play("up")
 			velocity.y -= 1
+
 		if Input.is_action_pressed("ui_down"):
+			$sprite.play("down")
 			velocity.y += 1
+			
+		if !Input.is_action_pressed("ui_down") and !Input.is_action_pressed("ui_up") and !Input.is_action_pressed("ui_left") and !Input.is_action_pressed("ui_right"):
+			$sprite.frame = 1
+			$sprite.stop()
+			
 		velocity = velocity.normalized() * speed
+	else:
+		$sprite.frame = 1
+		$sprite.stop()
 
 func _physics_process(_delta): #Move player
 	get_input()
