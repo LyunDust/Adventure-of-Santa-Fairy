@@ -37,6 +37,10 @@ func _ready():
 	timerText.text = String(2)+':00'
 	Global.presentNum = 0
 	windowSize = get_viewport_rect().size
+	aimingPause = false
+	aimMode = false
+	time = 0
+	Global.aiming = false
 	
 	for _i in range(10):
 		var newPresent

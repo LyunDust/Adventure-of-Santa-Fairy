@@ -152,8 +152,6 @@ region_rect = Rect2( 32, 64, 47, 47 )
 [node name="fire" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 7.25105 )
 frames = SubResource( 9 )
-frame = 5
-playing = true
 
 [node name="Sprite7" type="Sprite" parent="."]
 position = Vector2( -3.90439, 116.016 )
@@ -364,7 +362,6 @@ polygon = PoolVector2Array( 16.1753, 2.78886, 22.3108, 2.78886, 44.6217, 36.8129
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 collision_layer = 512
-collision_mask = 1025
 
 [node name="startPosition" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2( 232.033, 1.11554 )

@@ -15,6 +15,7 @@ var velocity = Vector2()
 
 func _ready():
 	isMoving = true
+	life = 3
 
 func get_input(): #Control player
 	velocity = Vector2()
