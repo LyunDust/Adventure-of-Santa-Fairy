@@ -1,5 +1,6 @@
 extends ColorRect
 
+
 export var dialogPath="C:/Users/syp13/GitHub/Adventure-of-Santa-Fairy/dialog3.json"
 #export var dialogPath="https://github.com/LyunDust/Adventure-of-Santa-Fairy/blob/PSY/dialog.json"
 export(float) var textSpeed=0.05
@@ -25,7 +26,7 @@ func _process(delta):
 			$Text.visible_characters=len($Text.text)
 	
 	if dialogFinished:
-		get_tree().change_scene("res://scenes/StartScreen.tscn")
+		get_tree().change_scene("res://scenes/HumanWorldScene.tscn")
 
 func getDialog() ->Array:
 	var file=File.new()

@@ -14,7 +14,7 @@ func _ready():
 	
 func _process(delta):
 	if $Hat == null and $Muffler == null and $Jacket == null and $Glove == null:
-		print("yyyyyy")
+		get_tree().change_scene("res://scenes/EndingStoryScreen.tscn")
 
 
 
