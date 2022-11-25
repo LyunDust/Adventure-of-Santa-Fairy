@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Aisle/Background/Scenes/Reeds_back.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Aisle/MovementAndCollisions/Scenes/ChirstmasTree.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Aisle/Items/Scenes/Item4.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Aisle/Items/Scenes/Item5.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Aisle/UI/ALGER.TTF" type="DynamicFontData" id=23]
+[ext_resource path="res://Aisle/Aisle.gd" type="Script" id=24]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -31,6 +32,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 23 )
 
 [node name="Aisle" type="Node"]
+script = ExtResource( 24 )
 __meta__ = {
 "_edit_vertical_guides_": [ 3848.0 ]
 }
@@ -79,7 +81,6 @@ position = Vector2( 153, 343 )
 [node name="Item7" parent="Items" instance=ExtResource( 20 )]
 
 [node name="EvilSantaFairy" parent="." instance=ExtResource( 8 )]
-position = Vector2( 258, 500 )
 
 [node name="Player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1920, 500 )
@@ -198,3 +199,11 @@ script = ExtResource( 13 )
 [connection signal="getItem" from="Player" to="Items/Item6" method="_on_Player_getItem"]
 [connection signal="getItem" from="Player" to="Items/Item7" method="_on_Player_getItem"]
 [connection signal="isHeAlived" from="Player" to="Player/UI_Text" method="_on_Player_isHeAlived"]
+[connection signal="itemReset" from="Player" to="Items/Item1" method="_on_Player_itemReset"]
+[connection signal="itemReset" from="Player" to="Items/Item2" method="_on_Player_itemReset"]
+[connection signal="itemReset" from="Player" to="Items/Item3" method="_on_Player_itemReset"]
+[connection signal="itemReset" from="Player" to="Items/Item4" method="_on_Player_itemReset"]
+[connection signal="itemReset" from="Player" to="Items/Item5" method="_on_Player_itemReset"]
+[connection signal="itemReset" from="Player" to="Items/Item6" method="_on_Player_itemReset"]
+[connection signal="itemReset" from="Player" to="Items/Item7" method="_on_Player_itemReset"]
+[connection signal="itemReset" from="Player" to="Player" method="_on_Player_itemReset"]

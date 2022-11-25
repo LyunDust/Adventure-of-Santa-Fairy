@@ -5,12 +5,17 @@ class_name MonsterMan
 export (int) var monsterManSpeed = 350
 
 var velocity = Vector2()
-
+var monsterManXPos = 3700
+var monsterManYPos = 331
 var monsterManBlocked = false;
 
 const DIRECTION_RIGHT = 1
 const DIRECTION_LEFT = -1
 var monsterManDirection = Vector2(DIRECTION_RIGHT, 1)
+
+
+func _ready():
+	self.set_position(Vector2(monsterManXPos, monsterManYPos))
 
 
 func _physics_process(delta):	
@@ -29,6 +34,7 @@ func _physics_process(delta):
 	
 	if collision:
 		monsterManBlocked = !monsterManBlocked
+		
 
 
 func set_direction(hor_direction):

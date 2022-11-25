@@ -7,6 +7,7 @@ var boxXPos
 func _ready():
 	boxXPos = rand_range(80, 3700)	
 	self.set_position(Vector2(boxXPos, 517))
+	print("boxXpos: ", boxXPos)
 
 
 func _on_Box_body_entered(body):

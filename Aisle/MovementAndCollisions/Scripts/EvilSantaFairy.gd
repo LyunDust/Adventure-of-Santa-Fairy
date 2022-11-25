@@ -5,7 +5,8 @@ class_name EvilSantaFairy
 export (int) var evilSantaFairySpeed = 100
 
 var velocity = Vector2()
-
+var EvilSantaFairyXPos = 0
+var EvilSantaFairyYPos = 500
 var evilSantaFairyBlocked = false;
 
 const DIRECTION_RIGHT = 1
@@ -13,6 +14,11 @@ const DIRECTION_LEFT = -1
 var evilSantaFairyDirection = Vector2(DIRECTION_RIGHT, 1)
 
 onready var animation = $AnimationPlayer
+
+
+func _ready():
+	EvilSantaFairyXPos = rand_range(100, 3700)	
+	self.set_position(Vector2(EvilSantaFairyXPos, EvilSantaFairyYPos))
 
 
 func _physics_process(delta):	

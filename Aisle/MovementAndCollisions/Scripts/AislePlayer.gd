@@ -16,6 +16,7 @@ var decoPossible = false
 
 signal isHeAlived (isHeAlive)
 signal getItem (getItem)
+signal itemReset (itemReset)
 
 onready var itemText = get_node("UI_Text/ItemCount")
 onready var animation = $AnimationPlayer
@@ -57,6 +58,7 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
+	
 	itemText.text = "Items: " + str(itemCount) + " / " + str(itemList)
 	
 	var collision = move_and_collide(velocity*delta)
@@ -91,3 +93,17 @@ func _on_ChirstmasTree_body_exited(body):
 
 func _on_Item_body_entered(body):
 	itemCount += 1
+
+
+func _on_Area2D_body_entered(body):
+	if body is MonsterMan or body is MonsterWoman:
+		emit_signal("isHeAlived", false)
+		get_tree().paused = true
+	if body is EvilSantaFairy:
+		emit_signal("itemReset", true)
+
+
+func _on_Player_itemReset(itemReset):
+	print("itemReset")
+	var itemCount = 0
+	var decoPossible = false
