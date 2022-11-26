@@ -21,6 +21,7 @@ func _ready():
 func _physics_process(_delta):
 	velocity = velocity.normalized() * speed
 	
+	#When colliding, change the x direction in reverse and determine a random value to move in the y direction
 	if is_on_wall():
 		direction = direction * -1
 		yValue = rand_range(-1, 1)
@@ -34,7 +35,7 @@ func _physics_process(_delta):
 		
 	emit_signal("sendPos", position)
 		
-
+#It stops moving for a certain amount of time and gives the effect of blinking
 func robotError():
 	set_modulate(Color(0.5, 0.5, 0.5))
 	isMoving = false
@@ -46,18 +47,18 @@ func robotError():
 	$Timer.start()
 	$Timer/blink.start()
 
-
+#Blinking effect
 func _on_blink_timeout():
 	visible = !visible
 
-
+#When the timer times out, stop the effect and allow it to move again
 func _on_Timer_timeout():
 	$Timer/blink.stop()
 	visible = true
 	set_modulate(Color(1, 1, 1))
 	isMoving = true
 
-
+#When a player and a robot vacuum collide, the player, robot vacuum, cat, and aim pause
 func _on_Area2D_body_entered(body):
 	if body is player:
 		body.pausePlayer()
@@ -65,13 +66,13 @@ func _on_Area2D_body_entered(body):
 		emit_signal("catPause")
 		emit_signal("aimingPause")
 
-
+#When Santa's bag and robot vacuum collide, the robot vacuums's movement and aim are paused for a certain period of time
 func _on_Santa_bag_vacuumsPause():
 	isMoving = false
 	emit_signal("aimingPause")
 	$Timer.start()
 
-
+#_on_ray_gameOver() ~ _on_sideRay3_gameOver(): When the game is over, the robot vacuum stops moving
 func _on_ray_gameOver():
 	isMoving = false
 
@@ -93,14 +94,17 @@ func _on_sideRay2_gameOver():
 func _on_sideRay3_gameOver():
 	isMoving = false
 
+#When a player and a cat collide, the robot vacuum stops for a certain amount of time
 func _on_Cat_vacuumsPause():
 	isMoving = false
 	$Timer.start()
 	
+#Move the robot vacuum to a specific location
 func teleport():
 	position = Vector2(40, 200)
 	isMoving = false
 	$hit.start()
 
+#Stop moving for a certain amount of time after teleporting
 func _on_hit_timeout():
 	isMoving = true

@@ -42,6 +42,7 @@ func _ready():
 	time = 0
 	Global.aiming = false
 	
+	#Create 10 Random Kinds of present
 	for _i in range(10):
 		var newPresent
 		presentNum = randi() % 3
@@ -56,18 +57,23 @@ func _ready():
 		add_child(newPresent)
 		Global.presentNum += 1
 	
+	#Start Timeout Timer for Stage
 	$stageTimer.start()
 	
 func _physics_process(_delta):
+	#Call only if the aim is not paused and in aimMode
 	if aimMode == true and aimingPause == false:
 		throwItem()
+	#If the player succeeds in aiming the robot vacuum, it continues to store the robot vacuum's position
 	if Global.target == true:
 			Global.vaccumsPos = vacuumPos
 
 func throwItem():
+	#When the key to throw is pressed, stop the ray and make the global variable 'aiming' true
 	if Input.is_action_pressed("throw"):
 		emit_signal("pauseRay")
 		Global.aiming = true
+	#If not, allow the rays to operate again, eliminate the crosshair, and create an item that fits the type of item
 	else:
 		emit_signal("startRay")
 		aimMode = false
@@ -93,19 +99,21 @@ func throwItem():
 		
 		
 func _unhandled_input(event):
+	#Change the type of item to throw
 	if event.is_action_pressed("changeItem"):
 		emit_signal("changeItem")
 		if itemType == 0:
 			itemType = 1
 		elif itemType == 1:
 			itemType = 0
+	#If the aimMode is false and the aiming is not paused, create a crosshair and change the aimMode to true
 	elif event.is_action_pressed("throw") and aimMode == false and aimingPause == false:
 		cH = crossHair.instance()
 		cH.position = $Player.position
 		add_child(cH)
 		aimMode = true
 	
-		
+#If there are fewer than 10 presents, create them again until there are 10
 func presentReposition():
 	for _i in range(10 - Global.presentNum):
 		var newPresent
@@ -120,6 +128,7 @@ func presentReposition():
 		add_child(newPresent)
 		Global.presentNum += 1
 
+#If there are fewer than 10 presents, create one present again
 func onePresentReposition():
 	if Global.presentNum < 10:
 		var newPresent
@@ -134,10 +143,11 @@ func onePresentReposition():
 		add_child(newPresent)
 		Global.presentNum += 1
 
+#Execute when Santa's bag and robot vacuum collide
 func _on_Santa_bag_bagBoom():
 	presentReposition()
 
-
+#Change labels that display time-outs or move on to game over
 func _on_stageTimer_timeout():
 	time += 1
 	if(time <= 50):
@@ -151,15 +161,15 @@ func _on_stageTimer_timeout():
 	if time == 120:
 		$Timer.start()
 
-
+#Execute when Santa's bag and cat collide
 func _on_Santa_bag_catInterruption():
 	onePresentReposition()
 
-
+#When the time limit for the stage is over, change to Game Over Scene
 func _on_Timer_timeout():
 	get_tree().change_scene("res://scene/GameOver.tscn")
 
-
+##Stop aiming if a robot vacuum collides with a player or Santa bag
 func _on_Robot_vacuums_aimingPause():
 	aimMode = false
 	if Global.aiming == true:
@@ -168,7 +178,7 @@ func _on_Robot_vacuums_aimingPause():
 	aimingPause = true
 	$aimingPauseTimer.start()
 
-
+#Stop aiming if a cat collides with a player or Santa bag
 func _on_Cat_aimingPause():
 	aimMode = false
 	if Global.aiming == true:
@@ -177,9 +187,10 @@ func _on_Cat_aimingPause():
 	aimingPause = true
 	$aimingPauseTimer.start()
 
-
+#Enables aiming at the end of the timer
 func _on_aimingPauseTimer_timeout():
 	aimingPause = false
 
+#Location from robot vacuums
 func _on_Robot_vacuums_sendPos(pos):
 	vacuumPos = pos

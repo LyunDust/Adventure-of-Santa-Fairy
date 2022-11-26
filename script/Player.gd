@@ -19,7 +19,7 @@ func _ready():
 	$sprite.play("default")
 		
 
-func get_input(): #Control player
+func get_input(): #Control player and change animation
 	velocity = Vector2()
 	if isMoving == true and Global.aiming == false:
 		if Input.is_action_pressed("ui_right"):
