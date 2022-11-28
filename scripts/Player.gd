@@ -4,8 +4,8 @@ class_name Player
 
 export (int) var speed = 200
 var velocity = Vector2()
-#var collectedClothes = 0
-
+var collectedClothes = 0
+var cloth
 	
 func get_input():
 	# set velocity based on the keys pressed
@@ -19,8 +19,6 @@ func get_input():
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 
-	# use normalized vector (length = 1) so that the velocity 
-	# is calculated correctly based on the speed.
 	velocity = velocity.normalized() * speed
 
 
@@ -29,5 +27,5 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 	
 
-	
-
+func _on_Cloth_body_entered(body):
+	pass

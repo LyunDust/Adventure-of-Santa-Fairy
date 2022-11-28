@@ -1,20 +1,40 @@
 extends Node2D
 
-var collectedClothes = []
-var cloth
-var totalClothes = 4
+var clothesList = []
+var numOfClothes
+var numOfCollectedClothes = 0 
+var isClothCollected = []
+var isAllClothesCollected = false
 
 func _ready():
-	collectedClothes = 0
-	$Hat/Sprite.texture = load("res://Images/SantaHat.png")
-	$Muffler/Sprite.texture = load("res://Images/SantaMuffler.png")
-	$Jacket/Sprite.texture = load("res://Images/SantaJacket.png")
-	$Glove/Sprite.texture = load("res://Images/SantaGlove.png")
-	
+	set_child()
 	
 func _process(delta):
-	if $Hat == null and $Muffler == null and $Jacket == null and $Glove == null:
-		get_tree().change_scene("res://scenes/EndingStoryScreen.tscn")
+	if numOfCollectedClothes == numOfClothes:
+		isAllClothesCollected = true
+	if isAllClothesCollected == true:
+		get_tree().change_scene("res://scenes/EndingStoryScene.tscn")
 
+	
+func set_child():
+	var cloth_texture
+	clothesList= get_children()
+	numOfClothes=get_child_count()
+	for i in numOfClothes:
+		clothesList[i].setClothNum(i)
+		cloth_texture = str("res://Images/SantaCloth", i,".png")
+		clothesList[i].setSpriteTexture(cloth_texture)
+		isClothCollected.append(false)
+	
+
+func checkBeforeClothCollected(i)->bool:
+	if i < 1:
+		return true
+	else:
+		return isClothCollected[i-1]
+		
+func setClothCollected(i):
+	isClothCollected[i]=true
+	numOfCollectedClothes += 1 
 
 

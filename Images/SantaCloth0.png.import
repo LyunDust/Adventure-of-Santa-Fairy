@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SantaGlove.png-2710c3d3b5402299af4ec5d25a776215.stex"
+path="res://.import/SantaCloth0.png-1da1362078d76a6b13db1ad9ec748982.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/SantaGlove.png"
-dest_files=[ "res://.import/SantaGlove.png-2710c3d3b5402299af4ec5d25a776215.stex" ]
+source_file="res://Images/SantaCloth0.png"
+dest_files=[ "res://.import/SantaCloth0.png-1da1362078d76a6b13db1ad9ec748982.stex" ]
 
 [params]
 
