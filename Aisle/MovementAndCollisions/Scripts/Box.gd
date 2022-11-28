@@ -1,8 +1,11 @@
+# Owner: Kim Hyeri
+
 extends Area2D
 
 onready var hide = get_node("/root/Aisle/Player/UI_Text/PressKey_hide")
 
 var boxXPos
+
 
 func _ready():
 	boxXPos = rand_range(80, 3700)	

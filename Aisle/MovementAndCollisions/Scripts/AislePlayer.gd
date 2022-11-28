@@ -1,3 +1,5 @@
+# Owner: Kim Hyeri
+
 extends KinematicBody2D
 
 class_name AislePlayer
@@ -5,6 +7,8 @@ class_name AislePlayer
 export (int) var playerSpeed = 150
 
 var velocity = Vector2()
+var aislePlayerXPos = 1920
+var aislePlayerYPos = 500
 
 var input = false
 var sitdown = false

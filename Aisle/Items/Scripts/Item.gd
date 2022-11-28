@@ -1,3 +1,5 @@
+# Owner: Kim Hyeri
+
 extends Area2D
 
 var itemXPos

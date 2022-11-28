@@ -1,3 +1,5 @@
+# Owner: Kim Hyeri
+
 extends KinematicBody2D
 
 class_name MonsterMan

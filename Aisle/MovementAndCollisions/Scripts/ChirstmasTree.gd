@@ -1,3 +1,5 @@
+# Owner: Kim Hyeri
+
 extends Area2D
 
 onready var deco = get_node("/root/Aisle/Player/UI_Text/PressKey_deco")
