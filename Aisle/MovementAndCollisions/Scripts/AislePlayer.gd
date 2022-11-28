@@ -63,9 +63,9 @@ func _physics_process(delta):
 	
 	var collision = move_and_collide(velocity*delta)
 	
-	if collision:
-		emit_signal("isHeAlived", false)
-		get_tree().paused = true
+#	if collision:
+#		emit_signal("isHeAlived", false)
+#		get_tree().paused = true
 	
 	if !input:
 		animation.stop()
@@ -105,5 +105,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_Player_itemReset(itemReset):
 	print("itemReset")
-	var itemCount = 0
-	var decoPossible = false
+	itemCount = 0
+	decoPossible = false
+	print(itemCount)
+	itemText.text = "Items: " + str(itemCount) + " / " + str(itemList)
