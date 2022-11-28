@@ -2,14 +2,21 @@
 
 extends Area2D
 
+class_name Box
+
 onready var hide = get_node("/root/Aisle/Player/UI_Text/PressKey_hide")
 
 var boxXPos
+var boxYPos
 
+
+func _init():
+	boxXPos = 0
+	boxYPos = 517
 
 func _ready():
 	boxXPos = rand_range(80, 3700)	
-	self.set_position(Vector2(boxXPos, 517))
+	self.set_position(Vector2(boxXPos, boxYPos))
 	print("boxXpos: ", boxXPos)
 
 

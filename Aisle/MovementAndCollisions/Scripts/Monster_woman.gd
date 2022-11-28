@@ -7,13 +7,18 @@ class_name MonsterWoman
 export (int) var monsterWomanSpeed = 250
 
 var velocity = Vector2()
-var monsterwomanXPos = 153
-var monsterwomanYPos = 343
+var monsterwomanXPos
+var monsterwomanYPos 
 var monsterWomanBlocked = false;
 
 const DIRECTION_RIGHT = 1
 const DIRECTION_LEFT = -1
 var monsterWomanDirection = Vector2(DIRECTION_RIGHT, 1)
+
+
+func _init():
+	monsterwomanXPos = 153
+	monsterwomanYPos = 343
 
 
 func _ready():

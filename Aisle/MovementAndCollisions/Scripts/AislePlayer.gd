@@ -7,8 +7,8 @@ class_name AislePlayer
 export (int) var playerSpeed = 150
 
 var velocity = Vector2()
-var aislePlayerXPos = 1920
-var aislePlayerYPos = 500
+var aislePlayerXPos
+var aislePlayerYPos
 
 var input = false
 var sitdown = false
@@ -26,7 +26,13 @@ onready var itemText = get_node("UI_Text/ItemCount")
 onready var animation = $AnimationPlayer
 
 
+func _init():
+	aislePlayerXPos = 1920
+	aislePlayerYPos = 500
+
+
 func _ready():
+	self.set_position(Vector2(aislePlayerXPos, aislePlayerYPos))
 	itemText.text = "Items: " + str(itemCount) + " / " + str(itemList)
 
 
