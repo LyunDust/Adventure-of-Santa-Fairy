@@ -18,6 +18,8 @@ var itemList = 7
 var itemCount = 0
 var decoPossible = false
 
+var playerDie = false
+
 signal isHeAlived (isHeAlive)
 signal getItem (getItem)
 signal itemReset (itemReset)
@@ -38,29 +40,34 @@ func _ready():
 
 func get_input():
 	velocity = Vector2()
-	if Input.is_action_pressed("right"):
-		velocity.x += 1
-		animation.play("run")
+	if !playerDie:
+		if Input.is_action_pressed("right"):
+			velocity.x += 1
+			animation.play("run")
+			input = true
+			sitdown = false
+		if Input.is_action_pressed("left"):
+			velocity.x -= 1
+			animation.play("run_left")
+			input = true
+			sitdown = false
+		if Input.is_action_pressed("down"):
+			animation.play("sitdown")
+			sitdown = true
+			input = true
+		if Input.is_action_pressed("interact"):
+			if collideWithBox:
+				animation.play("inTheBox")
+			if decoPossible:
+				$UI_Text/Decorate.visible = true
+				$UI_Text/PressKey_hide.visible = false
+				$UI_Text/PressKey_deco.visible = false
+				get_tree().paused = true
 		input = true
-		sitdown = false
-	if Input.is_action_pressed("left"):
-		velocity.x -= 1
-		animation.play("run_left")
-		input = true
-		sitdown = false
-	if Input.is_action_pressed("down"):
-		animation.play("sitdown")
-		sitdown = true
-		input = true
-	if Input.is_action_pressed("interact"):
-		if collideWithBox:
-			animation.play("inTheBox")
-		if decoPossible:
-			$UI_Text/Decorate.visible = true
-			$UI_Text/PressKey_hide.visible = false
-			$UI_Text/PressKey_deco.visible = false
-			get_tree().paused = true
-		input = true
+	else:
+		if Input.is_action_pressed("interact"):
+			print("restart")
+		
 		
 	if !sitdown:
 		velocity = velocity.normalized() * playerSpeed
@@ -71,7 +78,8 @@ func _physics_process(delta):
 	
 	itemText.text = "Items: " + str(itemCount) + " / " + str(itemList)
 	
-	var collision = move_and_collide(velocity*delta)
+	if !playerDie:
+		var collision = move_and_collide(velocity*delta)
 	
 #	if collision:
 #		emit_signal("isHeAlived", false)
@@ -108,7 +116,6 @@ func _on_Item_body_entered(body):
 func _on_Area2D_body_entered(body):
 	if body is MonsterMan or body is MonsterWoman:
 		emit_signal("isHeAlived", false)
-		get_tree().paused = true
 	if body is EvilSantaFairy:
 		emit_signal("itemReset", true)
 
@@ -119,3 +126,8 @@ func _on_Player_itemReset(itemReset):
 	decoPossible = false
 	print(itemCount)
 	itemText.text = "Items: " + str(itemCount) + " / " + str(itemList)
+
+
+func _on_Player_isHeAlived(isHeAlive):
+	playerDie = true
+	animation.stop()

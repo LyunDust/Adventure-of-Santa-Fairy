@@ -92,16 +92,6 @@ margin_right = -472.857
 margin_bottom = -486.25
 script = ExtResource( 9 )
 
-[node name="GameOver" type="Label" parent="Player/UI_Text"]
-visible = false
-margin_right = 1024.0
-margin_bottom = 600.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = ExtResource( 7 )
-text = "Game Over"
-align = 1
-valign = 1
-
 [node name="PressKey_hide" type="Label" parent="Player/UI_Text"]
 visible = false
 margin_top = 100.0
@@ -139,6 +129,16 @@ margin_right = 824.0
 margin_bottom = 520.0
 custom_fonts/font = ExtResource( 12 )
 text = "Item: 0/7"
+
+[node name="GameOver" type="Label" parent="Player/UI_Text"]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Game Over"
+align = 1
+valign = 1
 
 [node name="BlockStage" type="Node2D" parent="."]
 visible = false
@@ -198,6 +198,10 @@ script = ExtResource( 13 )
 [connection signal="getItem" from="Player" to="Items/Item5" method="_on_Player_getItem"]
 [connection signal="getItem" from="Player" to="Items/Item6" method="_on_Player_getItem"]
 [connection signal="getItem" from="Player" to="Items/Item7" method="_on_Player_getItem"]
+[connection signal="isHeAlived" from="Player" to="Monster_man" method="_on_Player_isHeAlived"]
+[connection signal="isHeAlived" from="Player" to="Monster_woman" method="_on_Player_isHeAlived"]
+[connection signal="isHeAlived" from="Player" to="EvilSantaFairy" method="_on_Player_isHeAlived"]
+[connection signal="isHeAlived" from="Player" to="Player" method="_on_Player_isHeAlived"]
 [connection signal="isHeAlived" from="Player" to="Player/UI_Text" method="_on_Player_isHeAlived"]
 [connection signal="itemReset" from="Player" to="Items/Item1" method="_on_Player_itemReset"]
 [connection signal="itemReset" from="Player" to="Items/Item2" method="_on_Player_itemReset"]

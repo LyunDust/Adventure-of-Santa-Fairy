@@ -9,7 +9,9 @@ export (int) var evilSantaFairySpeed = 100
 var velocity = Vector2()
 var EvilSantaFairyXPos
 var EvilSantaFairyYPos
-var evilSantaFairyBlocked = false;
+var evilSantaFairyBlocked = false
+
+var playerDie = false
 
 const DIRECTION_RIGHT = 1
 const DIRECTION_LEFT = -1
@@ -31,14 +33,17 @@ func _ready():
 func _physics_process(delta):	
 	velocity = Vector2()
 	
-	if evilSantaFairyBlocked:
-		velocity.x -= 1
-		animation.play("run_left")
-#		set_direction(DIRECTION_LEFT)
-	if !evilSantaFairyBlocked:
-		velocity.x += 1
-		animation.play("run")
-#		set_direction(DIRECTION_RIGHT)
+	if !playerDie:
+		if evilSantaFairyBlocked:
+			velocity.x -= 1
+			animation.play("run_left")
+#			set_direction(DIRECTION_LEFT)
+		if !evilSantaFairyBlocked:
+			velocity.x += 1
+			animation.play("run")
+#			set_direction(DIRECTION_RIGHT)
+	else:
+		velocity.x += 0
 	
 	velocity = velocity.normalized() * evilSantaFairySpeed
 	
@@ -54,3 +59,8 @@ func set_direction(hor_direction):
 	var hor_dir_mod = hor_direction / abs(hor_direction)
 	apply_scale(Vector2(hor_dir_mod * evilSantaFairyDirection.x, 1))
 	evilSantaFairyDirection = Vector2(hor_dir_mod, evilSantaFairyDirection.y)
+
+
+func _on_Player_isHeAlived(isHeAlive):
+	animation.stop()
+	playerDie = true

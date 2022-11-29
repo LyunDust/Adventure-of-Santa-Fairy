@@ -9,7 +9,9 @@ export (int) var monsterManSpeed = 350
 var velocity = Vector2()
 var monsterManXPos
 var monsterManYPos
-var monsterManBlocked = false;
+var monsterManBlocked = false
+
+var playerDie = false
 
 const DIRECTION_RIGHT = 1
 const DIRECTION_LEFT = -1
@@ -28,12 +30,15 @@ func _ready():
 func _physics_process(delta):	
 	velocity = Vector2()
 	
-	if !monsterManBlocked:
-		velocity.x -= 1
-		set_direction(DIRECTION_LEFT)
-	if monsterManBlocked:
-		velocity.x += 1
-		set_direction(DIRECTION_RIGHT)
+	if !playerDie:
+		if !monsterManBlocked:
+			velocity.x -= 1
+			set_direction(DIRECTION_LEFT)
+		if monsterManBlocked:
+			velocity.x += 1
+			set_direction(DIRECTION_RIGHT)
+	else:
+		velocity.x += 0
 	
 	velocity = velocity.normalized() * monsterManSpeed
 	
@@ -50,3 +55,7 @@ func set_direction(hor_direction):
 	var hor_dir_mod = hor_direction / abs(hor_direction)
 	apply_scale(Vector2(hor_dir_mod * monsterManDirection.x, 1))
 	monsterManDirection = Vector2(hor_dir_mod, monsterManDirection.y)
+
+
+func _on_Player_isHeAlived(isHeAlive):
+	playerDie = true

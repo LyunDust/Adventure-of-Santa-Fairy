@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Aisle/Background/Scenes/Background_Aisle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Aisle/Aisle_Gameover.gd" type="Script" id=2]
+[ext_resource path="res://Aisle/UI/AisleUI.tres" type="DynamicFont" id=3]
+
+[node name="Aisle_Gameover" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background_Aisle" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.203922, 0.203922, 0.203922, 1 )
+
+[node name="GameOver" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Game Over"
+align = 1
+valign = 1

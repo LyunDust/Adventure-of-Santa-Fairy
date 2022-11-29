@@ -9,7 +9,9 @@ export (int) var monsterWomanSpeed = 250
 var velocity = Vector2()
 var monsterwomanXPos
 var monsterwomanYPos 
-var monsterWomanBlocked = false;
+var monsterWomanBlocked = false
+
+var playerDie = false
 
 const DIRECTION_RIGHT = 1
 const DIRECTION_LEFT = -1
@@ -28,13 +30,15 @@ func _ready():
 func _physics_process(delta):	
 	velocity = Vector2()
 	
-	if !monsterWomanBlocked:
-		velocity.x -= 1
-		set_direction(DIRECTION_LEFT)
-	if monsterWomanBlocked:
-		velocity.x += 1
-		set_direction(DIRECTION_RIGHT)
-	
+	if !playerDie:
+		if !monsterWomanBlocked:
+			velocity.x -= 1
+			set_direction(DIRECTION_LEFT)
+		if monsterWomanBlocked:
+			velocity.x += 1
+			set_direction(DIRECTION_RIGHT)
+	else:
+		velocity.x += 0
 	velocity = velocity.normalized() * monsterWomanSpeed
 	
 	var collision = move_and_collide(velocity*delta)
@@ -49,3 +53,7 @@ func set_direction(hor_direction):
 	var hor_dir_mod = hor_direction / abs(hor_direction)
 	apply_scale(Vector2(hor_dir_mod * monsterWomanDirection.x, 1))
 	monsterWomanDirection = Vector2(hor_dir_mod, monsterWomanDirection.y)
+
+
+func _on_Player_isHeAlived(isHeAlive):
+	playerDie = true

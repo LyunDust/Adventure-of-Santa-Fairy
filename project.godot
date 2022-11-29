@@ -19,6 +19,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Aisle/Aisle.gd"
 }, {
+"base": "Node",
+"class": "AisleSceneGameover",
+"language": "GDScript",
+"path": "res://Aisle/Aisle_Gameover.gd"
+}, {
 "base": "Control",
 "class": "AisleUI",
 "language": "GDScript",
@@ -62,6 +67,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "AislePlayer": "",
 "AisleScene": "",
+"AisleSceneGameover": "",
 "AisleUI": "",
 "Block": "",
 "Box": "",
