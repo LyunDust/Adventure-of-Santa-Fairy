@@ -14,25 +14,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Aisle/MovementAndCollisions/Scripts/AislePlayer.gd"
 }, {
-"base": "Node",
-"class": "AisleScene",
-"language": "GDScript",
-"path": "res://Aisle/Aisle.gd"
-}, {
-"base": "Node",
-"class": "AisleSceneGameover",
-"language": "GDScript",
-"path": "res://Aisle/Aisle_Gameover.gd"
-}, {
 "base": "Control",
 "class": "AisleUI",
 "language": "GDScript",
 "path": "res://Aisle/UI/GameOver.gd"
-}, {
-"base": "Node",
-"class": "Block",
-"language": "GDScript",
-"path": "res://Aisle/Background/Scripts/BlockStage.gd"
 }, {
 "base": "Area2D",
 "class": "Box",
@@ -66,10 +51,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AislePlayer": "",
-"AisleScene": "",
-"AisleSceneGameover": "",
 "AisleUI": "",
-"Block": "",
 "Box": "",
 "ChirstmasTree": "",
 "EvilSantaFairy": "",
@@ -82,7 +64,7 @@ _global_script_class_icons={
 
 config/name="Adventure of Santa Fairy"
 run/main_scene="res://Aisle/Aisle.tscn"
-config/icon="res://Aisle/Image/icon.png"
+config/icon="res://icon.png"
 
 [gui]
 
@@ -136,4 +118,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://Aisle/Image/default_env.tres"
+environment/default_environment="res://default_env.tres"

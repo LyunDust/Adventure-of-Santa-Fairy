@@ -46,7 +46,6 @@ func _physics_process(delta):
 	
 	if collision:
 		monsterManBlocked = !monsterManBlocked
-		
 
 
 func set_direction(hor_direction):

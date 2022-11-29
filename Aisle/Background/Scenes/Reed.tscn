@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Aisle/Image/Backgrounds/reed.png" type="Texture" id=1]
 
-
 [node name="Reed" type="Node2D"]
 modulate = Color( 0.776471, 0.466667, 0.811765, 1 )
 

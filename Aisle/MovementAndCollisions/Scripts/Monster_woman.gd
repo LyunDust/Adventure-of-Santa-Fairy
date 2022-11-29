@@ -39,6 +39,7 @@ func _physics_process(delta):
 			set_direction(DIRECTION_RIGHT)
 	else:
 		velocity.x += 0
+	
 	velocity = velocity.normalized() * monsterWomanSpeed
 	
 	var collision = move_and_collide(velocity*delta)

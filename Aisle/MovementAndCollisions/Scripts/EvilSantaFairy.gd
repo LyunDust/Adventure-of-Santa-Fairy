@@ -37,11 +37,9 @@ func _physics_process(delta):
 		if evilSantaFairyBlocked:
 			velocity.x -= 1
 			animation.play("run_left")
-#			set_direction(DIRECTION_LEFT)
 		if !evilSantaFairyBlocked:
 			velocity.x += 1
 			animation.play("run")
-#			set_direction(DIRECTION_RIGHT)
 	else:
 		velocity.x += 0
 	
@@ -51,14 +49,6 @@ func _physics_process(delta):
 	
 	if collision:
 		evilSantaFairyBlocked = !evilSantaFairyBlocked
-
-
-func set_direction(hor_direction):
-	if hor_direction == 0:
-		hor_direction = DIRECTION_RIGHT
-	var hor_dir_mod = hor_direction / abs(hor_direction)
-	apply_scale(Vector2(hor_dir_mod * evilSantaFairyDirection.x, 1))
-	evilSantaFairyDirection = Vector2(hor_dir_mod, evilSantaFairyDirection.y)
 
 
 func _on_Player_isHeAlived(isHeAlive):

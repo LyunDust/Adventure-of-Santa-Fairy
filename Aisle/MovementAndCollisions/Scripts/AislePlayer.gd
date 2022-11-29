@@ -13,6 +13,7 @@ var aislePlayerYPos
 var input = false
 var sitdown = false
 var collideWithBox = false
+var itemNoReset = false
 
 var itemList = 7
 var itemCount = 0
@@ -24,7 +25,11 @@ signal isHeAlived (isHeAlive)
 signal getItem (getItem)
 signal itemReset (itemReset)
 
-onready var itemText = get_node("UI_Text/ItemCount")
+onready var text_pressKeyHide = $UI_Text/PressKey_hide
+onready var text_pressKeyDeco = $UI_Text/PressKey_deco
+onready var text_decorate = $UI_Text/Decorate
+onready var text_itemCount = $UI_Text/ItemCount
+
 onready var animation = $AnimationPlayer
 
 
@@ -37,7 +42,7 @@ func _ready():
 	itemCount = 0
 	decoPossible = false	
 	self.set_position(Vector2(aislePlayerXPos, aislePlayerYPos))
-	itemText.text = "Items: " + str(itemCount) + " / " + str(itemList)
+	text_itemCount.text = "Items: " + str(itemCount) + " / " + str(itemList)
 
 
 func get_input():
@@ -48,28 +53,31 @@ func get_input():
 			animation.play("run")
 			input = true
 			sitdown = false
+			itemNoReset = false
 		if Input.is_action_pressed("left"):
 			velocity.x -= 1
 			animation.play("run_left")
 			input = true
 			sitdown = false
+			itemNoReset = false
 		if Input.is_action_pressed("down"):
 			animation.play("sitdown")
 			sitdown = true
 			input = true
+			itemNoReset = false
 		if Input.is_action_pressed("interact"):
 			if collideWithBox:
 				animation.play("inTheBox")
+				itemNoReset = true
 			if decoPossible:
-				$UI_Text/Decorate.visible = true
-				$UI_Text/PressKey_hide.visible = false
-				$UI_Text/PressKey_deco.visible = false
+				text_decorate.visible = true
+				text_pressKeyHide.visible = false
+				text_pressKeyDeco.visible = false
 				get_tree().paused = true
 		input = true
 	else:
 		if Input.is_action_pressed("interact"):
 			emit_signal("isHeAlived", true)
-			print("restart")
 		
 		
 	if !sitdown:
@@ -79,14 +87,10 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	
-	itemText.text = "Items: " + str(itemCount) + " / " + str(itemList)
+	text_itemCount.text = "Items: " + str(itemCount) + " / " + str(itemList)
 	
 	if !playerDie:
-		var collision = move_and_collide(velocity*delta)
-	
-#	if collision:
-#		emit_signal("isHeAlived", false)
-#		get_tree().paused = true
+		move_and_collide(velocity*delta)
 	
 	if !input:
 		animation.stop()
@@ -109,7 +113,7 @@ func _on_ChirstmasTree_body_entered(body):
 
 func _on_ChirstmasTree_body_exited(body):
 	if itemCount == itemList:
-		$UI_Text/Decorate.visible = false
+		text_decorate.visible = false
 
 
 func _on_Item_body_entered(body):
@@ -119,16 +123,14 @@ func _on_Item_body_entered(body):
 func _on_Area2D_body_entered(body):
 	if body is MonsterMan or body is MonsterWoman:
 		emit_signal("isHeAlived", false)
-	if body is EvilSantaFairy:
+	if body is EvilSantaFairy and !itemNoReset:
 		emit_signal("itemReset", true)
 
 
 func _on_Player_itemReset(itemReset):
-	print("itemReset")
 	itemCount = 0
 	decoPossible = false
-	print(itemCount)
-	itemText.text = "Items: " + str(itemCount) + " / " + str(itemList)
+	text_itemCount.text = "Items: " + str(itemCount) + " / " + str(itemList)
 
 
 func _on_Player_isHeAlived(isHeAlive):

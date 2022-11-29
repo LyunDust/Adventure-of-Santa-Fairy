@@ -7,7 +7,8 @@ class_name ChirstmasTree
 var treeXPos
 var treeYPos
 
-onready var deco = get_node("/root/Aisle/Player/UI_Text/PressKey_deco")
+onready var text_pressKeyDeco = get_node("/root/Aisle/Player/UI_Text/PressKey_deco")
+
 
 func _init():
 	treeXPos = 1935
@@ -17,9 +18,9 @@ func _init():
 
 func _on_ChirstmasTree_body_entered(body):
 	if body is AislePlayer:
-		deco.visible = true
+		text_pressKeyDeco.visible = true
 
 
 func _on_ChirstmasTree_body_exited(body):
 	if body is AislePlayer:
-		deco.visible = false
+		text_pressKeyDeco.visible = false
