@@ -16,3 +16,6 @@ func _on_Player_isHeAlived(isHeAlive):
 		item.visible = false
 		gameover.visible = true
 		print("gameover")
+	else:
+		item.visible = true
+		gameover.visible = false

@@ -28,3 +28,8 @@ func _on_Player_itemReset(itemReset):
 	itemXPos = rand_range(100, 3700)	
 	self.set_position(Vector2(itemXPos, itemYPos))
 	print("itemXPos: ", itemXPos)
+
+
+func _on_Player_isHeAlived(isHeAlive):
+	if isHeAlive:
+		self._ready()

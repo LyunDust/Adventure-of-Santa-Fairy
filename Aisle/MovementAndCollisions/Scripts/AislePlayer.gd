@@ -34,6 +34,8 @@ func _init():
 
 
 func _ready():
+	itemCount = 0
+	decoPossible = false	
 	self.set_position(Vector2(aislePlayerXPos, aislePlayerYPos))
 	itemText.text = "Items: " + str(itemCount) + " / " + str(itemList)
 
@@ -66,6 +68,7 @@ func get_input():
 		input = true
 	else:
 		if Input.is_action_pressed("interact"):
+			emit_signal("isHeAlived", true)
 			print("restart")
 		
 		
@@ -129,5 +132,9 @@ func _on_Player_itemReset(itemReset):
 
 
 func _on_Player_isHeAlived(isHeAlive):
-	playerDie = true
-	animation.stop()
+	if !isHeAlive:
+		playerDie = true
+		animation.stop()
+	else:
+		playerDie = false
+		self._ready()

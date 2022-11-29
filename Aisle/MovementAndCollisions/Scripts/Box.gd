@@ -28,3 +28,8 @@ func _on_Box_body_entered(body):
 func _on_Box_body_exited(body):
 	if body is AislePlayer:
 		hide.visible = false
+
+
+func _on_Player_isHeAlived(isHeAlive):
+	if isHeAlive:
+		self._ready()

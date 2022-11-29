@@ -58,4 +58,8 @@ func set_direction(hor_direction):
 
 
 func _on_Player_isHeAlived(isHeAlive):
-	playerDie = true
+	if !isHeAlive:
+		playerDie = true
+	else:
+		playerDie = false
+		self._ready()
