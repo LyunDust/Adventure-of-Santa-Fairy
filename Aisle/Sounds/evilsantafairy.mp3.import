@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/evilsantafairy.mp3-decca4fd351699e5b1d9c865702aa6ed.mp3str"
+
+[deps]
+
+source_file="res://Aisle/Sounds/evilsantafairy.mp3"
+dest_files=[ "res://.import/evilsantafairy.mp3-decca4fd351699e5b1d9c865702aa6ed.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/success.mp3-3937774351899bed4489e4dc1e28e0ec.mp3str"
+
+[deps]
+
+source_file="res://Aisle/Sounds/success.mp3"
+dest_files=[ "res://.import/success.mp3-3937774351899bed4489e4dc1e28e0ec.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

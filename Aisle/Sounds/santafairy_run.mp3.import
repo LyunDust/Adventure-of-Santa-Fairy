@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/santafairy_run.mp3-9323a3f11ff5305a034347f4f7fe351a.mp3str"
+
+[deps]
+
+source_file="res://Aisle/Sounds/santafairy_run.mp3"
+dest_files=[ "res://.import/santafairy_run.mp3-9323a3f11ff5305a034347f4f7fe351a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

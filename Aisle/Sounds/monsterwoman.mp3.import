@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/monsterwoman.mp3-25b444d19b2eb2f22dd5566c1d51a133.mp3str"
+
+[deps]
+
+source_file="res://Aisle/Sounds/monsterwoman.mp3"
+dest_files=[ "res://.import/monsterwoman.mp3-25b444d19b2eb2f22dd5566c1d51a133.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

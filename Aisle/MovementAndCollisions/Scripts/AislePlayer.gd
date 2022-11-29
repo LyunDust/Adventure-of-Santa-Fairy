@@ -31,6 +31,7 @@ onready var text_decorate = $UI_Text/Decorate
 onready var text_itemCount = $UI_Text/ItemCount
 
 onready var animation = $AnimationPlayer
+onready var audio_player = $AudioStreamPlayer
 
 
 func _init():
@@ -51,23 +52,30 @@ func get_input():
 		if Input.is_action_pressed("right"):
 			velocity.x += 1
 			animation.play("run")
+			if !audio_player.is_playing():
+				audio_player.play()	
 			input = true
 			sitdown = false
 			itemNoReset = false
 		if Input.is_action_pressed("left"):
 			velocity.x -= 1
 			animation.play("run_left")
+			if !audio_player.is_playing():
+				audio_player.play()	
 			input = true
 			sitdown = false
 			itemNoReset = false
 		if Input.is_action_pressed("down"):
 			animation.play("sitdown")
+			audio_player.stop()
 			sitdown = true
 			input = true
 			itemNoReset = false
 		if Input.is_action_pressed("interact"):
+			audio_player.stop()
 			if collideWithBox:
 				animation.play("inTheBox")
+				text_pressKeyHide.visible = false
 				itemNoReset = true
 			if decoPossible:
 				text_decorate.visible = true
@@ -91,7 +99,7 @@ func _physics_process(delta):
 	
 	if !playerDie:
 		move_and_collide(velocity*delta)
-	
+
 	if !input:
 		animation.stop()
 	
@@ -137,6 +145,7 @@ func _on_Player_isHeAlived(isHeAlive):
 	if !isHeAlive:
 		playerDie = true
 		animation.stop()
+		audio_player.stop()
 	else:
 		playerDie = false
 		self._ready()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/monsterman.mp3-7b740e211394309923032284bc3db11d.mp3str"
+
+[deps]
+
+source_file="res://Aisle/Sounds/monsterman.mp3"
+dest_files=[ "res://.import/monsterman.mp3-7b740e211394309923032284bc3db11d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
