@@ -1,4 +1,3 @@
-
 [gd_resource type="AudioBusLayout" load_steps=3 format=2]
 
 [sub_resource type="AudioEffectChorus" id=1]
@@ -11,13 +10,11 @@ resource_name = "Chorus"
 dry = 0.45
 wet = 0.75
 
-
 [resource]
 bus/1/name = "BGM"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-
 bus/1/volume_db = -5.625
 bus/1/send = "Master"
 bus/2/name = "Man"
@@ -48,4 +45,3 @@ bus/5/mute = false
 bus/5/bypass_fx = false
 bus/5/volume_db = -21.0931
 bus/5/send = "Master"
-

@@ -8,12 +8,51 @@
 
 config_version=4
 
-
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "AislePlayer",
+"language": "GDScript",
+"path": "res://Aisle/MovementAndCollisions/Scripts/AislePlayer.gd"
+}, {
+"base": "Control",
+"class": "AisleUI",
+"language": "GDScript",
+"path": "res://Aisle/UI/GameOver.gd"
+}, {
+"base": "Area2D",
+"class": "Box",
+"language": "GDScript",
+"path": "res://Aisle/MovementAndCollisions/Scripts/Box.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Cat",
 "language": "GDScript",
 "path": "res://script/Cat.gd"
+}, {
+"base": "Area2D",
+"class": "ChirstmasTree",
+"language": "GDScript",
+"path": "res://Aisle/MovementAndCollisions/Scripts/ChirstmasTree.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "EvilSantaFairy",
+"language": "GDScript",
+"path": "res://Aisle/MovementAndCollisions/Scripts/EvilSantaFairy.gd"
+}, {
+"base": "Area2D",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Aisle/Items/Scripts/Item.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "MonsterMan",
+"language": "GDScript",
+"path": "res://Aisle/MovementAndCollisions/Scripts/Monster_man.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "MonsterWoman",
+"language": "GDScript",
+"path": "res://Aisle/MovementAndCollisions/Scripts/Monster_woman.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -44,73 +83,29 @@ _global_script_classes=[ {
 "class": "vacuums",
 "language": "GDScript",
 "path": "res://script/Robot vacuums.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "AislePlayer",
-"language": "GDScript",
-"path": "res://Aisle/MovementAndCollisions/Scripts/AislePlayer.gd"
-}, {
-"base": "Control",
-"class": "AisleUI",
-"language": "GDScript",
-"path": "res://Aisle/UI/GameOver.gd"
-}, {
-"base": "Area2D",
-"class": "Box",
-"language": "GDScript",
-"path": "res://Aisle/MovementAndCollisions/Scripts/Box.gd"
-}, {
-"base": "Area2D",
-"class": "ChirstmasTree",
-"language": "GDScript",
-"path": "res://Aisle/MovementAndCollisions/Scripts/ChirstmasTree.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "EvilSantaFairy",
-"language": "GDScript",
-"path": "res://Aisle/MovementAndCollisions/Scripts/EvilSantaFairy.gd"
-}, {
-"base": "Area2D",
-"class": "Item",
-"language": "GDScript",
-"path": "res://Aisle/Items/Scripts/Item.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "MonsterMan",
-"language": "GDScript",
-"path": "res://Aisle/MovementAndCollisions/Scripts/Monster_man.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "MonsterWoman",
-"language": "GDScript",
-"path": "res://Aisle/MovementAndCollisions/Scripts/Monster_woman.gd"
-}  ]
+} ]
 _global_script_class_icons={
-"Cat": "",
-"gameBackground": "",
-"item2Class": "",
-"player": "",
-"Player": "",
-"santaBag": "",
-"vacuums": "",
 "AislePlayer": "",
 "AisleUI": "",
 "Box": "",
+"Cat": "",
 "ChirstmasTree": "",
 "EvilSantaFairy": "",
 "Item": "",
 "MonsterMan": "",
-"MonsterWoman": ""
+"MonsterWoman": "",
+"Player": "",
+"gameBackground": "",
+"item2Class": "",
+"player": "",
+"santaBag": "",
+"vacuums": ""
 }
-
-
 
 [application]
 
 config/name="Adventure of Santa Fairy"
-
 run/main_scene="res://scene/Level 2.tscn"
-
 config/icon="res://icon.png"
 
 [autoload]
@@ -120,7 +115,6 @@ Global="*res://script/Global.gd"
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
-
 
 [input]
 
@@ -187,7 +181,6 @@ interact={
 2d_physics/layer_14="Box"
 2d_physics/layer_15="Block"
 2d_physics/layer_16="Cloth"
-
 
 [physics]
 
