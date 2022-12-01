@@ -5,7 +5,7 @@
 
 [node name="Box" type="Area2D"]
 scale = Vector2( 0.5, 0.5 )
-collision_layer = 8
+collision_layer = 8192
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

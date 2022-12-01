@@ -6,8 +6,8 @@
 
 [node name="Monster_man" type="KinematicBody2D"]
 scale = Vector2( 0.328459, 0.53 )
-collision_layer = 2
-collision_mask = 33
+collision_layer = 2048
+collision_mask = 16385
 collision/safe_margin = 0.01
 script = ExtResource( 2 )
 

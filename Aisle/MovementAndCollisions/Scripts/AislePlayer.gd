@@ -49,7 +49,7 @@ func _ready():
 func get_input():
 	velocity = Vector2()
 	if !playerDie:
-		if Input.is_action_pressed("right"):
+		if Input.is_action_pressed("ui_right"):
 			velocity.x += 1
 			animation.play("run")
 			if !audio_player.is_playing():
@@ -57,7 +57,7 @@ func get_input():
 			input = true
 			sitdown = false
 			itemNoReset = false
-		if Input.is_action_pressed("left"):
+		if Input.is_action_pressed("ui_left"):
 			velocity.x -= 1
 			animation.play("run_left")
 			if !audio_player.is_playing():
@@ -65,7 +65,7 @@ func get_input():
 			input = true
 			sitdown = false
 			itemNoReset = false
-		if Input.is_action_pressed("down"):
+		if Input.is_action_pressed("ui_down"):
 			animation.play("sitdown")
 			audio_player.stop()
 			sitdown = true
