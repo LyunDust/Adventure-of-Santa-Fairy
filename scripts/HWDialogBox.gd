@@ -1,7 +1,7 @@
-extends TextureRect
+extends ColorRect
 
-
-export var dialogPath="C:/Users/syp13/GitHub/Adventure-of-Santa-Fairy/dialog.json"
+#export var dialogPath="C:/Users/syp13/GitHub/Adventure-of-Santa-Fairy/dialog2.json"
+export var dialogPath="C:/Users/syp13/GitHub/Adventure-of-Santa-Fairy/dialog2.json"
 export(float) var textSpeed=0.05
 
 var dialog
@@ -25,7 +25,7 @@ func _process(delta):
 			$Text.visible_characters=len($Text.text)
 	
 	if dialogFinished:
-		get_tree().change_scene("res://Aisle/Aisle.tscn")
+		get_tree().change_scene("res://scene/Level 2.tscn")
 
 func getDialog() ->Array:
 	var file=File.new()

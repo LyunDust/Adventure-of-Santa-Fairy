@@ -6,10 +6,12 @@ var clothNum
 var keyNum 
 var key
 var manageClothes
+var windowSize 
 
 func _ready(): #keyshape settings, importing clothes node
 	$KeyShape.visible = false
-	manageClothes = get_node("/root/HumanWorld/Clothes")
+	windowSize = get_viewport_rect().size
+	manageClothes = get_node("/root/Level 2/Clothes")
 
 func setClothNum(num): #Unique numbering for each cloth
 	clothNum = num
@@ -19,6 +21,10 @@ func getClothNum()->int: #Find out what the cloth is by returning their unique n
 	
 func setSpriteTexture(sprite_texture): #Load the corresponding image
 	$Sprite.texture =load(sprite_texture) 
+	
+func setPosition():
+	position = Vector2(rand_range(18, windowSize.x-18), rand_range(100, windowSize.y-16))
+	
 
 func set_key(): #Generate a random key each time the player accesses it
 	keyNum = randi() % 4 + 1 #1-4
@@ -41,7 +47,7 @@ func set_key(): #Generate a random key each time the player accesses it
 func _on_Cloth_body_entered(body):
 	#if the player acesses to clothes, and have acquired the previous order of clothes,
 	#enter a key to obtain them
-	if body is Player and manageClothes.checkBeforeClothCollected(clothNum):
+	if body is player and manageClothes.checkBeforeClothCollected(clothNum):
 		set_key()
 		$KeyShape.visible = true
 		$KeyShape/Label.visible = true
@@ -49,7 +55,7 @@ func _on_Cloth_body_entered(body):
 	
 func _on_Cloth_body_exited(body):
 	#Unable to enter key and obtain cloth when out of cloth
-	if body is Player:
+	if body is player:
 		key= null
 		$KeyShape.visible = false
 	

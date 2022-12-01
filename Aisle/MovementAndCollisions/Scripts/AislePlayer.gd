@@ -81,7 +81,9 @@ func get_input():
 				text_decorate.visible = true
 				text_pressKeyHide.visible = false
 				text_pressKeyDeco.visible = false
-				get_tree().paused = true
+				#get_tree().paused = true
+				get_tree().change_scene("res://scenes/HumanWorldStory.tscn")
+				#PSY added
 		input = true
 	else:
 		if Input.is_action_pressed("interact"):

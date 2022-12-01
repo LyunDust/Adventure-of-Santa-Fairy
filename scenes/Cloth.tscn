@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Images/SantaCloth0.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Cloth.gd" type="Script" id=2]
 [ext_resource path="res://Images/keyShape.png" type="Texture" id=3]
+[ext_resource path="res://fonts/Ronysiswadi9Med-ALDYM.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28, 24 )
 
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 4 )
+
 [node name="Cloth" type="Area2D"]
+scale = Vector2( 0.626793, 0.587712 )
 collision_layer = 32768
 script = ExtResource( 2 )
 
@@ -20,7 +25,8 @@ shape = SubResource( 1 )
 
 [node name="KeyShape" type="Sprite" parent="."]
 visible = false
-position = Vector2( 4, 56 )
+position = Vector2( 0, 57.8515 )
+scale = Vector2( 1.12763, 1.27224 )
 texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="KeyShape"]
@@ -29,6 +35,7 @@ margin_top = -12.0
 margin_right = 10.0
 margin_bottom = 2.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "h"
 
 [connection signal="body_entered" from="." to="." method="_on_Cloth_body_entered"]
