@@ -1,7 +1,7 @@
 extends ColorRect
 
 #export var dialogPath="C:/Users/syp13/GitHub/Adventure-of-Santa-Fairy/dialog2.json"
-export var dialogPath="C:/Users/syp13/GitHub/Adventure-of-Santa-Fairy/dialog2.json"
+export var dialogPath="res://dialog/dialog2.json"
 export(float) var textSpeed=0.05
 
 var dialog
