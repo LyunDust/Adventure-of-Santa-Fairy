@@ -1,11 +1,9 @@
 extends KinematicBody2D
 
-class_name Player
-
 export (int) var speed = 200
 var velocity = Vector2()
-var collectedClothes = 0
-var cloth
+
+class_name Player
 	
 func get_input():
 	# set velocity based on the keys pressed
@@ -26,6 +24,3 @@ func _physics_process(delta):
 	get_input()	
 	velocity = move_and_slide(velocity)
 	
-
-func _on_Cloth_body_entered(body):
-	pass

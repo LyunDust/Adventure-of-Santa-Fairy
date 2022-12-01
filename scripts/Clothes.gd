@@ -16,7 +16,7 @@ func _process(delta):
 		get_tree().change_scene("res://scenes/EndingStoryScene.tscn")
 
 	
-func set_child():
+func set_child(): #Get children to specify a unique number and image
 	var cloth_texture
 	clothesList= get_children()
 	numOfClothes=get_child_count()
@@ -27,13 +27,13 @@ func set_child():
 		isClothCollected.append(false)
 	
 
-func checkBeforeClothCollected(i)->bool:
+func checkBeforeClothCollected(i)->bool: #Check if previous order clothes have been acquired
 	if i < 1:
 		return true
 	else:
 		return isClothCollected[i-1]
 		
-func setClothCollected(i):
+func setClothCollected(i): #If you get clothes, increase the total number of clothes you collected
 	isClothCollected[i]=true
 	numOfCollectedClothes += 1 
 

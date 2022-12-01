@@ -1,8 +1,15 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scripts/Aisle.gd" type="Script" id=1]
 [ext_resource path="res://fonts/BRLNSR.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://fonts/SourceSansPro-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Node2D
+
+
+func _on_Button_button_up():
+	get_tree().change_scene(\"res://scenes/HumanWorldStory.tscn\")
+"
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -13,7 +20,7 @@ size = 30
 font_data = ExtResource( 3 )
 
 [node name="Aisle" type="Node2D"]
-script = ExtResource( 1 )
+script = SubResource( 3 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

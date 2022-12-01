@@ -135,4 +135,5 @@ scale = Vector2( 0.82915, 0.837989 )
 texture = ExtResource( 1 )
 
 [connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/StartButton" to="." method="_on_StartButton_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/OptionButton" to="." method="_on_OptionButton_button_up"]
 [connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/CreditButton" to="." method="_on_CreditButton_button_up"]
