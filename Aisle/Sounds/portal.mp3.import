@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/portal.mp3-fd7b1d752c9e9838d4ccdf9a2d7214fa.mp3str"
+
+[deps]
+
+source_file="res://Aisle/Sounds/portal.mp3"
+dest_files=[ "res://.import/portal.mp3-fd7b1d752c9e9838d4ccdf9a2d7214fa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
