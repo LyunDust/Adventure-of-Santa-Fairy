@@ -11,19 +11,60 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
+"class": "Cat",
+"language": "GDScript",
+"path": "res://script/Cat.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://scripts/Player.gd"
+}, {
+"base": "StaticBody2D",
+"class": "gameBackground",
+"language": "GDScript",
+"path": "res://script/Background.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "item2Class",
+"language": "GDScript",
+"path": "res://script/item2.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "player",
+"language": "GDScript",
+"path": "res://script/Player.gd"
+}, {
+"base": "StaticBody2D",
+"class": "santaBag",
+"language": "GDScript",
+"path": "res://script/Santa bag.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "vacuums",
+"language": "GDScript",
+"path": "res://script/Robot vacuums.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"Cat": "",
+"gameBackground": "",
+"item2Class": "",
+"player": "",
+"Player": "",
+"santaBag": "",
+"vacuums": ""
 }
-
 
 [application]
 
 config/name="Adventure of Santa Fairy"
+run/main_scene="res://scene/Level 2.tscn"
+
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://script/Global.gd"
 
 [gui]
 

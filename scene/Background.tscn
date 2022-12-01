@@ -1,0 +1,386 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://image/burning_loop_1.png" type="Texture" id=1]
+[ext_resource path="res://image/TopDownHouse_FurnitureState1.png" type="Texture" id=2]
+[ext_resource path="res://image/TopDownHouse_DoorsAndWindows.png" type="Texture" id=3]
+[ext_resource path="res://image/TopDownHouse_SmallItems.png" type="Texture" id=4]
+[ext_resource path="res://image/TopDownHouse_FurnitureState2.png" type="Texture" id=5]
+[ext_resource path="res://image/Interior.png" type="Texture" id=6]
+[ext_resource path="res://image/Christmas Tree.png" type="Texture" id=7]
+[ext_resource path="res://script/Background.gd" type="Script" id=8]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 24, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 72, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 120, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 144, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 168, 0, 24, 32 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 96, 128 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 96, 0, 96, 128 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 16.9921, 5.01994 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 22.032, 21.7331 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 29.5419, 24.8009 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 13.3666, 6.11554 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 85.6179, 14.7811 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 12.8238, 28.1475 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 17.012, 10.2989 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 8.3667, 10.8567 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 7.52988, 10.8969 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 9.74106, 6.39439 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 5.98606, 8.06774 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 256.017, 22.5897 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 21.7531, 22.8487 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 15.5977, 8.06775 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 16.7132, 14.7809 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 19.7809, 6.68328 )
+
+[node name="Background" type="StaticBody2D"]
+position = Vector2( 517, 46 )
+scale = Vector2( 1.79285, 1.79285 )
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 8 )
+
+[node name="fireplace" type="Sprite" parent="."]
+position = Vector2( 0, 1.25103 )
+scale = Vector2( 1.47352, 1.47352 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 146, 113, 28, 41 )
+
+[node name="bookShelf1" type="Sprite" parent="."]
+position = Vector2( -44.4903, 5.01993 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32.256, 63.2202, 46.9906, 48.1298 )
+
+[node name="bookShelf2" type="Sprite" parent="."]
+position = Vector2( -90.3589, 5.57771 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 32, 64, 47, 47 )
+
+[node name="fire" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 7.25105 )
+frames = SubResource( 9 )
+
+[node name="Sprite7" type="Sprite" parent="."]
+position = Vector2( -3.90439, 116.016 )
+scale = Vector2( 1.79884, 1.79884 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 240, 544, 81, 62 )
+
+[node name="window" type="Sprite" parent="."]
+position = Vector2( -198.009, -2.23108 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 100, 131, 25, 28 )
+
+[node name="window2" type="Sprite" parent="."]
+position = Vector2( -128.287, -2.23108 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 100, 131, 25, 28 )
+
+[node name="window3" type="Sprite" parent="."]
+position = Vector2( 81.9924, -2.23108 )
+texture = ExtResource( 3 )
+offset = Vector2( 5.01994, 0 )
+region_enabled = true
+region_rect = Rect2( 100, 131, 25, 28 )
+
+[node name="window4" type="Sprite" parent="."]
+position = Vector2( 157.291, -2.23108 )
+texture = ExtResource( 3 )
+offset = Vector2( 5.01994, 0 )
+region_enabled = true
+region_rect = Rect2( 100, 131, 25, 28 )
+
+[node name="door" type="Sprite" parent="."]
+position = Vector2( 231.475, -4.46217 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 131, 2, 26, 46 )
+
+[node name="stairs" type="Sprite" parent="."]
+position = Vector2( -258.248, 1.11555 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 32, 81, 61, 79 )
+
+[node name="clock" type="Sprite" parent="."]
+position = Vector2( 31.2352, -8.92437 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 80, 16, 15, 15 )
+
+[node name="lamp" type="Sprite" parent="."]
+position = Vector2( -34.4106, 58.6396 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 94, 112, 20, 47 )
+
+[node name="sofa1" type="Sprite" parent="."]
+position = Vector2( -2.05984, 67.0062 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 87.4288, 160, 50.6338, 31.6743 )
+
+[node name="sofa2" type="Sprite" parent="."]
+position = Vector2( -50.0281, 91.5481 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 175, 116, 26, 38 )
+
+[node name="sofa3" type="Sprite" parent="."]
+position = Vector2( 46.4663, 91.5481 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 175, 116, 26, 38 )
+
+[node name="table" type="Sprite" parent="."]
+position = Vector2( -2.05984, 98.7991 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 82.7127, 42.9116, 26.314, 20.6905 )
+
+[node name="standHanger" type="Sprite" parent="."]
+position = Vector2( 263.826, 6.1355 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 48.4206, 114.303, 16.8529, 45.4888 )
+
+[node name="turntable" type="Sprite" parent="."]
+position = Vector2( -51.315, 117.69 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 173, 262, 36, 27 )
+
+[node name="kitchen1" type="Sprite" parent="."]
+position = Vector2( 264.941, 273.308 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 176.64, 193, 36.3604, 64 )
+
+[node name="kitchen2" type="Sprite" parent="."]
+position = Vector2( 207.491, 263.826 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 96, 193, 80, 44 )
+
+[node name="kitchen3" type="Sprite" parent="."]
+position = Vector2( 152.272, 263.826 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 63.8367, 192.169, 32.1958, 43.4615 )
+
+[node name="kitchen4" type="Sprite" parent="."]
+position = Vector2( 123.825, 259.921 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 32.3111, 194.512, 30.9562, 62.1362 )
+
+[node name="cat bed" type="Sprite" parent="."]
+position = Vector2( -269.403, 46.295 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 97.8937, 239.513, 29.2318, 15.9446 )
+
+[node name="mirror" type="Sprite" parent="."]
+position = Vector2( 200.798, -2.23108 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 115, 113, 26, 46 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -161.106, 82.6697 )
+scale = Vector2( 0.838525, 0.838525 )
+frames = SubResource( 24 )
+frame = 1
+speed_scale = 0.3
+playing = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 21.1953 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( -44.2115, 4.44224 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
+position = Vector2( -89.8011, 4.46218 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2( -260.459, 15.3188 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -269.384, 46.3149 )
+shape = SubResource( 14 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2( 197.73, 257.411 )
+shape = SubResource( 15 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2( 270.524, 281.416 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2( -2.50989, 66.076 )
+shape = SubResource( 17 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
+position = Vector2( 46.8529, 92.2912 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="."]
+position = Vector2( -50.1994, 92.0322 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
+position = Vector2( -44.3427, 116.275 )
+shape = SubResource( 19 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="."]
+position = Vector2( -1.93225, 97.9088 )
+shape = SubResource( 20 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="."]
+position = Vector2( -58.4165, 119.921 )
+shape = SubResource( 21 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="."]
+position = Vector2( -37.9284, -6.41437 )
+shape = SubResource( 26 )
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="."]
+position = Vector2( 266.057, -6.67331 )
+shape = SubResource( 27 )
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="."]
+position = Vector2( 232.033, -21.4543 )
+shape = SubResource( 28 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -180.718, 49.6416 )
+polygon = PoolVector2Array( 16.1753, 2.78886, 22.3108, 2.78886, 44.6217, 36.8129, 44.0639, 69.7214, -3.90442, 69.7214, -7.25105, 40.7173, 10.9746, 9.90733 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 512
+
+[node name="startPosition" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 232.033, 1.11554 )
+shape = SubResource( 29 )
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="startPosition2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 232.033, 1.39443 )
+shape = SubResource( 29 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 512
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 233.706, 9.47214 )
+shape = SubResource( 30 )
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

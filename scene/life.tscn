@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://image/Heart.png" type="Texture" id=1]
+[ext_resource path="res://script/life.gd" type="Script" id=2]
+
+[node name="life" type="Sprite"]
+script = ExtResource( 2 )
+
+[node name="life1" type="Sprite" parent="."]
+position = Vector2( -35, 0 )
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 62, 39, 19, 18 )
+
+[node name="life2" type="Sprite" parent="."]
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 62, 39, 19, 18 )
+
+[node name="life3" type="Sprite" parent="."]
+position = Vector2( 35, 0 )
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 62, 39, 19, 18 )
