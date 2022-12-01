@@ -26,8 +26,8 @@ func set_key(): #Generate a random key each time the player accesses it
 		$KeyShape/Label.text = "Q"
 		key = KEY_Q
 	elif keyNum == 2:
-		$KeyShape/Label.text = "W"
-		key = KEY_W
+		$KeyShape/Label.text = "T"
+		key = KEY_T
 	elif keyNum == 3:
 		$KeyShape/Label.text = "E"
 		key = KEY_E

@@ -8,7 +8,7 @@
 extents = Vector2( 28, 24 )
 
 [node name="Cloth" type="Area2D"]
-collision_layer = 2
+collision_layer = 32768
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
