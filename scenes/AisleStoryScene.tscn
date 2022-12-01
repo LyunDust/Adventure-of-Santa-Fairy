@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/DialogBox.gd" type="Script" id=1]
+[ext_resource path="res://Images/dialogImg.png" type="Texture" id=2]
+[ext_resource path="res://Images/StartSceneBackground.jpg" type="Texture" id=3]
+[ext_resource path="res://OtherSantaFairy.png" type="Texture" id=4]
+[ext_resource path="res://fonts/SourceSansPro-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Images/FairyWorldBackground.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 5 )
+
+[node name="AisleStoryScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="DialogBox" type="TextureRect" parent="Control"]
+margin_left = 184.0
+margin_top = 368.0
+margin_right = 862.0
+margin_bottom = 531.0
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Name" type="RichTextLabel" parent="Control/DialogBox"]
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 528.0
+margin_bottom = 56.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Name"
+
+[node name="Text" type="RichTextLabel" parent="Control/DialogBox"]
+margin_left = 32.0
+margin_top = 72.0
+margin_right = 616.0
+margin_bottom = 144.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "Text here"
+
+[node name="Indicator" type="Polygon2D" parent="Control/DialogBox"]
+position = Vector2( 24, 24 )
+scale = Vector2( 0.875, 0.777778 )
+color = Color( 0.0823529, 0.0235294, 0.498039, 1 )
+polygon = PoolVector2Array( 696, 128, 714.286, 128, 728, 128, 712, 152 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/DialogBox/Indicator"]
+
+[node name="Timer" type="Timer" parent="Control/DialogBox"]
+
+[node name="Portrait" type="Sprite" parent="Control/DialogBox"]
+position = Vector2( 32, -32 )
+scale = Vector2( 0.11, 0.106667 )
+texture = ExtResource( 4 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Control"]
+
+[node name="StartSceneBackground" type="Sprite" parent="Control/ParallaxBackground"]
+visible = false
+position = Vector2( 512, 300 )
+scale = Vector2( 0.82915, 0.837989 )
+texture = ExtResource( 3 )
+
+[node name="FairyWorldBackground" type="Sprite" parent="Control/ParallaxBackground"]
+position = Vector2( 512, 300 )
+scale = Vector2( 0.64, 0.496689 )
+texture = ExtResource( 6 )
