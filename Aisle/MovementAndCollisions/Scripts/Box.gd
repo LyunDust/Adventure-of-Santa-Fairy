@@ -6,7 +6,7 @@ extends Area2D
 class_name Box
 
 # UI texts
-onready var text_pressKeyHide = get_node("/root/Aisle/Player/UI_Text/PressKey_hide")
+onready var text_pressKeyHide = get_node("/root/Aisle/UI_Text/PressKey_hide")
 
 # variables for box's position
 var boxXPos

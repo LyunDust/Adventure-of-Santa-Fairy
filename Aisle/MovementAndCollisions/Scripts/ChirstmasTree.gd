@@ -10,7 +10,7 @@ var treeXPos
 var treeYPos
 
 # UI text
-onready var text_pressKeyDeco = get_node("/root/Aisle/Player/UI_Text/PressKey_deco")
+onready var text_pressKeyDeco = get_node("/root/Aisle/UI_Text/PressKey_deco")
 
 
 # set the tree's position

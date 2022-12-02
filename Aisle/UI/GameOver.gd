@@ -1,7 +1,7 @@
 # Owner: Kim Hyeri
 # This script is attached to UI_Text node
 
-extends Control
+extends CanvasLayer
 
 class_name AisleUI
 

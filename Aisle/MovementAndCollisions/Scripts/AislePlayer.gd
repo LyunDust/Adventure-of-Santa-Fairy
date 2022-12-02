@@ -33,10 +33,10 @@ signal getItem (getItem)
 signal itemReset (itemReset)
 
 # UI texts
-onready var text_pressKeyHide = $UI_Text/PressKey_hide
-onready var text_pressKeyDeco = $UI_Text/PressKey_deco
-onready var text_decorate = $UI_Text/Decorate
-onready var text_itemCount = $UI_Text/ItemCount
+onready var text_pressKeyHide = get_node("/root/Aisle/UI_Text/PressKey_hide")
+onready var text_pressKeyDeco = get_node("/root/Aisle/UI_Text/PressKey_deco")
+onready var text_decorate =  get_node("/root/Aisle/UI_Text/Decorate")
+onready var text_itemCount =  get_node("/root/Aisle/UI_Text/ItemCount")
 
 # animation and audio
 onready var animation = $AnimationPlayer
