@@ -126,7 +126,7 @@ func _physics_process(delta):
 		move_and_collide(velocity*delta)
 
 	# if the player doesn't move, the player's animation is stopped
-	if !input:
+	if !input and !collideWithBox:
 		animation.stop()
 		audio_player.stop()
 	
