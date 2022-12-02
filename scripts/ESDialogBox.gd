@@ -25,8 +25,8 @@ func _process(delta):
 			$Text.visible_characters=len($Text.text)
 	
 	if dialogFinished:
-		#get_tree().change_scene("res://scenes/StartScreen.tscn")
-		get_tree().paused = true
+		get_tree().change_scene("res://scenes/EndingScene.tscn")
+		
 
 func getDialog() ->Array:
 	var file=File.new()
