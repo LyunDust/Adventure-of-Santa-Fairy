@@ -50,14 +50,14 @@ func nextPhrase()->void:
 	
 	finished=false
 	
-	$Name.bbcode_text=dialog[phraseNum]["Name"]
+	$Name.bbcode_text=dialog[phraseNum]["Name"] + dialog[phraseNum]["Emotion"]
 	$Text.bbcode_text=dialog[phraseNum]["Text"]
 	
 	
 	$Text.visible_characters=0
 	
 	var file=File.new()
-	var img=dialog[phraseNum]["Name"] + dialog[phraseNum]["Emotion"] + ".png"
+	var img="res://Aisle/Image/Characters/"+ dialog[phraseNum]["Name"] + dialog[phraseNum]["Emotion"] + ".png"
 	
 	if file.file_exists(img):
 		$Portrait.texture=load(img)

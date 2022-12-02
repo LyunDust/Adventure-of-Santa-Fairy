@@ -57,7 +57,7 @@ func nextPhrase()->void:
 	$Text.visible_characters=0
 	
 	var file=File.new()
-	var img=dialog[phraseNum]["Name"] + dialog[phraseNum]["Emotion"] + ".png"
+	var img= "res://Images/" + dialog[phraseNum]["Name"] + dialog[phraseNum]["Emotion"] + ".png"
 	
 	if file.file_exists(img):
 		$Portrait.texture=load(img)

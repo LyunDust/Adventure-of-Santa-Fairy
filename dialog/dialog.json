@@ -1,32 +1,32 @@
 [
   {
-    "Name": "SantaFairy",
-    "Emotion": "Happy",
+    "Name": "santafairy",
+    "Emotion": "",
     "Text": "It's Christmas soon!"
   },
   {
-    "Name": "SantaFairy",
-    "Emotion": "Happy",
+    "Name": "santafairy",
+    "Emotion": "",
     "Text": "I want to go to the human world"
   },
   {
-    "Name": "OtherSantaFairy",
-    "Emotion": "",
+    "Name": "santafairy",
+    "Emotion": "_evil",
     "Text": "What? Are you going to the human world? I want to go too!!"
   },
   {
-    "Name": "SantaFairy",
-    "Emotion": "Happy",
+    "Name": "santafairy",
+    "Emotion": "",
     "Text": "Only a fairy can go to the human world. You can't go!"
   },
   {
-    "Name": "OtherSantaFairy",
-    "Emotion": "",
+    "Name": "santafairy",
+    "Emotion": "_evil",
     "Text": "Do you think you can go through that rough aisle?"
   },
   {
-    "Name": "OtherSantaFairy",
-    "Emotion": "",
+    "Name": "santafairy",
+    "Emotion": "_evil",
     "Text": "Let's see who's going!"
   }
 

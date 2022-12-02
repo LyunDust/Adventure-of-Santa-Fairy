@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Images/StartSceneBackground.jpg" type="Texture" id=1]
+[ext_resource path="res://Aisle/Image/Backgrounds/sky_purple.jpg" type="Texture" id=1]
 [ext_resource path="res://scripts/HWDialogBox.gd" type="Script" id=2]
-[ext_resource path="res://OtherSantaFairy.png" type="Texture" id=3]
+[ext_resource path="res://fonts/arial.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://fonts/Ronysiswadi9Med-ALDYM.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
-font_data = ExtResource( 4 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 25
@@ -58,12 +58,11 @@ polygon = PoolVector2Array( 696, 128, 714.286, 128, 728, 128, 712, 152 )
 
 [node name="Portrait" type="Sprite" parent="Control/HWDialogBox"]
 position = Vector2( 32, -32 )
-scale = Vector2( 0.11, 0.106667 )
-texture = ExtResource( 3 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="StartSceneBackground" type="Sprite" parent="ParallaxBackground"]
 position = Vector2( 512, 300 )
-scale = Vector2( 0.82915, 0.837989 )
+scale = Vector2( 1.0882, 0.38961 )
 texture = ExtResource( 1 )
