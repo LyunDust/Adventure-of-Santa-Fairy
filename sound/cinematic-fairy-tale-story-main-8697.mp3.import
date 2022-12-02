@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cinematic-fairy-tale-story-main-8697.mp3-eb9392f1a6ad6241a054365775d3df73.mp3str"
+
+[deps]
+
+source_file="res://sound/cinematic-fairy-tale-story-main-8697.mp3"
+dest_files=[ "res://.import/cinematic-fairy-tale-story-main-8697.mp3-eb9392f1a6ad6241a054365775d3df73.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

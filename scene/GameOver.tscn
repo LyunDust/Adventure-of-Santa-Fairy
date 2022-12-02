@@ -21,17 +21,17 @@ color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 0, 0, 1028, 0, 1028, 600, 0, 600 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 314.0
-margin_top = 251.0
-margin_right = 729.0
-margin_bottom = 341.0
+margin_left = 303.0
+margin_top = 244.0
+margin_right = 718.0
+margin_bottom = 334.0
 custom_fonts/font = SubResource( 1 )
 text = "Game Over"
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 435.0
-margin_top = 454.0
-margin_right = 624.0
-margin_bottom = 489.0
+margin_left = 417.0
+margin_top = 438.0
+margin_right = 606.0
+margin_bottom = 473.0
 custom_fonts/font = SubResource( 2 )
 text = "Press any key"

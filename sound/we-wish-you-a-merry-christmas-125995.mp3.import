@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/we-wish-you-a-merry-christmas-125995.mp3-7ba8758b07970663c95584734cb0b997.mp3str"
+
+[deps]
+
+source_file="res://sound/we-wish-you-a-merry-christmas-125995.mp3"
+dest_files=[ "res://.import/we-wish-you-a-merry-christmas-125995.mp3-7ba8758b07970663c95584734cb0b997.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

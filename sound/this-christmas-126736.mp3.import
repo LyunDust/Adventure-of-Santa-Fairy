@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/this-christmas-126736.mp3-4666f59d4f711a499b523f6bb91d5f6a.mp3str"
+
+[deps]
+
+source_file="res://sound/this-christmas-126736.mp3"
+dest_files=[ "res://.import/this-christmas-126736.mp3-4666f59d4f711a499b523f6bb91d5f6a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
