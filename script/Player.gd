@@ -17,6 +17,7 @@ func _ready():
 	isMoving = true
 	life = 3
 	$sprite.play("default")
+	Global.playerDie = false
 		
 
 func get_input(): #Control player and change animation
