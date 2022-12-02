@@ -25,6 +25,7 @@
 [ext_resource path="res://Aisle/UI/ALGER.TTF" type="DynamicFontData" id=23]
 [ext_resource path="res://Aisle/Aisle.gd" type="Script" id=24]
 
+
 [sub_resource type="DynamicFont" id=1]
 size = 50
 outline_size = 3

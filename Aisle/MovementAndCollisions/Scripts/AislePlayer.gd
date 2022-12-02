@@ -91,7 +91,7 @@ func get_input():
 			itemNoReset = false
 		
 		if Input.is_action_pressed("interact"):
-			
+			audio_player.stop()
 			# the player hide in the box
 			if collideWithBox:
 				animation.play("inTheBox")
@@ -129,7 +129,7 @@ func _physics_process(delta):
 		move_and_collide(velocity*delta)
 
 	# if the player doesn't move, the player's animation is stopped
-	if !input:
+	if !input and !collideWithBox:
 		animation.stop()
 		audio_player.stop()
 	
