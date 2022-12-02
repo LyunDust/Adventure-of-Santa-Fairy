@@ -3,12 +3,14 @@ extends Area2D
 
 var windowSize
 var setPosition = false
+var clothes 
 
 #Position randomly within windowSize
 func _ready():
 	windowSize = get_viewport_rect().size
 	visible  = false
 	position = Vector2(rand_range(18, windowSize.x-18), rand_range(100, windowSize.y-16))
+	clothes = get_node("/root/Level 2/Clothes")
 
 func _physics_process(_delta):
 	#If the sensor collides with the background, wall, other presents, or Santa bag, it repositions.
@@ -26,7 +28,4 @@ func _on_bluePresnet_body_entered(_body):
 	if setPosition == true:
 		queue_free()
 		Global.presentNum -= 1
-	
-		if Global.presentNum == 0:
-			get_tree().paused = true
 		

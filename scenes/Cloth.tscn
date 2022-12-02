@@ -25,7 +25,7 @@ shape = SubResource( 1 )
 
 [node name="KeyShape" type="Sprite" parent="."]
 visible = false
-position = Vector2( 0, 57.8515 )
+position = Vector2( 4.78627, -54.4484 )
 scale = Vector2( 1.12763, 1.27224 )
 texture = ExtResource( 3 )
 
@@ -37,6 +37,30 @@ margin_bottom = 2.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "h"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 51.0535, 0 )
+collision_mask = 274
+collide_with_areas = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, -40.8363 )
+collision_mask = 274
+collide_with_areas = true
+
+[node name="RayCast2D3" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -38.2901, 0 )
+collision_mask = 274
+collide_with_areas = true
+
+[node name="RayCast2D4" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 40.8363 )
+collision_mask = 274
+collide_with_areas = true
 
 [connection signal="body_entered" from="." to="." method="_on_Cloth_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Cloth_body_exited"]

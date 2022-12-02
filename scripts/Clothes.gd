@@ -8,15 +8,14 @@ var numOfCollectedClothes = 0
 var isClothCollected = []
 var isAllClothesCollected = false
 
-func _ready():
+func _ready():	
 	set_child()
 	
 func _process(delta):
 	if numOfCollectedClothes == numOfClothes:
 		isAllClothesCollected = true
-	if isAllClothesCollected == true:
-		print("Suceed")
-		#get_tree().change_scene("res://scenes/EndingStoryScene.tscn")
+	if isAllClothesCollected == true and Global.presentNum == 0:
+		get_tree().change_scene("res://scenes/EndingStoryScene.tscn")
 
 	
 func set_child(): #Get children to specify a unique number and image
@@ -29,7 +28,6 @@ func set_child(): #Get children to specify a unique number and image
 		cloth_texture = str("res://Images/SantaCloth", i,".png")
 		clothesList[i].setSpriteTexture(cloth_texture)
 		isClothCollected.append(false)
-		clothesList[i].setPosition()
 	
 
 func checkBeforeClothCollected(i)->bool: #Check if previous order clothes have been acquired

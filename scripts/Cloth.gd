@@ -12,6 +12,11 @@ func _ready(): #keyshape settings, importing clothes node
 	$KeyShape.visible = false
 	windowSize = get_viewport_rect().size
 	manageClothes = get_node("/root/Level 2/Clothes")
+	position = Vector2(rand_range(18, windowSize.x-18), rand_range(100, windowSize.y-16))
+	
+func _physics_process(delta):
+	if($RayCast2D.is_colliding() or $RayCast2D2.is_colliding() or $RayCast2D3.is_colliding() or $RayCast2D4.is_colliding()):
+		position = Vector2(rand_range(18, windowSize.x-18), rand_range(100, windowSize.y-16))
 
 func setClothNum(num): #Unique numbering for each cloth
 	clothNum = num
@@ -21,25 +26,21 @@ func getClothNum()->int: #Find out what the cloth is by returning their unique n
 	
 func setSpriteTexture(sprite_texture): #Load the corresponding image
 	$Sprite.texture =load(sprite_texture) 
-	
-func setPosition():
-	position = Vector2(rand_range(18, windowSize.x-18), rand_range(100, windowSize.y-16))
-	
 
 func set_key(): #Generate a random key each time the player accesses it
 	keyNum = randi() % 4 + 1 #1-4
 	if keyNum == 1:
-		$KeyShape/Label.text = "Q"
-		key = KEY_Q
+		$KeyShape/Label.text = "Y"
+		key = KEY_Y
 	elif keyNum == 2:
-		$KeyShape/Label.text = "T"
-		key = KEY_T
+		$KeyShape/Label.text = "U"
+		key = KEY_U
 	elif keyNum == 3:
-		$KeyShape/Label.text = "E"
-		key = KEY_E
+		$KeyShape/Label.text = "I"
+		key = KEY_I
 	elif keyNum == 4:
-		$KeyShape/Label.text = "R"
-		key = KEY_R
+		$KeyShape/Label.text = "O"
+		key = KEY_O
 	else:
 		key = KEY_H
 

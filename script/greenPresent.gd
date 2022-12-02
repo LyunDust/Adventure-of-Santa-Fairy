@@ -23,6 +23,3 @@ func _on_greenPresent_body_entered(_body):
 	if setPosition == true:
 		queue_free()
 		Global.presentNum -= 1
-	
-		if Global.presentNum == 0:
-			get_tree().paused = true

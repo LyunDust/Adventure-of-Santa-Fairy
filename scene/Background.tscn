@@ -288,7 +288,6 @@ region_rect = Rect2( 115, 113, 26, 46 )
 position = Vector2( -161.106, 82.6697 )
 scale = Vector2( 0.838525, 0.838525 )
 frames = SubResource( 24 )
-frame = 1
 speed_scale = 0.3
 playing = true
 
