@@ -91,7 +91,7 @@ func get_input():
 			itemNoReset = false
 		
 		if Input.is_action_pressed("interact"):
-			
+			audio_player.stop()
 			# the player hide in the box
 			if collideWithBox:
 				animation.play("inTheBox")
