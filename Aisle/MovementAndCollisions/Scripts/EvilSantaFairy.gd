@@ -1,30 +1,36 @@
 # Owner: Kim Hyeri
+# This script is attached to EvilSantaFairy.tscn
 
 extends KinematicBody2D
 
 class_name EvilSantaFairy
 
+# variables for moving
 export (int) var evilSantaFairySpeed = 100
-
 var velocity = Vector2()
+
+# variables for evil's position
 var EvilSantaFairyXPos
 var EvilSantaFairyYPos
+
+# variable for bouncing when he collide with something
 var evilSantaFairyBlocked = false
 
+# variable for gameover and restart
 var playerDie = false
 
-const DIRECTION_RIGHT = 1
-const DIRECTION_LEFT = -1
-var evilSantaFairyDirection = Vector2(DIRECTION_RIGHT, 1)
-
+# animation and audio
 onready var animation = $AnimationPlayer
+onready var audio_player = $AudioStreamPlayer2D
 
 
+# set the evil's position
 func _init():
 	EvilSantaFairyXPos = 0
 	EvilSantaFairyYPos = 500
 
 
+# set the evil's position randomly
 func _ready():
 	EvilSantaFairyXPos = rand_range(100, 3700)	
 	self.set_position(Vector2(EvilSantaFairyXPos, EvilSantaFairyYPos))
@@ -34,12 +40,17 @@ func _physics_process(delta):
 	velocity = Vector2()
 	
 	if !playerDie:
+		# when the evil collide with something, the evil's direction is changed
 		if evilSantaFairyBlocked:
 			velocity.x -= 1
 			animation.play("run_left")
 		if !evilSantaFairyBlocked:
 			velocity.x += 1
 			animation.play("run")
+		if !audio_player.is_playing():
+			audio_player.play()	
+	
+	# when the player is dead, the evil stop to move
 	else:
 		velocity.x += 0
 	
@@ -49,12 +60,19 @@ func _physics_process(delta):
 	
 	if collision:
 		evilSantaFairyBlocked = !evilSantaFairyBlocked
+	
+	
 
 
 func _on_Player_isHeAlived(isHeAlive):
+	
+	# if the player is dead, the evil's animation and audio are stopped and change the variable's state for gameover
 	if !isHeAlive:
 		animation.stop()
+		audio_player.stop()
 		playerDie = true
+	
+	# if the player try to restart, the evil's position is reset
 	else:
 		playerDie = false
 		self._ready()
