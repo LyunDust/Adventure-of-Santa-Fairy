@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Aisle/MovementAndCollisions/Scripts/AislePlayer.gd"
 }, {
-"base": "Control",
+"base": "CanvasLayer",
 "class": "AisleUI",
 "language": "GDScript",
 "path": "res://Aisle/UI/GameOver.gd"

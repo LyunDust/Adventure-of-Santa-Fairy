@@ -88,7 +88,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 62 ]
+"values": [ 31744 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath(".:collision_layer")
@@ -136,7 +136,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ PoolVector2Array( 50.833, -66.429, 23.333, -39.286, 10, -36.429, 8.333, -15.714, -5.833, -15.714, -17.5, -34.286, -62.5, -10.714, -109.167, -37.143, -125.833, 15, -107, 30, -96.667, 29.286, -60, 57.857, -45, 58.571, -2.5, 74.286, 22.5, 74.286, 40.833, 66.429, 60.833, 72.857, 84.167, 64.286, 85.833, 45, 110, 45, 115.833, 33.571, 125.833, 27.143, 126.667, 20, 112.5, 12.857, 105.833, 18.571, 84.286, 11.25, 81.667, 4.286, 90.833, -7.143, 92.5, -18.571, 80, -12.857, 68.333, -23.571, 70.833, -45.714 ) ]
+"values": [ PoolVector2Array( 48.9796, -67.8571, 21.7687, -41.6667, 8.16327, -36.9048, 6.80272, -19.0476, -5.44218, -19.0476, -17.5, -34.286, -61.2245, -13.0952, -107.483, -40.4762, -125.833, 15, -107, 30, -95.2381, 29.7619, -60, 57.857, -45, 58.571, -2.5, 74.286, 22.5, 74.286, 40.8163, 69.0476, 59.8639, 76.1905, 84.167, 64.286, 87.0748, 47.6191, 108.844, 47.6191, 115.833, 33.571, 125.833, 27.143, 126.667, 20, 112.925, 9.52381, 102.041, 11.9048, 84.286, 11.25, 81.667, 4.286, 91.1565, -3.57143, 91.1565, -21.4286, 80.2721, -16.6667, 68.333, -23.571, 70.833, -45.714 ) ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Area2D:collision_layer")
@@ -160,7 +160,19 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 2 ]
+"values": [ 2048 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Area2D/CollisionPolygon2D:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.05, 1.05 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -175,7 +187,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 40 ]
+"values": [ 24576 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CollisionPolygon2D:polygon")
@@ -208,10 +220,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ false, false ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CollisionPolygon2D:visible")
@@ -223,7 +235,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Area2D/CollisionPolygon2D:polygon")
@@ -284,6 +296,18 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Area2D/CollisionPolygon2D:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.05, 1.05 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -348,7 +372,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 62 ]
+"values": [ 31744 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath(".:collision_layer")
@@ -396,7 +420,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ PoolVector2Array( 50.833, -66.429, 23.333, -39.286, 10, -36.429, 8.333, -15.714, -5.833, -15.714, -17.5, -34.286, -62.5, -10.714, -109.167, -37.143, -125.833, 15, -107, 30, -96.667, 29.286, -60, 57.857, -45, 58.571, -2.5, 74.286, 22.5, 74.286, 40.833, 66.429, 60.833, 72.857, 84.167, 64.286, 85.833, 45, 110, 45, 115.833, 33.571, 125.833, 27.143, 126.667, 20, 112.5, 12.857, 105.833, 18.571, 84.286, 11.25, 81.667, 4.286, 90.833, -7.143, 92.5, -18.571, 80, -12.857, 68.333, -23.571, 70.833, -45.714 ) ]
+"values": [ PoolVector2Array( 48.9796, -67.8571, 21.7687, -41.6667, 8.16327, -36.9048, 6.80272, -19.0476, -5.44218, -19.0476, -17.5, -34.286, -61.2245, -13.0952, -107.483, -40.4762, -125.833, 15, -107, 30, -95.2381, 29.7619, -60, 57.857, -45, 58.571, -2.5, 74.286, 22.5, 74.286, 40.8163, 69.0476, 59.8639, 76.1905, 84.167, 64.286, 87.0748, 47.6191, 108.844, 47.6191, 115.833, 33.571, 125.833, 27.143, 126.667, 20, 112.925, 9.52381, 102.041, 11.9048, 84.286, 11.25, 81.667, 4.286, 91.1565, -3.57143, 91.1565, -21.4286, 80.2721, -16.6667, 68.333, -23.571, 70.833, -45.714 ) ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Area2D:collision_mask")
@@ -408,7 +432,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 2048 ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Area2D:collision_layer")
@@ -429,7 +453,7 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0.8 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
@@ -441,10 +465,22 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0.8 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Area2D/CollisionPolygon2D:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.05, 1.05 ), Vector2( 0.998, 1.05 ), Vector2( 0.945, 1.05 ), Vector2( 0.998, 1.05 ), Vector2( 1.05, 1.05 ), Vector2( 1.103, 1.05 ), Vector2( 1.155, 1.05 ), Vector2( 1.103, 1.05 ), Vector2( 1.05, 1.05 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -506,10 +542,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( -0.1, 0 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 62 ]
+"values": [ 31744, 31744 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath(".:collision_layer")
@@ -557,7 +593,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ PoolVector2Array( -50.833, -66.429, -23.333, -39.286, -10, -36.429, -8.333, -15.714, 5.833, -15.714, 17.5, -34.286, 62.5, -10.714, 109.167, -37.143, 125.833, 15, 107.5, 30, 96.667, 29.286, 60, 57.857, 45, 58.571, 2.5, 74.286, -22.5, 74.286, -40.833, 66.429, -60.833, 72.857, -84.167, 64.286, -85.833, 45, -110, 45, -115.833, 33.571, -125.833, 27.143, -126.667, 20, -112.5, 12.857, -105.833, 18.571, -84.2857, 11.25, -81.667, 4.286, -90.833, -7.143, -92.5, -18.571, -80, -12.857, -68.333, -23.571, -70.833, -45.714 ) ]
+"values": [ PoolVector2Array( -48.98, -67.857, -21.769, -41.667, -8.163, -36.905, -6.803, -19.048, 5.442, -19.048, 17.5, -34.286, 61.224, -13.095, 107.483, -40.476, 125.833, 15, 107, 30, 95.238, 29.762, 60, 57.857, 45, 58.571, 2.5, 74.286, -22.5, 74.286, -40.816, 69.048, -59.864, 76.19, -84.167, 64.286, -87.075, 47.619, -108.844, 47.619, -115.833, 33.571, -125.833, 27.143, -126.667, 20, -112.925, 9.524, -102.041, 11.905, -84.286, 11.25, -81.667, 4.286, -91.156, -3.571, -91.156, -21.429, -80.272, -16.667, -68.333, -23.571, -70.833, -45.714 ) ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Area2D:collision_layer")
@@ -581,7 +617,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 2048 ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("CollisionPolygon2D:position")
@@ -594,6 +630,18 @@ tracks/11/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Area2D/CollisionPolygon2D:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.05, 1.05 ), Vector2( 0.998, 1.05 ), Vector2( 0.945, 1.05 ), Vector2( 0.998, 1.05 ), Vector2( 1.05, 1.05 ), Vector2( 1.103, 1.05 ), Vector2( 1.155, 1.05 ), Vector2( 1.103, 1.05 ), Vector2( 1.05, 1.05 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -667,10 +715,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.55 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 62 ]
+"values": [ 31744, 31744 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath(".:collision_layer")
@@ -742,12 +790,24 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 2048 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Area2D/CollisionPolygon2D:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0.55 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.11871, 1.05 ) ]
 }
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.7, 0.8 )
-collision_mask = 62
+collision_mask = 31744
 collision/safe_margin = 0.01
 script = ExtResource( 2 )
 
@@ -773,11 +833,11 @@ anims/run_left = SubResource( 3 )
 anims/sitdown = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_mask = 2
+collision_mask = 2048
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 scale = Vector2( 1.05, 1.05 )
-polygon = PoolVector2Array( 50.833, -66.429, 23.333, -39.286, 10, -36.429, 8.333, -15.714, -5.833, -15.714, -17.5, -34.286, -62.5, -10.714, -109.167, -37.143, -125.833, 15, -107, 30, -96.667, 29.286, -60, 57.857, -45, 58.571, -2.5, 74.286, 22.5, 74.286, 40.833, 66.429, 60.833, 72.857, 84.167, 64.286, 85.833, 45, 110, 45, 115.833, 33.571, 125.833, 27.143, 126.667, 20, 112.5, 12.857, 105.833, 18.571, 84.286, 11.25, 81.667, 4.286, 90.833, -7.143, 92.5, -18.571, 80, -12.857, 68.333, -23.571, 70.833, -45.714 )
+polygon = PoolVector2Array( 48.9796, -67.8571, 21.7687, -41.6667, 8.16327, -36.9048, 6.80272, -19.0476, -5.44218, -19.0476, -17.5, -34.286, -61.2245, -13.0952, -107.483, -40.4762, -125.833, 15, -107, 30, -95.2381, 29.7619, -60, 57.857, -45, 58.571, -2.5, 74.286, 22.5, 74.286, 40.8163, 69.0476, 59.8639, 76.1905, 84.167, 64.286, 87.0748, 47.6191, 108.844, 47.6191, 115.833, 33.571, 125.833, 27.143, 126.667, 20, 112.925, 9.52381, 102.041, 11.9048, 84.286, 11.25, 81.667, 4.286, 91.1565, -3.57143, 91.1565, -21.4286, 80.2721, -16.6667, 68.333, -23.571, 70.833, -45.714 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

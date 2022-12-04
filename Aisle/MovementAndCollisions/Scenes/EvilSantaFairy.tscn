@@ -146,6 +146,5 @@ anims/run_left = SubResource( 3 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
-autoplay = true
 max_distance = 700.0
 bus = "Evil"
