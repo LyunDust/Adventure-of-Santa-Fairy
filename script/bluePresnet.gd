@@ -23,7 +23,7 @@ func _physics_process(_delta):
 			visible = true
 	
 #If the present collides with the player while the location is confirmed, the present 
-#disappears and the presentNum is reduced by 1. If presentNum is 0, move on to the next scene
+#disappears and the presentNum is reduced by 1.
 func _on_bluePresnet_body_entered(_body):
 	if setPosition == true:
 		queue_free()
