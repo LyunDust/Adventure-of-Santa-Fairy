@@ -8,6 +8,8 @@ onready var audio_player = $AudioStreamPlayer
 
 
 func _ready():
+	BackGroundMusic.pause_storySceneMusic()
+	BackGroundMusic.set_level1MusicVol(audio_player.volume_db)
 	if !audio_player.is_playing():
 		audio_player.play()	
 

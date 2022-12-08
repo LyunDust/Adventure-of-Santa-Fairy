@@ -21,5 +21,6 @@ func _physics_process(_delta):
 	
 func _on_greenPresent_body_entered(_body):
 	if setPosition == true:
+		Global.set_presentCollected(true)
 		queue_free()
 		Global.presentNum -= 1

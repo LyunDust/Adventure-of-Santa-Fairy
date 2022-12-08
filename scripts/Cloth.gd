@@ -64,6 +64,8 @@ func _input(event):
 	#If the player type the right key, the player can get clothes
 	if event is InputEventKey:
 		if event.scancode == key:
+			if !$"../../EffectSound/CollectItem".is_playing():
+				$"../../EffectSound/CollectItem".play()
 			manageClothes.setClothCollected(clothNum)
 			queue_free()		
 

@@ -59,11 +59,15 @@ func pausePlayer():
 	$Timer.start()
 	$Timer/blink.start()
 	life -= 1
+	if !$"../EffectSound/PlayerHurt".is_playing():
+		$"../EffectSound/PlayerHurt".play()
 	emit_signal("playerDamage")
 	emit_signal("pauseRay")
 	
 	#When the life becomes 0, it changes to the game over scene after a certain period of time
 	if life == 0:
+		if !$"../EffectSound/GameOver".is_playing():
+			$"../EffectSound/GameOver".play()
 		Global.playerDie = true
 		$Timer2.start()
 		

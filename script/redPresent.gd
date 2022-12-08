@@ -5,13 +5,12 @@ extends Area2D
 
 var windowSize
 var setPosition = false
-var clothes
 
 func _ready():
 	windowSize = get_viewport_rect().size
 	visible  = false
 	position = Vector2(rand_range(18, windowSize.x-18), rand_range(100, windowSize.y-16))
-	clothes = get_node("/root/Level 2/Clothes")
+	
 
 func _physics_process(_delta):
 	if setPosition == false:
@@ -23,5 +22,6 @@ func _physics_process(_delta):
 
 func _on_redPresent_body_entered(_body):
 	if setPosition == true:
+		Global.set_presentCollected(true)
 		queue_free()
 		Global.presentNum -= 1

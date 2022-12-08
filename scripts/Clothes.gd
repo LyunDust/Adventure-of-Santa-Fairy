@@ -20,7 +20,7 @@ func _process(delta):
 	
 func set_child(): #Get children to specify a unique number and image
 	var cloth_texture
-	var windowSize = get_viewport_rect().size
+	#var windowSize = get_viewport_rect().size
 	clothesList= get_children()
 	numOfClothes=get_child_count()
 	for i in numOfClothes:

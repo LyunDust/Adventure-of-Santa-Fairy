@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scripts/CreditScene.gd" type="Script" id=1]
+[ext_resource path="res://scripts/OptionScene.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Ronysiswadi9Med-ALDYM.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/arial.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Aisle/Sounds/aisle_bgm.mp3" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=4]
 size = 30
@@ -15,6 +17,10 @@ bg_color = Color( 0.341176, 0.290196, 0.607843, 0.686275 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.341176, 0.290196, 0.607843, 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 50
+font_data = ExtResource( 3 )
 
 [node name="OptionScene" type="Control"]
 anchor_right = 1.0
@@ -40,13 +46,74 @@ custom_styles/pressed = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
 text = "Quit"
 
-[node name="HSlider" type="HSlider" parent="ColorRect"]
-margin_left = 384.0
-margin_top = 191.0
-margin_right = 640.0
-margin_bottom = 327.0
+[node name="MainSlider" type="HSlider" parent="ColorRect"]
+margin_left = 512.0
+margin_top = 96.0
+margin_right = 768.0
+margin_bottom = 232.0
 min_value = -30.0
 max_value = 0.0
+scrollable = false
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 224.0
+margin_top = 128.0
+margin_right = 512.0
+margin_bottom = 196.0
+custom_fonts/font = SubResource( 8 )
+text = "Main"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="ColorRect"]
+margin_left = 224.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 324.0
+custom_fonts/font = SubResource( 8 )
+text = "Story"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="ColorRect"]
+margin_left = 224.0
+margin_top = 384.0
+margin_right = 512.0
+margin_bottom = 452.0
+custom_fonts/font = SubResource( 8 )
+text = "Level 1"
+align = 1
+valign = 1
+
+[node name="StorySlider" type="HSlider" parent="ColorRect"]
+margin_left = 512.0
+margin_top = 224.0
+margin_right = 768.0
+margin_bottom = 360.0
+min_value = -30.0
+max_value = 0.0
+scrollable = false
+
+[node name="Level1Slider" type="HSlider" parent="ColorRect"]
+margin_left = 512.0
+margin_top = 352.0
+margin_right = 768.0
+margin_bottom = 488.0
+min_value = -30.0
+max_value = 0.0
+scrollable = false
+
+[node name="Level1Player" type="AudioStreamPlayer" parent="ColorRect/Level1Slider"]
+stream = ExtResource( 4 )
+bus = "BGM"
 
 [connection signal="button_up" from="ColorRect/Button" to="." method="_on_Button_button_up"]
-[connection signal="value_changed" from="ColorRect/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="drag_ended" from="ColorRect/MainSlider" to="." method="_on_MainSlider_drag_ended"]
+[connection signal="drag_started" from="ColorRect/MainSlider" to="." method="_on_MainSlider_drag_started"]
+[connection signal="value_changed" from="ColorRect/MainSlider" to="." method="_on_MainSlider_value_changed"]
+[connection signal="drag_ended" from="ColorRect/StorySlider" to="." method="_on_StorySlider_drag_ended"]
+[connection signal="drag_started" from="ColorRect/StorySlider" to="." method="_on_StorySlider_drag_started"]
+[connection signal="value_changed" from="ColorRect/StorySlider" to="." method="_on_StorySlider_value_changed"]
+[connection signal="drag_ended" from="ColorRect/Level1Slider" to="." method="_on_Level1Slider_drag_ended"]
+[connection signal="drag_started" from="ColorRect/Level1Slider" to="." method="_on_Level1Slider_drag_started"]
+[connection signal="value_changed" from="ColorRect/Level1Slider" to="." method="_on_Level1Slider_value_changed"]

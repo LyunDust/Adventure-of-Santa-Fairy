@@ -8,3 +8,11 @@ var target = false #Variables that check that the player has successfully aimed
 var toyArrive = false #Variable to determine if item2 thrown by the player has arrived at the target position
 var toyCount = 0 #Variable to count the number of item2s thrown
 var vaccumsPos #Variable to store the position of the robot vacuum that changes continuously
+
+var presentCollected = false
+
+func set_presentCollected(var isCollected):
+	presentCollected = isCollected
+	
+func get_presentCollected() ->bool:
+	return presentCollected

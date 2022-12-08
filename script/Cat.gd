@@ -86,6 +86,7 @@ func catCollision():
 		visible = true
 	velocity.x = 0
 	$AnimatedSprite.playing = false
+	
 	$Timer.start()
 	$Timer/blink.start()
 		

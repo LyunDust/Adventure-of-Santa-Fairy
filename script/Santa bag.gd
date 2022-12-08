@@ -15,10 +15,12 @@ func _on_Area2D_body_entered(body):
 	if body is vacuums:
 		emit_signal("catPause")
 		body.robotError()
+
 	#Invoke a function to pause the cat and send a signal to pause the robot vacuum
 	elif body is Cat:
 		emit_signal("vacuumsPause")
 		body.catCollision()
+
 	
 	#Save body for use in other functions
 	node = body
@@ -29,6 +31,19 @@ func _on_Area2D_body_entered(body):
 	
 #Effect over a period of time
 func boom():
+	
+	var t = Timer.new()
+	t.set_wait_time(0.5)
+	t.set_one_shot(true)
+	self.add_child(t)
+	if !$"../EffectSound/ResetGift".is_playing():
+			$"../EffectSound/ResetGift".play()
+	t.start()
+	yield(t, "timeout")
+	if !$"../EffectSound/ResetGift".is_playing():
+			$"../EffectSound/ResetGift".play()
+	t.queue_free()
+	
 	set_modulate(Color(0.5, 0.5, 0.5))
 	visible = false
 	$Timer.start()

@@ -11,6 +11,7 @@ var finished=false
 var dialogFinished=false
 
 func _ready():
+	BackGroundMusic.play_storySceneMusic()
 	$Timer.wait_time=textSpeed
 	dialog=getDialog()
 	assert(dialog, "Dialog not found")

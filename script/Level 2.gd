@@ -26,6 +26,7 @@ signal pauseRay
 signal startRay
 
 func _ready():
+	BackGroundMusic.pause_storySceneMusic()
 	randomize()
 	bluePresent = load("res://scene/bluePresent.tscn")
 	greenPresent = load("res://scene/greenPresent.tscn")
@@ -67,6 +68,11 @@ func _physics_process(_delta):
 	#If the player succeeds in aiming the robot vacuum, it continues to store the robot vacuum's position
 	if Global.target == true:
 			Global.vaccumsPos = vacuumPos
+			
+	if Global.get_presentCollected() == true:
+		if !$EffectSound/CollectItem.is_playing():
+			$EffectSound/CollectItem.play()
+			Global.set_presentCollected(false)
 
 func throwItem():
 	#When the key to throw is pressed, stop the ray and make the global variable 'aiming' true
@@ -76,6 +82,8 @@ func throwItem():
 	#If not, allow the rays to operate again, eliminate the crosshair, and create an item that fits the type of item
 	else:
 		emit_signal("startRay")
+		if !$EffectSound/ThrowItem.is_playing():
+			$EffectSound/ThrowItem.play()
 		aimMode = false
 		Global.aiming = false
 		remove_child(cH)
@@ -167,6 +175,8 @@ func _on_Santa_bag_catInterruption():
 
 #When the time limit for the stage is over, change to Game Over Scene
 func _on_Timer_timeout():
+	if !$EffectSound/GameOver.is_playing():
+		$EffectSound/GameOver.play()
 	get_tree().change_scene("res://scene/GameOver.tscn")
 
 ##Stop aiming if a robot vacuum collides with a player or Santa bag

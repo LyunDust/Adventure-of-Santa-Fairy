@@ -6,8 +6,12 @@ extends Area2D
 var num
 var isSeeing = false
 signal gameOver
+var laserBeamSound
+var gameOverSound
 
 func _ready():
+	laserBeamSound = $"../EffectSound/Laser Beam"
+	gameOverSound = $"../EffectSound/GameOver"
 	$textBalloon.visible = false
 	randomize()
 	$raySprite.visible = false
@@ -20,6 +24,8 @@ func _physics_process(_delta):
 	if isSeeing == true:
 		if $sensor1.is_colliding() or $sensor2.is_colliding():
 			emit_signal("gameOver")
+			if !gameOverSound.is_playing():
+				gameOverSound.play()
 			$Timer2.start()
 			isSeeing = false
 
@@ -41,6 +47,8 @@ func _on_textBalloonTimer_timeout():
 func _on_smallTimer_timeout():
 	$textBalloon.visible = false
 	isSeeing = true
+	if !laserBeamSound.is_playing():
+		laserBeamSound.play()
 	$raySprite.set_modulate(Color(1, 1, 1, 1))
 	$rayTimer.start()
 

@@ -61,7 +61,7 @@ func _on_Timer_timeout():
 #When a player and a robot vacuum collide, the player, robot vacuum, cat, and aim pause
 func _on_Area2D_body_entered(body):
 	if body is player:
-		body.pausePlayer()
+		body.pausePlayer()	
 		robotError()
 		emit_signal("catPause")
 		emit_signal("aimingPause")
