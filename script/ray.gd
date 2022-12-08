@@ -70,6 +70,7 @@ func _on_Timer2_timeout():
 
 #When the game over signal is received, all timers except Timer 2 are stopped
 func _on_ray_gameOver():
+	BackGroundMusic.pause_level2SceneMusic()
 	$rayTimer.paused = true
 	$textBalloonTimer.paused = true
 	$textBalloonTimer/smallTimer.paused = true

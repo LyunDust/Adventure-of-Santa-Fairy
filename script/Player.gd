@@ -89,6 +89,7 @@ func _on_blink_timeout():
 
 #change to game over scene
 func _on_Timer2_timeout():
+	BackGroundMusic.pause_level2SceneMusic()
 	get_tree().change_scene("res://scene/GameOver.tscn")
 	
 #If a cat or robot vacuum collide with a Santa bag, it pauses the player and the light

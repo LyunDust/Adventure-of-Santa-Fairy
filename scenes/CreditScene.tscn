@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/CreditScene.gd" type="Script" id=1]
-[ext_resource path="res://fonts/Ronysiswadi9Med-ALDYM.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/arial.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -57,7 +57,7 @@ margin_right = 931.0
 margin_bottom = 336.0
 custom_fonts/font = SubResource( 2 )
 text = "Park Sinyoung: Main Scene(sound), Story Scene,
- Human World(game over, clothes)"
+ Human World(clothes), Code Merge"
 
 [node name="Label3" type="Label" parent="ColorRect"]
 margin_left = 99.0
@@ -65,8 +65,8 @@ margin_top = 344.0
 margin_right = 891.0
 margin_bottom = 472.0
 custom_fonts/font = SubResource( 8 )
-text = "Lee Soyoung:  Human World(gift, disturbance), 
-Code merge"
+text = "Lee Soyoung:  Human World(gift, disturbance, game over)
+"
 
 [node name="Button" type="Button" parent="ColorRect"]
 margin_left = 864.0

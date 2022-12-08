@@ -15,6 +15,7 @@ func _process(delta):
 	if numOfCollectedClothes == numOfClothes:
 		isAllClothesCollected = true
 	if isAllClothesCollected == true and Global.presentNum == 0:
+		BackGroundMusic.pause_level2SceneMusic()
 		get_tree().change_scene("res://scenes/EndingStoryScene.tscn")
 
 	

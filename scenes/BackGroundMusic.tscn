@@ -12,3 +12,6 @@ volume_db = -10.0
 
 [node name="StorySceneMusic" type="AudioStreamPlayer" parent="."]
 volume_db = -10.0
+
+[node name="Level2SceneMusic" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0

@@ -27,6 +27,7 @@ signal startRay
 
 func _ready():
 	BackGroundMusic.pause_storySceneMusic()
+	BackGroundMusic.play_level2SceneMusic()
 	randomize()
 	bluePresent = load("res://scene/bluePresent.tscn")
 	greenPresent = load("res://scene/greenPresent.tscn")
@@ -177,6 +178,7 @@ func _on_Santa_bag_catInterruption():
 func _on_Timer_timeout():
 	if !$EffectSound/GameOver.is_playing():
 		$EffectSound/GameOver.play()
+	BackGroundMusic.pause_level2SceneMusic()
 	get_tree().change_scene("res://scene/GameOver.tscn")
 
 ##Stop aiming if a robot vacuum collides with a player or Santa bag

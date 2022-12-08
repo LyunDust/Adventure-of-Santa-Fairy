@@ -3,8 +3,10 @@ extends Control
 onready var mainSlider = $ColorRect/MainSlider
 onready var storySlider = $ColorRect/StorySlider
 onready var level1Slider = $ColorRect/Level1Slider
+onready var level2Slider = $ColorRect/Level2Slider
 var mainVolume 
 var storyVolume
+var level2Volume
 var bgm_bus = AudioServer.get_bus_index("BGM")
 
 func _ready():
@@ -13,6 +15,9 @@ func _ready():
 	storyVolume = BackGroundMusic.get_storyScreenmusicVol()
 	storySlider.value = storyVolume
 	level1Slider.value = BackGroundMusic.get_level1MusicVol()
+	level2Volume = BackGroundMusic.get_level2SceneMusicVol()
+	level2Slider.value = level2Volume
+	
 
 func _on_Button_button_up():
 	#BackGroundMusic.play_startScreenmusic()
@@ -64,3 +69,18 @@ func _on_Level1Slider_drag_ended(value_changed):
 	BackGroundMusic.play_startScreenmusic()
 	if $ColorRect/Level1Slider/Level1Player.is_playing():
 		$ColorRect/Level1Slider/Level1Player.stop()
+
+
+func _on_Level2Slider_value_changed(value):
+	BackGroundMusic.set_level2SceneMusicVol(value)
+	level2Slider.value = value
+
+
+func _on_Level2Slider_drag_started():
+	BackGroundMusic.pause_startScreenmusic()
+	BackGroundMusic.play_level2SceneMusic()
+
+
+func _on_Level2Slider_drag_ended(value_changed):
+	BackGroundMusic.play_startScreenmusic()
+	BackGroundMusic.pause_level2SceneMusic()

@@ -70,6 +70,7 @@ func _on_Timer2_timeout():
 
 
 func _on_sideRay_gameOver():
+	BackGroundMusic.pause_level2SceneMusic()
 	$rayTimer.paused = true
 	$textBalloonTimer.paused = true
 	$textBalloonTimer/smallTimer.paused = true
