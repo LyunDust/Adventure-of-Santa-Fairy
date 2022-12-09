@@ -18,7 +18,13 @@ func _init():
 
 # set the item's position randomly
 func _ready():
-	itemXPos = rand_range(100, 3700)	
+	var tmpXPos1 = rand_range(100, 1700)	
+	var tmpXPos2 = rand_range(2140, 3700)
+	var randomValue = randf()
+	if randomValue < 0.5:
+		itemXPos = tmpXPos1
+	else:
+		itemXPos = tmpXPos2
 	self.set_position(Vector2(itemXPos, itemYPos))
 
 

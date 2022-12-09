@@ -23,7 +23,6 @@ var playerDie = false
 onready var animation = $AnimationPlayer
 onready var audio_player = $AudioStreamPlayer2D
 
-
 # set the evil's position
 func _init():
 	EvilSantaFairyXPos = 0
@@ -32,7 +31,13 @@ func _init():
 
 # set the evil's position randomly
 func _ready():
-	EvilSantaFairyXPos = rand_range(100, 3700)	
+	var tmpXPos1 = rand_range(100, 1700)	
+	var tmpXPos2 = rand_range(2140, 3700)
+	var randomValue = randf()
+	if randomValue < 0.5:
+		EvilSantaFairyXPos = tmpXPos1
+	else:
+		EvilSantaFairyXPos = tmpXPos2
 	self.set_position(Vector2(EvilSantaFairyXPos, EvilSantaFairyYPos))
 
 

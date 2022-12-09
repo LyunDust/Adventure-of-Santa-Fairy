@@ -21,7 +21,13 @@ func _init():
 
 # set the box's position randomly
 func _ready():
-	boxXPos = rand_range(80, 3700)	
+	var tmpXPos1 = rand_range(80, 1700)	
+	var tmpXPos2 = rand_range(2140, 3700)
+	var randomValue = randf()
+	if randomValue < 0.5:
+		boxXPos = tmpXPos1
+	else:
+		boxXPos = tmpXPos2
 	self.set_position(Vector2(boxXPos, boxYPos))
 
 
