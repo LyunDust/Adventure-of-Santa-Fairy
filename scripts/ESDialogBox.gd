@@ -1,5 +1,7 @@
-extends TextureRect
+#Owner: ParkSinYoung
 
+#Almost like AisleStoryScene
+extends TextureRect
 
 export var dialogPath="res://dialog/dialog3.json"
 export(float) var textSpeed=0.05

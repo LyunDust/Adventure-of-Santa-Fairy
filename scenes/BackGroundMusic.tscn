@@ -9,6 +9,7 @@ script = ExtResource( 1 )
 volume_db = -10.0
 
 [node name="EndingScreenMusic" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
 
 [node name="StorySceneMusic" type="AudioStreamPlayer" parent="."]
 volume_db = -10.0

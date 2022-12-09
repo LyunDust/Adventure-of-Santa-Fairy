@@ -15,6 +15,7 @@ func _ready(): #keyshape settings, importing clothes node
 	position = Vector2(rand_range(18, windowSize.x-18), rand_range(100, windowSize.y-16))
 	
 func _physics_process(delta):
+	#Arrange clothes so that they don't overlap with the surrounding objects
 	if($RayCast2D.is_colliding() or $RayCast2D2.is_colliding() or $RayCast2D3.is_colliding() or $RayCast2D4.is_colliding()):
 		position = Vector2(rand_range(18, windowSize.x-18), rand_range(100, windowSize.y-16))
 
@@ -64,6 +65,7 @@ func _input(event):
 	#If the player type the right key, the player can get clothes
 	if event is InputEventKey:
 		if event.scancode == key:
+			#Play sound effects when clothes are collected
 			if !$"../../EffectSound/CollectItem".is_playing():
 				$"../../EffectSound/CollectItem".play()
 			manageClothes.setClothCollected(clothNum)
