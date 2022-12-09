@@ -81,7 +81,7 @@ margin_top = 304.0
 margin_right = 512.0
 margin_bottom = 372.0
 custom_fonts/font = SubResource( 8 )
-text = "Level 1"
+text = "Stage 1"
 align = 1
 valign = 1
 
@@ -113,7 +113,7 @@ margin_top = 384.0
 margin_right = 512.0
 margin_bottom = 452.0
 custom_fonts/font = SubResource( 8 )
-text = "Level 2"
+text = "Stage 2"
 align = 1
 valign = 1
 
