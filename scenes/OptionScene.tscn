@@ -127,8 +127,6 @@ max_value = 0.0
 scrollable = false
 
 [connection signal="button_up" from="ColorRect/Button" to="." method="_on_Button_button_up"]
-[connection signal="drag_ended" from="ColorRect/MainSlider" to="." method="_on_MainSlider_drag_ended"]
-[connection signal="drag_started" from="ColorRect/MainSlider" to="." method="_on_MainSlider_drag_started"]
 [connection signal="value_changed" from="ColorRect/MainSlider" to="." method="_on_MainSlider_value_changed"]
 [connection signal="drag_ended" from="ColorRect/StorySlider" to="." method="_on_StorySlider_drag_ended"]
 [connection signal="drag_started" from="ColorRect/StorySlider" to="." method="_on_StorySlider_drag_started"]

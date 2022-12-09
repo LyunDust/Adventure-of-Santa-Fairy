@@ -1,3 +1,7 @@
+#Owner: ParkSinYoung
+
+#Almost like AisleStoryScene
+
 extends ColorRect
 
 #export var dialogPath="C:/Users/syp13/GitHub/Adventure-of-Santa-Fairy/dialog2.json"
