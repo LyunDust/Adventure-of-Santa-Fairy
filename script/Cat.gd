@@ -31,6 +31,8 @@ func _physics_process(_delta):
 	#If the item is in the target position, change isFollowing to true and change the direction 
 	#of the cat's sprite, movement direction, and sensor direction depending on the item's position
 	if Global.toyArrive == true:
+		if isFollowing == false:
+			$Timer2.start()
 		isFollowing = true
 		if target > position:
 			$AnimatedSprite.flip_h = false
@@ -48,7 +50,8 @@ func _physics_process(_delta):
 	#When the sensor collides, it reverses the direction of movement with the sensor 
 	#and randomly changes the amount of movement in the y direction.
 	if $sideSensor.is_colliding():
-		direction = direction * -1
+		if isFollowing == false:
+			direction = direction * -1
 		yValue = rand_range(-2, 2)
 		$sideSensor.position.x = $CollisionShape2D.shape.get_extents().x * direction * 0.5
 		
@@ -156,3 +159,11 @@ func _on_Robot_vacuums_catPause():
 #Save the location where the thrown item will arrive in the variable target
 func _on_Level_2_toyArrive(pos):
 	target = pos
+
+#If the cat can't reach the target's position, move it back to the random position
+func _on_Timer2_timeout():
+	isFollowing = false
+	Global.toyArrive = false;
+	if $sideSensor.is_colliding():
+		direction = direction * -1
+		$sideSensor.position.x = $CollisionShape2D.shape.get_extents().x * direction * 0.5

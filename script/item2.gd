@@ -23,6 +23,12 @@ func _physics_process(_delta):
 		else:
 			arrive = true
 			Global.toyArrive = true
+	
+	#The cat cannot reach the target's location
+	if arrive == true && Global.toyArrive == false:
+		arrive = false
+		Global.toyCount -= 1
+		queue_free()
 		
 	#queue_free() if the arrived location is where the item should not exist
 	if enterArea == true and arrive == true:
