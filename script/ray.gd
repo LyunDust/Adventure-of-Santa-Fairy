@@ -23,9 +23,10 @@ func _physics_process(_delta):
 		#When a sensor collides with a player, it sends a game over signal
 		if $sensor.is_colliding() or $sensor2.is_colliding():			
 			emit_signal("gameOver")
+			if !gameOverSound.is_playing():
+				gameOverSound.play()
 			$Timer2.start()
 			isSeeing = false
-
 
 #If rayTimer times out, hide raySprite
 func _on_rayTimer_timeout():
@@ -66,6 +67,8 @@ func _on_Player_startRay():
 
 #Change to game over scene after 0.5 second delay
 func _on_Timer2_timeout():
+	if !gameOverSound.is_playing():
+		gameOverSound.play()
 	get_tree().change_scene("res://scene/GameOver.tscn")
 
 #When the game over signal is received, all timers except Timer 2 are stopped
